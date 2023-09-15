@@ -10,12 +10,15 @@
 #include <xc.h>
 #include "ChipConfig.h"
 #include "IO.h"
+#include "timer.h"
 
 int main(void) {
     /***************************************************************************************************/
     //Initialisation de l?oscillateur
     /****************************************************************************************************/
     InitOscillator();
+    void InitTimer23(void);
+    void InitTimer1(void);
 
     /****************************************************************************************************/
     // Configuration des entrées sorties
@@ -30,7 +33,8 @@ int main(void) {
     // Boucle Principale
     /****************************************************************************************************/
     while (1) {
-LED_BLANCHE =! LED_BLANCHE;
+//LED_BLANCHE =! LED_BLANCHE;
 
     } // fin main
+  
 }
