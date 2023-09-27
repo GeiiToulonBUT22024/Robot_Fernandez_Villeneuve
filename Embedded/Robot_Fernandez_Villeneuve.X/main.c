@@ -11,20 +11,25 @@
 #include "ChipConfig.h"
 #include "IO.h"
 #include "timer.h"
+#include "PWM.h"
 
 int main(void) {
     /***************************************************************************************************/
     //Initialisation de l?oscillateur
     /****************************************************************************************************/
     InitOscillator();
-    void InitTimer23(void);
-    void InitTimer1(void);
 
     /****************************************************************************************************/
     // Configuration des entrées sorties
     /****************************************************************************************************/
     InitIO();
-
+    
+    InitTimer23();
+    InitTimer1();
+    
+    InitPWM();
+    PWMSetSpeed(50,1);
+    PWMSetSpeed(50,0);
     LED_BLANCHE = 1;
     LED_BLEUE = 1;
     LED_ORANGE = 1;
