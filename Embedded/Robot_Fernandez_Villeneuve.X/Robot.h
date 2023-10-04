@@ -12,4 +12,7 @@ float vitesseDroiteCommandeCourante;
 };
 } ROBOT_STATE_BITS;
 extern volatile ROBOT_STATE_BITS robotState;
+
+void PWMUpdateSpeed();
+
 #endif /* ROBOT_H */

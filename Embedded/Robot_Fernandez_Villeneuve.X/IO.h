@@ -16,19 +16,19 @@
 
 //Définitions des pins pour les 6 hacheurs moteurs
 
-#define MOTEUR_GAUCHE_INL MOTEUR1_IN1
-#define MOTEUR_GAUCHE_INH MOTEUR1_IN2
-#define MOTEUR_GAUCHE_ENH IOCON1bits.PENL
-#define MOTEUR_GAUCHE_ENL IOCON1bits.PENH
-#define MOTEUR_GAUCHE_DUTY_CYCLE PDC1
-
-//Définitions des pins pour les 6 hacheurs moteurs
-
-#define MOTEUR_DROITE_INL MOTEUR6_IN1
-#define MOTEUR_DROITE_INH MOTEUR6_IN2
-#define MOTEUR_DROITE_ENH IOCON6bits.PENL
-#define MOTEUR_DROITE_ENL IOCON6bits.PENH
-#define MOTEUR_DROITE_DUTY_CYCLE PDC6
+//#define MOTEUR_GAUCHE_INL MOTEUR1_IN1
+//#define MOTEUR_GAUCHE_INH MOTEUR1_IN2
+//#define MOTEUR_GAUCHE_ENH IOCON1bits.PENL
+//#define MOTEUR_GAUCHE_ENL IOCON1bits.PENH
+//#define MOTEUR_GAUCHE_DUTY_CYCLE PDC1
+//
+////Définitions des pins pour les 6 hacheurs moteurs
+//
+//#define MOTEUR_DROITE_INL MOTEUR6_IN1
+//#define MOTEUR_DROITE_INH MOTEUR6_IN2
+//#define MOTEUR_DROITE_ENH IOCON6bits.PENL
+//#define MOTEUR_DROITE_ENL IOCON6bits.PENH
+//#define MOTEUR_DROITE_DUTY_CYCLE PDC6
 
 //Configuration éspcifique du moteur gauche
 #define MOTEUR_GAUCHE_H_IO_OUTPUT MOTEUR1_IN1
