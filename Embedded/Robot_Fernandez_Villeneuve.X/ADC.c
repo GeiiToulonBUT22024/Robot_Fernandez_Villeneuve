@@ -11,7 +11,7 @@
 #include "ADC.h"
 
 unsigned char ADCResultIndex = 0;
-static unsigned int ADCResult[4];
+static unsigned int ADCResult[5];
 unsigned char ADCConversionFinishedFlag;
 
 /****************************************************************************************************/
@@ -37,7 +37,7 @@ void InitADC1(void) {
     AD1CON2bits.VCFG = 0b000; // 000 : Voltage Reference = AVDD AVss
     AD1CON2bits.CSCNA = 1; // 1 : Enable Channel Scanning
     AD1CON2bits.CHPS = 0b00; // Converts CH0 only
-    AD1CON2bits.SMPI = 2; // 2+1 conversions successives avant interrupt
+    AD1CON2bits.SMPI = 4; // 2+1 conversions successives avant interrupt
     AD1CON2bits.ALTS = 0;
     AD1CON2bits.BUFM = 0;
 
@@ -58,14 +58,18 @@ void InitADC1(void) {
     /************************************************************/
     //Configuration des ports
     /************************************************************/
-    //ADC utilisés : 16(G9)-11(C11)-6(C0)
+    //ADC utilisés : 16(G9)-11(C11)-6(C0) - 15(E15) - 3(B1)
     ANSELCbits.ANSC0 = 1;
     ANSELCbits.ANSC11 = 1;
     ANSELGbits.ANSG9 = 1;
+    ANSELEbits.ANSE15 = 1;
+    ANSELBbits.ANSB1 = 1;
 
-    AD1CSSLbits.CSS6 = 1; // Enable AN6 for scan
+    AD1CSSLbits.CSS3 = 1; // Enable AN2 for scan 
+    AD1CSSLbits.CSS6 = 1; // Enable AN6 for scan 
     AD1CSSLbits.CSS11 = 1; // Enable AN11 for scan
-    AD1CSSHbits.CSS16 = 1; // Enable AN16 for scan
+    AD1CSSLbits.CSS15 = 1; // Enable AN15 for scan 
+    AD1CSSHbits.CSS16 = 1; // Enable AN16 for scan 
 
     /* Assign MUXA inputs */
     AD1CHS0bits.CH0SA = 0; // CH0SA bits ignored for CH0 +ve input selection
@@ -82,6 +86,8 @@ void __attribute__((interrupt, no_auto_psv)) _AD1Interrupt(void) {
     ADCResult[0] = ADC1BUF0; // Read the AN-scan input 1 conversion result
     ADCResult[1] = ADC1BUF1; // Read the AN3 conversion result
     ADCResult[2] = ADC1BUF2; // Read the AN5 conversion result
+    ADCResult[3] = ADC1BUF3;
+    ADCResult[4] = ADC1BUF4;
     ADCConversionFinishedFlag = 1;
 }
 
