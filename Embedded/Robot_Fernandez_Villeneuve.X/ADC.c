@@ -59,11 +59,11 @@ void InitADC1(void) {
     //Configuration des ports
     /************************************************************/
     //ADC utilisés : 16(G9)-11(C11)-6(C0) - 15(E15) - 3(B1)
+    ANSELBbits.ANSB1 = 1;
     ANSELCbits.ANSC0 = 1;
     ANSELCbits.ANSC11 = 1;
-    ANSELGbits.ANSG9 = 1;
     ANSELEbits.ANSE15 = 1;
-    ANSELBbits.ANSB1 = 1;
+    ANSELGbits.ANSG9 = 1;
 
     AD1CSSLbits.CSS3 = 1; // Enable AN2 for scan 
     AD1CSSLbits.CSS6 = 1; // Enable AN6 for scan 
