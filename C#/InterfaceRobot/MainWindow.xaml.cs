@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ExtendedSerialPort;
+using System.Windows.Threading;
 
 
 namespace InterfaceRobot
@@ -24,11 +25,31 @@ namespace InterfaceRobot
     public partial class MainWindow : Window
     {
         ReliableSerialPort serialPort1;
+        public string receivedText;
+        DispatcherTimer timerAffichage;
+
         public MainWindow()
         {
             InitializeComponent();
             serialPort1 = new ReliableSerialPort("COM6", 115200, Parity.None, 8, StopBits.One);
+            serialPort1.OnDataReceivedEvent += SerialPort1_DataReceived;
             serialPort1.Open();
+            timerAffichage = new DispatcherTimer();
+            timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            timerAffichage.Tick += TimerAffichage_Tick;
+            timerAffichage.Start();
+        }
+
+        private void TimerAffichage_Tick(object sender, EventArgs e)
+        {
+            if(receivedText != ""){
+                textBoxReception.Text = receivedText;
+            }
+        }
+
+        public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
+        {
+            receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
         }
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
@@ -59,7 +80,7 @@ namespace InterfaceRobot
         void SendMessage()
         {
             textBoxReception.Text += "Reçu: " + textBoxEmission.Text + "\n";
-            //textBoxEmission.Text = "";
+            textBoxEmission.Text = "";
 
             serialPort1.WriteLine(textBoxEmission.Text);
         }
