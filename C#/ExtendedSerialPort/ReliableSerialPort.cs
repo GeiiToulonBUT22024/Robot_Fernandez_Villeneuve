@@ -35,25 +35,29 @@ namespace ExtendedSerialPort
                 //Le Thread est infini mais il sera suspendu quand le port série sera trouvé et ouvert
                 while (true)
                 {
+                   
                     string PortNameFound = PortName;//SearchPortName(PortType); 
                     if (!string.IsNullOrWhiteSpace(PortNameFound))
                     {
-                        //Si on trouve un port série de type voulu
-                        base.PortName = PortNameFound;
-                        try
+                        if (!base.IsOpen)
                         {
-                            base.Open();
-                            IsSerialPortConnected = true;
-                            Console.WriteLine("Connection to serial port successful.");
-                            //On lance les acquisitions
-                            ContinuousRead();
-                            //On suspend le Thread de connexion
-                            StopTryingToConnect();
-                        }
-                        catch
-                        {
-                            IsSerialPortConnected = false;
-                            Console.WriteLine("Connection to serial port failed.");
+                            //Si on trouve un port série de type voulu
+                            base.PortName = PortNameFound;
+                            try
+                            {
+                                base.Open();
+                                IsSerialPortConnected = true;
+                                Console.WriteLine("Connection to serial port successful.");
+                                //On lance les acquisitions
+                                ContinuousRead();
+                                //On suspend le Thread de connexion
+                                StopTryingToConnect();
+                            }
+                            catch
+                            {
+                                IsSerialPortConnected = false;
+                                Console.WriteLine("Connection to serial port failed.");
+                            }
                         }
                     }
                     else
@@ -70,21 +74,19 @@ namespace ExtendedSerialPort
         private void StartTryingToConnect()
         {
             //Reprise du Thread de Connexion
-            connectionThread.Resume();
+            //connectionThread.Resume();
         }
         
         private void StopTryingToConnect()
         {
             //Suspension du Thread de Connexion
-            connectionThread.Suspend();
+            //connectionThread.Suspend();
         }
 
         new public void Open()
         {
             //On ne fait rien, c'est volontaire !
         }
-
-
 
         private string SearchPortName(string vendorName)
         {
