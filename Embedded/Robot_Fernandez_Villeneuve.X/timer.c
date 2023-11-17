@@ -7,6 +7,7 @@
 
 unsigned char toggle = 0;
 unsigned long timestamp;
+unsigned long timestamp3;
 //Initialisation d?un timer 32 bits
 
 void InitTimer23(void) {
@@ -59,9 +60,18 @@ void InitTimer1(void) {
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
-    SetFreqTimer1(50.0);
+    SetFreqTimer1(250.0);
     
 }
+
+void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
+    IFS0bits.T1IF = 0;
+    //LED_BLEUE = !LED_BLEUE;
+   // LED_BLANCHE = !LED_BLANCHE;
+    PWMUpdateSpeed();
+    ADC1StartConversionSequence();
+}
+
 void InitTimer4(void) {
     //Timer1 pour horodater les mesures (1ms)
     T4CONbits.TON = 0; // Disable Timer
@@ -76,17 +86,8 @@ void InitTimer4(void) {
     IFS1bits.T4IF = 0; // Clear Timer Interrupt Flag
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
-    SetFreqTimer4(1000.0);
+    SetFreqTimer4(3000.0);
     
-}
-//Interruption du timer 1
-
-void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
-    IFS0bits.T1IF = 0;
-    //LED_BLEUE = !LED_BLEUE;
-   // LED_BLANCHE = !LED_BLANCHE;
-    PWMUpdateSpeed();
-    ADC1StartConversionSequence();
 }
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
@@ -94,7 +95,6 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     //LED_ORANGE = !LED_ORANGE;
     timestamp++;
     OperatingSystemLoop();
-    ADC1StartConversionSequence();
 }
 
 void SetFreqTimer1(float freq) {
@@ -130,3 +130,4 @@ void SetFreqTimer4(float freq) {
     } else
         PR1 = (int) (FCY / freq);
 }
+
