@@ -1,0 +1,24 @@
+else if (robotState.distanceTelemetreDroit <30 &&
+            robotState.distanceTelemetreCentre > 30){
+if(obotState.distanceTelemetreDroit < robotState.distanceTelemetreGauche){
+positionObstacle = OBSTACLE_A_DROITE;
+}
+}
+
+else if (robotState.distanceTelemetreCentre > 30 &&
+            robotState.distanceTelemetreGauche < 30 &&){
+positionObstacle = OBSTACLE_A_GAUCHE;
+}
+
+
+else if (robotState.distanceTelemetreCentre <30){
+positionObstacle = OBSTACLE_EN_FACE;
+}
+
+
+
+else if(robotState.distanceTelemetreDroit > 25 &&
+            robotState.distanceTelemetreCentre >= 25 &&
+            robotState.distanceTelemetreGauche >= 25 &&){
+positionObstacle = PAS_D_OBSTACLE;
+}
