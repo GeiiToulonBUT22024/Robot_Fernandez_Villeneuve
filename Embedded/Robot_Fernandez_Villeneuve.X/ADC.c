@@ -62,13 +62,13 @@ void InitADC1(void) {
     ANSELBbits.ANSB1 = 1;
     ANSELCbits.ANSC0 = 1;
     ANSELCbits.ANSC11 = 1;
-    ANSELEbits.ANSE15 = 1;
+    ANSELEbits.ANSE14 = 1;
     ANSELGbits.ANSG9 = 1;
 
     AD1CSSLbits.CSS3 = 1; // Enable AN2 for scan 
     AD1CSSLbits.CSS6 = 1; // Enable AN6 for scan 
     AD1CSSLbits.CSS11 = 1; // Enable AN11 for scan
-    AD1CSSLbits.CSS15 = 1; // Enable AN15 for scan 
+    AD1CSSLbits.CSS14 = 1; // Enable AN15 for scan 
     AD1CSSHbits.CSS16 = 1; // Enable AN16 for scan 
 
     /* Assign MUXA inputs */
