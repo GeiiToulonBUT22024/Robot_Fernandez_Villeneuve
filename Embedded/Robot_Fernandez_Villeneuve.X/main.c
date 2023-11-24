@@ -41,11 +41,11 @@ int main(void) {
     InitTimer4();
     InitADC1();
     InitPWM();
-    //    PWMSetSpeed(50,MOTEUR_GAUCHE);
-    //    PWMSetSpeed(50,MOTEUR_DROIT);
+//        PWMSetSpeed(50,MOTEUR_GAUCHE);
+//        PWMSetSpeed(50,MOTEUR_DROIT);
 
-    //    PWMSetSpeedConsigne(50, MOTEUR_GAUCHE);
-    //    PWMSetSpeedConsigne(50, MOTEUR_DROIT);
+//        PWMSetSpeedConsigne(50, MOTEUR_GAUCHE);
+//        PWMSetSpeedConsigne(20, MOTEUR_DROIT);
 
 
     //    LED_BLANCHE = 1;
@@ -68,7 +68,6 @@ int main(void) {
         //            ADCClearConversionFinishedFlag();
         //        }
 
-        OperatingSystemLoop();
 
 
         if (ADCIsConversionFinished() == 1) {
