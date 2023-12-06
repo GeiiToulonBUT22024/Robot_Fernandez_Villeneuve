@@ -6,8 +6,7 @@
 #include "IO.h"
 //#include "main.h"
 
-void InitIO()
-{
+void InitIO() {
     // IMPORTANT : désactiver les entrées analogiques, sinon on perd les entrées numériques
     ANSELA = 0; // 0 desactive
     ANSELB = 0;
@@ -20,10 +19,10 @@ void InitIO()
     // Configuration des sorties
 
     //******* LED ***************************
-    _TRISC10 = 0;  // LED Orange
-    _TRISG6  = 0; //LED Blanche
-    _TRISG7  = 0; // LED Bleue
-    
+    _TRISC10 = 0; // LED Orange
+    _TRISG6 = 0; //LED Blanche
+    _TRISG7 = 0; // LED Bleue
+
     //****** Moteurs ************************
 
     // Configuration des entrées
@@ -37,13 +36,16 @@ void InitIO()
     //*************************************************************
     // Unlock Registers
     //*************************************************************
-    __builtin_write_OSCCONL(OSCCON & ~(1<<6)); 
-    
+    __builtin_write_OSCCONL(OSCCON & ~(1 << 6));
+
     //Assignation des remappable pins
-    
+
+    _U1RXR = 24; //Remappe la RPI24 sur l?éentre Rx1
+    _RP36R = 0b00001; //Remappe la sortie Tx1 vers RP36
+
     //*************************************************************
     // Lock Registers
     //*************************************************************
-    __builtin_write_OSCCONL(OSCCON | (1<<6));
+    __builtin_write_OSCCONL(OSCCON | (1 << 6));
 }
 

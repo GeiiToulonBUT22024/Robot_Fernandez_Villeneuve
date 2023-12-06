@@ -30,10 +30,11 @@ namespace InterfaceRobot
         DispatcherTimer timerAffichage;
         byte[] byteList = new byte[20];
 
+
         public MainWindow()
         {
             InitializeComponent();
-            serialPort1 = new ReliableSerialPort("COM6", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ReliableSerialPort("COM9", 115200, Parity.None, 8, StopBits.One);
             serialPort1.OnDataReceivedEvent += SerialPort1_DataReceived;
             serialPort1.Open();
             
@@ -45,10 +46,17 @@ namespace InterfaceRobot
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
-            if(robot.receivedText != "" && robot.receivedText != "\r\n")
+            # region old code 
+            if (robot.receivedText != "" && robot.receivedText != "\r\n")
             {
                 textBoxReception.Text += robot.receivedText;
                 robot.receivedText = "";
+            }
+            # endregion
+            while (robot.byteListReceived.Count != 0)
+            {
+                byte list = robot.byteListReceived.Dequeue();
+                textBoxReception.Text += "0x" + list.ToString("X2") + " ";
             }
         }
 
@@ -61,7 +69,7 @@ namespace InterfaceRobot
                robot.byteListReceived.Enqueue(e.Data[i]);
             }
 
-            serialPort1.WriteLine(robot.receivedText.ToString());
+            //serialPort1.WriteLine(robot.receivedText.ToString());
         }
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
@@ -76,9 +84,9 @@ namespace InterfaceRobot
             //    buttonEnvoyer.Background = Brushes.RoyalBlue;
             //}
             #endregion
-
-            textBoxReception.Text += "Reçu: " + textBoxEmission.Text + "\n";
-            textBoxEmission.Text = "" ;
+            SendMessage();
+            //textBoxReception.Text += "Reçu: " + textBoxEmission.Text + "\n";
+            //textBoxEmission.Text = "" ;
         }
 
         private void textBoxEmission_KeyUp(object sender, KeyEventArgs e)
@@ -103,14 +111,10 @@ namespace InterfaceRobot
 
         private void buttonTest_Click(object sender, RoutedEventArgs e)
         {
-            for (byte i = 0; i < 20; i++) {
+            for (int i = 0; i < 20; i++) {
                 byteList[i] = (byte)(2 * i);
                 serialPort1.WriteLine(byteList[i].ToString());
             }
-
-
-
-
         }
     }
 }

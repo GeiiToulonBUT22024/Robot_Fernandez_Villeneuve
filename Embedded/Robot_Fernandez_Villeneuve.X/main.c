@@ -14,6 +14,7 @@
 #include "PWM.h"
 #include "Robot.h"
 #include "main.h"
+#include "UART.h"
 
 unsigned int*result;
 int var1;
@@ -41,11 +42,13 @@ int main(void) {
     InitTimer4();
     InitADC1();
     InitPWM();
-//        PWMSetSpeed(50,MOTEUR_GAUCHE);
-//        PWMSetSpeed(50,MOTEUR_DROIT);
+    InitUART();
+    
+    //        PWMSetSpeed(50,MOTEUR_GAUCHE);
+    //        PWMSetSpeed(50,MOTEUR_DROIT);
 
-//        PWMSetSpeedConsigne(50, MOTEUR_GAUCHE);
-//        PWMSetSpeedConsigne(20, MOTEUR_DROIT);
+    //        PWMSetSpeedConsigne(50, MOTEUR_GAUCHE);
+    //        PWMSetSpeedConsigne(20, MOTEUR_DROIT);
 
 
     //    LED_BLANCHE = 1;
@@ -67,8 +70,6 @@ int main(void) {
         //            var3 = result[2];
         //            ADCClearConversionFinishedFlag();
         //        }
-
-
 
         if (ADCIsConversionFinished() == 1) {
             ADCClearConversionFinishedFlag();
@@ -100,6 +101,9 @@ int main(void) {
                 LED_BLANCHE = 0;
             }
         }
+
+//        SendMessageDirect((unsigned char*) "Bonjour", 7);
+//        __delay32(40000000);
 
     } // fin main
 
@@ -221,14 +225,12 @@ void SetNextRobotStateInAutomaticMode() {
             robotState.distanceTelemetreExtremeDroite > robotState.distanceTelemetreExtremeGauche) {
         cpt = 0;
         positionObstacle = OBSTACLE_EN_FACE_G;
-    }
-    else if (robotState.distanceTelemetreCentre >= 30 &&
+    } else if (robotState.distanceTelemetreCentre >= 30 &&
             robotState.distanceTelemetreExtremeDroite >= 20 &&
             robotState.distanceTelemetreExtremeGauche >= 20) {
         cpt = 0;
         positionObstacle = PAS_D_OBSTACLE;
-    }
-    else if (robotState.distanceTelemetreDroit < 30 &&
+    } else if (robotState.distanceTelemetreDroit < 30 &&
             robotState.distanceTelemetreCentre > 30 &&
             robotState.distanceTelemetreDroit < robotState.distanceTelemetreGauche) {
         cpt = 0;
