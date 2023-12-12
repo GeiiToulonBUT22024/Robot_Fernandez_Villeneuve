@@ -15,6 +15,8 @@
 #include "Robot.h"
 #include "main.h"
 #include "UART.h"
+#include "CB_TX1.h"
+#include "CB_RX1.h"
 
 unsigned int*result;
 int var1;
@@ -43,7 +45,7 @@ int main(void) {
     InitADC1();
     InitPWM();
     InitUART();
-    
+
     //        PWMSetSpeed(50,MOTEUR_GAUCHE);
     //        PWMSetSpeed(50,MOTEUR_DROIT);
 
@@ -60,50 +62,49 @@ int main(void) {
     // Boucle Principale
     /****************************************************************************************************/
     while (1) {
-        //LED_BLANCHE =! LED_BLANCHE;
-        ADC1StartConversionSequence();
-        //        if( ADCIsConversionFinished()==1)
-        //        {
-        //            result = ADCGetResult();
-        //            var1 = result[0];
-        //            var2 = result[1];
-        //            var3 = result[2];
+        //        ADC1StartConversionSequence();
+        //
+        //        if (ADCIsConversionFinished() == 1) {
         //            ADCClearConversionFinishedFlag();
+        //            unsigned int * result = ADCGetResult();
+        //            float volts = ((float) result [1])* 3.3 / 4096 * 3.2;
+        //            robotState.distanceTelemetreDroit = 34 / volts - 5;
+        //            volts = ((float) result [2])* 3.3 / 4096 * 3.2;
+        //            robotState.distanceTelemetreCentre = 34 / volts - 5;
+        //            volts = ((float) result [4])* 3.3 / 4096 * 3.2;
+        //            robotState.distanceTelemetreGauche = 34 / volts - 5;
+        //            volts = ((float) result [0])* 3.3 / 4096 * 3.2;
+        //            robotState.distanceTelemetreExtremeDroite = 34 / volts - 5;
+        //            volts = ((float) result [3])* 3.3 / 4096 * 3.2;
+        //            robotState.distanceTelemetreExtremeGauche = 34 / volts - 5;
+        //
+        //            if (robotState.distanceTelemetreExtremeDroite > 30) {
+        //                LED_ORANGE = 1;
+        //            } else {
+        //                LED_ORANGE = 0;
+        //            }
+        //            if (robotState.distanceTelemetreCentre > 30) {
+        //                LED_BLEUE = 1;
+        //            } else {
+        //                LED_BLEUE = 0;
+        //            }
+        //            if (robotState.distanceTelemetreExtremeGauche > 30) {
+        //                LED_BLANCHE = 1;
+        //            } else {
+        //                LED_BLANCHE = 0;
+        //            }
         //        }
 
-        if (ADCIsConversionFinished() == 1) {
-            ADCClearConversionFinishedFlag();
-            unsigned int * result = ADCGetResult();
-            float volts = ((float) result [1])* 3.3 / 4096 * 3.2;
-            robotState.distanceTelemetreDroit = 34 / volts - 5;
-            volts = ((float) result [2])* 3.3 / 4096 * 3.2;
-            robotState.distanceTelemetreCentre = 34 / volts - 5;
-            volts = ((float) result [4])* 3.3 / 4096 * 3.2;
-            robotState.distanceTelemetreGauche = 34 / volts - 5;
-            volts = ((float) result [0])* 3.3 / 4096 * 3.2;
-            robotState.distanceTelemetreExtremeDroite = 34 / volts - 5;
-            volts = ((float) result [3])* 3.3 / 4096 * 3.2;
-            robotState.distanceTelemetreExtremeGauche = 34 / volts - 5;
-
-            if (robotState.distanceTelemetreExtremeDroite > 30) {
-                LED_ORANGE = 1;
-            } else {
-                LED_ORANGE = 0;
-            }
-            if (robotState.distanceTelemetreCentre > 30) {
-                LED_BLEUE = 1;
-            } else {
-                LED_BLEUE = 0;
-            }
-            if (robotState.distanceTelemetreExtremeGauche > 30) {
-                LED_BLANCHE = 1;
-            } else {
-                LED_BLANCHE = 0;
-            }
+        int i;
+        for (i = 0; i < CB_RX1_GetDataSize(); i++) {
+            unsigned char c = CB_RX1_Get();
+            SendMessage(&c, 1);
         }
+        __delay32(10000);
 
-//        SendMessageDirect((unsigned char*) "Bonjour", 7);
-//        __delay32(40000000);
+                //        SendMessage((unsigned char*) "Bonjour", 7);
+                //        SendMessageDirect((unsigned char*) "Bonjour", 7);
+                //__delay32(40000000);
 
     } // fin main
 
