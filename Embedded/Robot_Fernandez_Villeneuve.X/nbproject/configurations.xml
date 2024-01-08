@@ -8,13 +8,13 @@
       <itemPath>IO.h</itemPath>
       <itemPath>timer.h</itemPath>
       <itemPath>Robot.h</itemPath>
-      <itemPath>Toolbox.h</itemPath>
       <itemPath>PWM.h</itemPath>
       <itemPath>ADC.h</itemPath>
       <itemPath>main.h</itemPath>
       <itemPath>UART.h</itemPath>
       <itemPath>CB_TX1.h</itemPath>
       <itemPath>CB_RX1.h</itemPath>
+      <itemPath>Toolbox.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

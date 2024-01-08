@@ -56,8 +56,9 @@ namespace InterfaceRobot
             # endregion
             while (robot.byteListReceived.Count != 0)
             {
-                byte list = robot.byteListReceived.Dequeue();
-                textBoxReception.Text += "0x" + list.ToString("X2") + " ";
+                byte b = robot.byteListReceived.Dequeue();
+                //textBoxReception.Text += "0x" + b.ToString("X2") + " ";
+                textBoxReception.Text += Convert.ToChar(b);
             }
         }
 
@@ -67,7 +68,7 @@ namespace InterfaceRobot
 
             for (int i = 0; i < e.Data.Length; i++)
             {
-                robot.byteListReceived.Enqueue(e.Data[i]);
+                //robot.CurrentMessageReceived.Enqueue(e.Data[i]);
                 DecodeMessage(e.Data[i]);
             }
 
@@ -208,19 +209,13 @@ namespace InterfaceRobot
 
                 case StateReception.PayloadLengthLSB:
                     msgDecodedPayloadLength += c;
+                    msgDecodedPayload = new byte[msgDecodedPayloadLength]; 
                     rcvState = StateReception.Payload;
                     break;
 
                 case StateReception.Payload:
-                    msgDecodedPayload = new byte[msgDecodedPayloadLength];
-                    
 
-                    if (msgDecodedPayloadIndex == msgDecodedPayloadLength)
-                    {
-                        msgDecodedPayloadIndex = 0;
-                        rcvState = StateReception.CheckSum;
-                    }
-                    else if(msgDecodedPayloadLength > 1024)
+                    if(msgDecodedPayloadLength > 1024)
                     {
                         rcvState = StateReception.Waiting;
                     }
@@ -228,7 +223,12 @@ namespace InterfaceRobot
                     {
                         msgDecodedPayload[msgDecodedPayloadIndex] = c;
                         msgDecodedPayloadIndex++;
-                        rcvState = StateReception.Payload;
+
+                        if (msgDecodedPayloadIndex == msgDecodedPayloadLength)
+                        {
+                            msgDecodedPayloadIndex = 0;
+                            rcvState = StateReception.CheckSum;
+                        }
                     }
                     break;
 
@@ -238,12 +238,11 @@ namespace InterfaceRobot
 
                     if (calculatedChecksum == receivedChecksum)
                     {
-                        String mot = "Nyquit";
-                        robot.byteListReceived.Enqueue(Encoding.ASCII.GetBytes(mot));//Success, on a un message valide
+                        ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
                     }
                     else
                     {
-
+                        ProcessDecodedMessage(0x13, msgDecodedPayloadLength, msgDecodedPayload);
                     }
                     rcvState = StateReception.Waiting;
                     break;
@@ -251,6 +250,32 @@ namespace InterfaceRobot
                 default:
                     rcvState = StateReception.Waiting;
                     break;
+            }
+        }
+
+        private void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
+        {
+            // Case Error 404
+            if (msgFunction == 0x13)
+            {
+                byte[] array = Encoding.ASCII.GetBytes(" Error 404");
+                foreach (byte b in array)
+                {
+                    robot.byteListReceived.Enqueue(b);
+                }
+            }
+          
+            // Case Ox80
+            if (msgFunction == 0x80) {
+                foreach (byte b in msgPayload)
+                {
+                    robot.byteListReceived.Enqueue(b);
+                }
+                byte[] array = Encoding.ASCII.GetBytes(" : Nyquit");
+                foreach (byte b in array)
+                {
+                    robot.byteListReceived.Enqueue(b);
+                }
             }
         }
     }
