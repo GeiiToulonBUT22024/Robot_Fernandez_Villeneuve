@@ -277,6 +277,23 @@ namespace InterfaceRobot
                     robot.byteListReceived.Enqueue(b);
                 }
             }
+
+            // Case 0x20
+            if (msgFunction == 0x20)
+            {
+
+            }
+
+            // Case 0x30
+            if (msgFunction == 0x30)
+            {
+
+            }
+            
+            // Case 0x40
+            if (msgFunction == 0x40)
+            {
+
+            }
         }
-    }
 }
