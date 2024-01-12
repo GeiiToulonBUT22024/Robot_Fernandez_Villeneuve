@@ -35,7 +35,7 @@ namespace InterfaceRobot
         public MainWindow()
         {
             InitializeComponent();
-            serialPort1 = new ReliableSerialPort("COM9", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ReliableSerialPort("COM8", 115200, Parity.None, 8, StopBits.One);
             serialPort1.OnDataReceivedEvent += SerialPort1_DataReceived;
             serialPort1.Open();
 
@@ -57,8 +57,10 @@ namespace InterfaceRobot
             while (robot.byteListReceived.Count != 0)
             {
                 byte b = robot.byteListReceived.Dequeue();
-                //textBoxReception.Text += "0x" + b.ToString("X2") + " ";
-                textBoxReception.Text += Convert.ToChar(b);
+                DecodeMessage(b);
+                ////textBoxReception.Text += "0x" + b.ToString("X2") + " ";
+                //textBoxReception.Text += Convert.ToChar(b);
+                //DecodeMessage(b);
             }
         }
 
@@ -68,10 +70,8 @@ namespace InterfaceRobot
 
             for (int i = 0; i < e.Data.Length; i++)
             {
-                //robot.CurrentMessageReceived.Enqueue(e.Data[i]);
-                DecodeMessage(e.Data[i]);
+                robot.byteListReceived.Enqueue(e.Data[i]);
             }
-
             //serialPort1.WriteLine(robot.receivedText.ToString());
         }
 
@@ -124,6 +124,13 @@ namespace InterfaceRobot
 
             byte[] array = Encoding.ASCII.GetBytes("Bonjour");
             UartEncodeAndSendMessage(0x0080, array.Length, array);
+            byte[] arrayLED = { 3, 1 };
+            UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+            byte[] arrayIR = { 10, 21,14 };
+            UartEncodeAndSendMessage(0x0030, arrayIR.Length, arrayIR);
+            byte[] arrayVit = { 50,25 };
+            UartEncodeAndSendMessage(0x0040, arrayVit.Length, arrayVit);
+
 
         }
         private byte CalculateChecksum(int msgFunction, int msgPayloadLength, byte[] msgPayload)
@@ -186,14 +193,14 @@ namespace InterfaceRobot
             switch (rcvState)
             {
                 case StateReception.Waiting:
-                    if (c ==0xFE)
+                    if (c == 0xFE)
                     {
                         rcvState = StateReception.FunctionMSB;
                     }
                     break;
 
                 case StateReception.FunctionMSB:
-                    msgDecodedFunction = c<<8;
+                    msgDecodedFunction = c << 8;
                     rcvState = StateReception.FunctionLSB;
                     break;
 
@@ -209,17 +216,17 @@ namespace InterfaceRobot
 
                 case StateReception.PayloadLengthLSB:
                     msgDecodedPayloadLength += c;
-                    msgDecodedPayload = new byte[msgDecodedPayloadLength]; 
+                    msgDecodedPayload = new byte[msgDecodedPayloadLength];
                     rcvState = StateReception.Payload;
                     break;
 
                 case StateReception.Payload:
 
-                    if(msgDecodedPayloadLength > 1024)
+                    if (msgDecodedPayloadLength > 1024)
                     {
                         rcvState = StateReception.Waiting;
                     }
-                    else if(msgDecodedPayloadIndex < msgDecodedPayloadLength)
+                    else if (msgDecodedPayloadIndex < msgDecodedPayloadLength)
                     {
                         msgDecodedPayload[msgDecodedPayloadIndex] = c;
                         msgDecodedPayloadIndex++;
@@ -261,39 +268,97 @@ namespace InterfaceRobot
                 byte[] array = Encoding.ASCII.GetBytes(" Error 404");
                 foreach (byte b in array)
                 {
-                    robot.byteListReceived.Enqueue(b);
+                    textBoxReception.Text += Convert.ToChar(b);
                 }
             }
-          
+
             // Case Ox80
-            if (msgFunction == 0x80) {
+            if (msgFunction == 0x80)
+            {
                 foreach (byte b in msgPayload)
                 {
-                    robot.byteListReceived.Enqueue(b);
+                    textBoxReception.Text += Convert.ToChar(b);
                 }
                 byte[] array = Encoding.ASCII.GetBytes(" : Nyquit");
                 foreach (byte b in array)
                 {
-                    robot.byteListReceived.Enqueue(b);
+                    textBoxReception.Text += Convert.ToChar(b);
                 }
             }
 
             // Case 0x20
             if (msgFunction == 0x20)
             {
+                byte[] tabLED = new byte[msgPayloadLength];
 
+                for(int i =0; i< msgPayloadLength; i++)
+                {
+                    tabLED[i] = msgPayload[i];
+                }
+                if(tabLED[0] == 1)
+                {
+                    if (tabLED[1] == 0)
+                    {
+                        Led1.IsChecked = false;
+                    }
+                    else if (tabLED[1] == 1)
+                    {
+                        Led1.IsChecked = true;
+                    }
+                }
+                else if (tabLED[0] == 2)
+                {
+                    if (tabLED[1] == 0)
+                    {
+                        Led2.IsChecked = false;
+                    }
+                    else if (tabLED[1] == 1)
+                    {
+                        Led2.IsChecked = true;
+                    }
+                }
+                else if (tabLED[0] == 3)
+                {
+                    if (tabLED[1] == 0)
+                    {
+                        Led3.IsChecked = false;
+                    }
+                    else if (tabLED[1] == 1)
+                    {
+                        Led3.IsChecked = true;
+                    }
+                }
             }
 
             // Case 0x30
             if (msgFunction == 0x30)
             {
+                byte[] tabIR = new byte[msgPayloadLength];
+
+                for (int i = 0; i < msgPayloadLength; i++)
+                {
+                    tabIR[i] = msgPayload[i];
+                }
+                IR_Gauche.Content += msgPayload[0]+" cm";
+                IR_Centre.Content += msgPayload[1] + " cm";
+                IR_Droit.Content += msgPayload[2] + " cm";
+
 
             }
-            
+
             // Case 0x40
             if (msgFunction == 0x40)
             {
+                byte[] tabVitesse = new byte[msgPayloadLength];
 
+                for (int i = 0; i < msgPayloadLength; i++)
+                {
+                    tabVitesse[i] = msgPayload[i];
+                }
+                Vitesse_Gauche.Content += msgPayload[0] + "%";
+                Vitesse_Droit.Content += msgPayload[1] + "%";
             }
         }
+
+    }
 }

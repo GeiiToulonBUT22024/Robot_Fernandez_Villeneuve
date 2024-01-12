@@ -6,32 +6,52 @@
         xmlns:local="clr-namespace:InterfaceRobot"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="30"/>
-      <RowDefinition Height="299" />
-      <RowDefinition Height="0"/>
-      <RowDefinition Height="30"/>
-      <RowDefinition Height="30"/>
-      <RowDefinition Height="30"/>
+    <Window.Background>
+        <SolidColorBrush Color="#FF00B9FF"/>
+    </Window.Background>
+    <Window.Resources>
+        <Color x:Key="Color1">#FFFFBFBF</Color>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
 
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="30"/>
-      <ColumnDefinition Width="1*"/>
-      <ColumnDefinition Width="30"/>
-      <ColumnDefinition Width="1*"/>
-      <ColumnDefinition Width="30"/>
-    </Grid.ColumnDefinitions>
-    <GroupBox x:Name="groupBoxEmission" Header="Emission" Margin="0,0,0,119" Background="#FF51E3EA" BorderBrush ="#FF000000 " Grid.Column="1" Grid.Row="1">
-      <TextBox x:Name="textBoxEmission" Margin="0,0,0,161" TextWrapping="Wrap" Text="" Background="{x:Null}" BorderBrush="{x:Null}" AcceptsReturn="True" KeyUp="textBoxEmission_KeyUp"/>
-    </GroupBox>
-    <GroupBox x:Name="groupBoxReception" Header="Reception" Margin="0,0,0,119" Background="#FFDDDDDD " BorderBrush ="#FF000000 " Grid.Column="3" Grid.Row="1" >
-      <TextBox x:Name="textBoxReception" Margin="0,0,0,161" TextWrapping="Wrap" Text="" Background="{x:Null}" BorderBrush="{x:Null}" AcceptsReturn="True" IsReadOnly ="True"/>
-    </GroupBox>
-    <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="3" Width="100" Background="#FFECB278" Click="buttonEnvoyer_Click"/>
-    <Button x:Name="buttonClear" Content="Clear" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="3" Width="100" Background="#FFECB278" Click="buttonClear_Click"/>
-    <Button x:Name="buttonTest" Content="Test" Grid.Column="1" HorizontalAlignment="Center" Margin="136,0,139,0" Grid.Row="3" VerticalAlignment="Top" Width="76" Height="30" Background="#DF853AE5" Click="buttonTest_Click"/>
-
-  </Grid>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBoxEmission" Header="Emission" Margin="0,0,0,10" Background="#FF51E3EA" BorderBrush ="#FF000000 " Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="textBoxEmission" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" AcceptsReturn="True" KeyUp="textBoxEmission_KeyUp"/>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxReception" Header="Reception" Margin="0,0,0,10" Background="#FFDDDDDD " BorderBrush ="#FF000000 " Grid.Column="3" Grid.Row="1" >
+            <TextBox x:Name="textBoxReception" TextWrapping="Wrap" Text="" Background="{x:Null}" BorderBrush="{x:Null}" AcceptsReturn="True" IsReadOnly ="True"/>
+        </GroupBox>
+        <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="2" Width="100" Background="#FFECB278" Click="buttonEnvoyer_Click"/>
+        <Button x:Name="buttonClear" Content="Clear" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="2" Width="100" Background="#FFECB278" Click="buttonClear_Click"/>
+        <Button x:Name="buttonTest" Content="Test" Grid.Column="1" HorizontalAlignment="Center" Margin="136,0,139,0" Grid.Row="2" Width="76" Background="#DF853AE5"   Click="buttonTest_Click"/>
+        <CheckBox x:Name="Led1" Content="Led1" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Height="15" Width="71"  Margin="0,1,0,0"/>
+        <CheckBox x:Name="Led2" Content="Led2" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Height="15" Width="77" Margin="0,1,0,0"/>
+        <CheckBox x:Name="Led3" Content="Led3" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Height="15" Width="71" Margin="0,1,0,0"/>
+        <Label x:Name="IR_Gauche" Content="IR Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,22,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="112" Grid.RowSpan="3"/>
+        <Label x:Name="IR_Centre" Content="IR Centre : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,11,0,0" Grid.Row="5" VerticalAlignment="Top" Height="25" Width="133" Grid.RowSpan="3"/>
+        <Label x:Name="IR_Droit" Content="IR Droit : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,11,0,0" Grid.Row="6" VerticalAlignment="Top" Height="25" Width="112" Grid.RowSpan="3"/>
+        <Label x:Name="Vitesse_Gauche" Content="Vitesse Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="235,20,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <Label x:Name="Vitesse_Droit" Content="Vitesse Droit : " Grid.Column="1" HorizontalAlignment="Left" Margin="235,10,0,0" Grid.Row="5" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <GroupBox x:Name="groupBox_Leds" Header="Leds" HorizontalAlignment="Left" Height="84" Grid.Row="4" Grid.RowSpan="5" VerticalAlignment="Top" Width="81" Grid.ColumnSpan="2" Margin="20,0,0,0"/>
+        <GroupBox x:Name="groupBox_telemetre" Grid.Column="1" Header="Télémètres IR " HorizontalAlignment="Left" Height="84" Margin="87,0,0,0" Grid.Row="4" Grid.RowSpan="5" VerticalAlignment="Top" Width="129"/>
+        <GroupBox x:Name="groupBox_Moteurs" Grid.Column="1" Header="Moteurs" HorizontalAlignment="Left" Height="84" Margin="230,0,0,0"  Grid.Row="4" Grid.RowSpan="5" VerticalAlignment="Top" Width="129" Grid.ColumnSpan="2"/>
+    </Grid>
 </Window>
