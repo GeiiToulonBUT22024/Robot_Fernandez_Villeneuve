@@ -126,9 +126,9 @@ namespace InterfaceRobot
             UartEncodeAndSendMessage(0x0080, array.Length, array);
             byte[] arrayLED = { 3, 1 };
             UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
-            byte[] arrayIR = { 10, 21,14 };
+            byte[] arrayIR = { 10, 21, 14 };
             UartEncodeAndSendMessage(0x0030, arrayIR.Length, arrayIR);
-            byte[] arrayVit = { 50,25 };
+            byte[] arrayVit = { 50, 25 };
             UartEncodeAndSendMessage(0x0040, arrayVit.Length, arrayVit);
 
 
@@ -291,11 +291,11 @@ namespace InterfaceRobot
             {
                 byte[] tabLED = new byte[msgPayloadLength];
 
-                for(int i =0; i< msgPayloadLength; i++)
+                for (int i = 0; i < msgPayloadLength; i++)
                 {
                     tabLED[i] = msgPayload[i];
                 }
-                if(tabLED[0] == 1)
+                if (tabLED[0] == 1)
                 {
                     if (tabLED[1] == 0)
                     {
@@ -339,7 +339,7 @@ namespace InterfaceRobot
                 {
                     tabIR[i] = msgPayload[i];
                 }
-                IR_Gauche.Content += msgPayload[0]+" cm";
+                IR_Gauche.Content += msgPayload[0] + " cm";
                 IR_Centre.Content += msgPayload[1] + " cm";
                 IR_Droit.Content += msgPayload[2] + " cm";
 
@@ -360,5 +360,40 @@ namespace InterfaceRobot
             }
         }
 
+        private void Led1_Checked(object sender, RoutedEventArgs e)
+        {
+            byte[] arrayLED = { 1, 1 };
+            UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+        }
+
+        private void Led1_Unchecked(object sender, RoutedEventArgs e)
+        {
+            byte[] arrayLED = { 1, 0 };
+            UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+        }
+
+        private void Led2_Checked(object sender, RoutedEventArgs e)
+        {
+            byte[] arrayLED = { 2, 1 };
+            UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+        }
+
+        private void Led2_Unchecked(object sender, RoutedEventArgs e)
+        {
+            byte[] arrayLED = { 2, 0 };
+            UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+        }
+
+        private void Led3_Checked(object sender, RoutedEventArgs e)
+        {
+            byte[] arrayLED = { 3, 1 };
+            UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+        }
+
+        private void Led3_Unchecked(object sender, RoutedEventArgs e)
+        {
+            byte[] arrayLED = { 3, 0 };
+            UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+        }
     }
 }

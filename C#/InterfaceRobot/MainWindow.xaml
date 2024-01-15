@@ -42,9 +42,9 @@
         <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="2" Width="100" Background="#FFECB278" Click="buttonEnvoyer_Click"/>
         <Button x:Name="buttonClear" Content="Clear" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="2" Width="100" Background="#FFECB278" Click="buttonClear_Click"/>
         <Button x:Name="buttonTest" Content="Test" Grid.Column="1" HorizontalAlignment="Center" Margin="136,0,139,0" Grid.Row="2" Width="76" Background="#DF853AE5"   Click="buttonTest_Click"/>
-        <CheckBox x:Name="Led1" Content="Led1" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Height="15" Width="71"  Margin="0,1,0,0"/>
-        <CheckBox x:Name="Led2" Content="Led2" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Height="15" Width="77" Margin="0,1,0,0"/>
-        <CheckBox x:Name="Led3" Content="Led3" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Height="15" Width="71" Margin="0,1,0,0"/>
+        <CheckBox x:Name="Led1" Content="Led1" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Height="15" Width="71"  Margin="0,1,0,0" Checked="Led1_Checked" Unchecked="Led1_Unchecked"/>
+        <CheckBox x:Name="Led2" Content="Led2" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Height="15" Width="77" Margin="0,1,0,0" Checked="Led2_Checked" Unchecked="Led2_Unchecked" />
+        <CheckBox x:Name="Led3" Content="Led3" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Height="15" Width="71" Margin="0,1,0,0" Checked="Led3_Checked" Unchecked="Led3_Unchecked" />
         <Label x:Name="IR_Gauche" Content="IR Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,22,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="112" Grid.RowSpan="3"/>
         <Label x:Name="IR_Centre" Content="IR Centre : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,11,0,0" Grid.Row="5" VerticalAlignment="Top" Height="25" Width="133" Grid.RowSpan="3"/>
         <Label x:Name="IR_Droit" Content="IR Droit : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,11,0,0" Grid.Row="6" VerticalAlignment="Top" Height="25" Width="112" Grid.RowSpan="3"/>
