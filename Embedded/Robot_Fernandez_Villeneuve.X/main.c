@@ -17,6 +17,7 @@
 #include "UART.h"
 #include "CB_TX1.h"
 #include "CB_RX1.h"
+#include "UART_Protocol.h"
 
 unsigned int*result;
 int var1;
@@ -27,6 +28,8 @@ unsigned char nextStateRobot = 0;
 float vitessed = 25;
 float vitesseg = 25;
 int cpt = 0;
+unsigned char tabIR[5];
+unsigned char tabVitesse[2];
 
 int main(void) {
     /***************************************************************************************************/
@@ -62,54 +65,76 @@ int main(void) {
     // Boucle Principale
     /****************************************************************************************************/
     while (1) {
-        //        ADC1StartConversionSequence();
-        //
-        //        if (ADCIsConversionFinished() == 1) {
-        //            ADCClearConversionFinishedFlag();
-        //            unsigned int * result = ADCGetResult();
-        //            float volts = ((float) result [1])* 3.3 / 4096 * 3.2;
-        //            robotState.distanceTelemetreDroit = 34 / volts - 5;
-        //            volts = ((float) result [2])* 3.3 / 4096 * 3.2;
-        //            robotState.distanceTelemetreCentre = 34 / volts - 5;
-        //            volts = ((float) result [4])* 3.3 / 4096 * 3.2;
-        //            robotState.distanceTelemetreGauche = 34 / volts - 5;
-        //            volts = ((float) result [0])* 3.3 / 4096 * 3.2;
-        //            robotState.distanceTelemetreExtremeDroite = 34 / volts - 5;
-        //            volts = ((float) result [3])* 3.3 / 4096 * 3.2;
-        //            robotState.distanceTelemetreExtremeGauche = 34 / volts - 5;
-        //
-        //            if (robotState.distanceTelemetreExtremeDroite > 30) {
-        //                LED_ORANGE = 1;
-        //            } else {
-        //                LED_ORANGE = 0;
-        //            }
-        //            if (robotState.distanceTelemetreCentre > 30) {
-        //                LED_BLEUE = 1;
-        //            } else {
-        //                LED_BLEUE = 0;
-        //            }
-        //            if (robotState.distanceTelemetreExtremeGauche > 30) {
-        //                LED_BLANCHE = 1;
-        //            } else {
-        //                LED_BLANCHE = 0;
-        //            }
-        
-        
-                int i;
-                for (i = 0; i < CB_RX1_GetDataSize(); i++) {
-                    unsigned char c = CB_RX1_Get();
-                    UartDecodeMessage(&c);
-//                    SendMessage(&c, 1);
-                }
-                __delay32(10000);
+        ADC1StartConversionSequence();
+
+        if (ADCIsConversionFinished() == 1) {
+            ADCClearConversionFinishedFlag();
+            unsigned int * result = ADCGetResult();
+            float volts = ((float) result [1])* 3.3 / 4096 * 3.2;
+            robotState.distanceTelemetreDroit = 34 / volts - 5;
+            tabIR[3]=robotState.distanceTelemetreDroit;
+            //UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
+            
+            volts = ((float) result [2])* 3.3 / 4096 * 3.2;
+            robotState.distanceTelemetreCentre = 34 / volts - 5;
+            tabIR[2]=robotState.distanceTelemetreCentre;
+           // UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
+            
+            volts = ((float) result [4])* 3.3 / 4096 * 3.2;
+            robotState.distanceTelemetreGauche = 34 / volts - 5;
+            tabIR[1]=robotState.distanceTelemetreGauche;
+           // UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
+            
+            volts = ((float) result [0])* 3.3 / 4096 * 3.2;
+            robotState.distanceTelemetreExtremeDroite = 34 / volts - 5;
+            tabIR[4]=robotState.distanceTelemetreExtremeDroite;
+            //UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
+            
+            volts = ((float) result [3])* 3.3 / 4096 * 3.2;
+            robotState.distanceTelemetreExtremeGauche = 34 / volts - 5;
+            tabIR[0]=robotState.distanceTelemetreExtremeGauche;
+            
+            UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
+
+            tabVitesse[0]=vitesseg;
+            UartEncodeAndSendMessage(0x0040, 2, (unsigned char*) tabVitesse);
+            tabVitesse[1]=vitessed;
+            UartEncodeAndSendMessage(0x0040, 2, (unsigned char*) tabVitesse);
+            
+            //
+            //            if (robotState.distanceTelemetreExtremeDroite > 30) {
+            //                LED_ORANGE = 1;
+            //            } else {
+            //                LED_ORANGE = 0;
+            //            }
+            //            if (robotState.distanceTelemetreCentre > 30) {
+            //                LED_BLEUE = 1;
+            //            } else {
+            //                LED_BLEUE = 0;
+            //            }
+            //            if (robotState.distanceTelemetreExtremeGauche > 30) {
+            //                LED_BLANCHE = 1;
+            //            } else {
+            //                LED_BLANCHE = 0;
+            //            }
+
+        }
+        int i;
+        for (i = 0; i < CB_RX1_GetDataSize(); i++) {
+            unsigned char c = CB_RX1_Get();
+            UartDecodeMessage(c);
+            //                    SendMessage(&c, 1);
+        }
+
+        __delay32(10000);
 
         //        SendMessage((unsigned char*) "Bonjour", 7);
         //        SendMessageDirect((unsigned char*) "Bonjour", 7);
         //__delay32(40000000);
 
-    } // fin main
+    }
 
-}
+}// fin main
 
 void OperatingSystemLoop(void) {
     switch (stateRobot) {
@@ -175,6 +200,7 @@ void OperatingSystemLoop(void) {
             stateRobot = STATE_ATTENTE;
             break;
     }
+
 }
 
 void SetNextRobotStateInAutomaticMode() {

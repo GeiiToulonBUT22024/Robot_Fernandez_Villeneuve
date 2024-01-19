@@ -164,28 +164,28 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
     }
 
-    // Case 0x30
-    if (function == 0x30) {
-        unsigned char tabIR[payloadLength];
-
-        tabIR[0] = robotState.distanceTelemetreGauche;
-        tabIR[1] = robotState.distanceTelemetreCentre;
-        tabIR[2] = robotState.distanceTelemetreDroit;
-
-        SendMessage(tabIR, sizeof (tabIR));
-    }
-
-    // Case 0x40
-    if (function == 0x40) {
-        unsigned char tabVitesse[payloadLength];
-
-        tabVitesse[0] = robotState.vitesseDroiteCommandeCourante;
-        tabVitesse[1] = robotState.vitesseGaucheCommandeCourante;
-
-        SendMessage(tabVitesse, sizeof (tabVitesse));
-    }
 }
 
+
+  // Case 0x30
+//
+//        unsigned char tabIR[payloadLength];
+//
+//        tabIR[0] = robotState.distanceTelemetreGauche;
+//        tabIR[1] = robotState.distanceTelemetreCentre;
+//        tabIR[2] = robotState.distanceTelemetreDroit;
+
+        //SendMessage(tabIR, sizeof (tabIR));
+//
+//    // Case 0x40
+//    if (function == 0x40) {
+//        unsigned char tabVitesse[payloadLength];
+//
+//        tabVitesse[0] = robotState.vitesseDroiteCommandeCourante;
+//        tabVitesse[1] = robotState.vitesseGaucheCommandeCourante;
+//
+//        SendMessage(tabVitesse, sizeof (tabVitesse));
+//    }
 //*************************************************************************/
 //Fonctions correspondant aux messages
 //*************************************************************************/

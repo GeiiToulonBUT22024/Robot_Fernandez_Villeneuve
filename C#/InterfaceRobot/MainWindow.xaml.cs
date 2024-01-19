@@ -339,9 +339,12 @@ namespace InterfaceRobot
                 {
                     tabIR[i] = msgPayload[i];
                 }
-                IR_Gauche.Content += msgPayload[0] + " cm";
-                IR_Centre.Content += msgPayload[1] + " cm";
-                IR_Droit.Content += msgPayload[2] + " cm";
+
+                IR_Gauche.Content = " IR Extreme Gauche : " + msgPayload[0] + " cm";
+                IR_Gauche.Content = " IR Gauche : " + msgPayload[1] + " cm";
+                IR_Centre.Content = " IR Centre : " + msgPayload[2] + " cm";
+                IR_Droit.Content = " IR Droite : " + msgPayload[3] + " cm";
+                IR_Droit.Content = " IR Extreme Droite : " + msgPayload[4] + " cm";
 
 
             }
@@ -355,8 +358,8 @@ namespace InterfaceRobot
                 {
                     tabVitesse[i] = msgPayload[i];
                 }
-                Vitesse_Gauche.Content += msgPayload[0] + "%";
-                Vitesse_Droit.Content += msgPayload[1] + "%";
+                Vitesse_Gauche.Content = "Vitesse Gauche : " + msgPayload[0] + "%";
+                Vitesse_Droit.Content = "Vitesse Droite : " + msgPayload[1] + "%";
             }
         }
 

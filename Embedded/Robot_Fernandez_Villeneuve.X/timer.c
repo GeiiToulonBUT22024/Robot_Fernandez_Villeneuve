@@ -4,6 +4,7 @@
 #include "PWM.h"
 #include "ADC.h"
 #include "main.h"
+#include "UART_Protocol.h"
 
 unsigned char toggle = 0;
 unsigned long timestamp;
@@ -70,7 +71,7 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
    // LED_BLANCHE = !LED_BLANCHE;
     //PWMUpdateSpeed();
     ADC1StartConversionSequence();
-   //OperatingSystemLoop();
+    OperatingSystemLoop();
 }
 
 void InitTimer4(void) {

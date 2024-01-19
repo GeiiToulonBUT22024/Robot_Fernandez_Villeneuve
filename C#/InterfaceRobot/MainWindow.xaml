@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfaceRobot"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="545" Width="884">
     <Window.Background>
-        <SolidColorBrush Color="#FF00B9FF"/>
+        <SolidColorBrush Color="#E0EFFF"/>
     </Window.Background>
     <Window.Resources>
         <Color x:Key="Color1">#FFFFBFBF</Color>
@@ -16,12 +16,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="200" />
+            <RowDefinition Height="20"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="24"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="15"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
 
@@ -29,29 +31,43 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="30"/>
+
         </Grid.ColumnDefinitions>
-        <GroupBox x:Name="groupBoxEmission" Header="Emission" Margin="0,0,0,10" Background="#FF51E3EA" BorderBrush ="#FF000000 " Grid.Column="1" Grid.Row="1">
-            <TextBox x:Name="textBoxEmission" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" AcceptsReturn="True" KeyUp="textBoxEmission_KeyUp"/>
+
+        <GroupBox x:Name="groupBoxEmission" Header="Emission" Margin="0,0,0,10" Background="#FFFFFF" BorderBrush ="#95B5DE " BorderThickness ="3" FontSize ="15"  Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"  HorizontalAlignment="Stretch">
+            <TextBox x:Name="textBoxEmission" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" AcceptsReturn="True" KeyUp="textBoxEmission_KeyUp" Margin="0,0,-2,-3"/>
         </GroupBox>
-        <GroupBox x:Name="groupBoxReception" Header="Reception" Margin="0,0,0,10" Background="#FFDDDDDD " BorderBrush ="#FF000000 " Grid.Column="3" Grid.Row="1" >
+        <GroupBox x:Name="groupBoxReception" Header="Reception" Margin="0,0,0,10" Background="#FFFFFF " BorderBrush ="#95B5DE " BorderThickness ="3" FontSize ="15 " Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" >
             <TextBox x:Name="textBoxReception" TextWrapping="Wrap" Text="" Background="{x:Null}" BorderBrush="{x:Null}" AcceptsReturn="True" IsReadOnly ="True"/>
         </GroupBox>
-        <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="2" Width="100" Background="#FFECB278" Click="buttonEnvoyer_Click"/>
-        <Button x:Name="buttonClear" Content="Clear" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,251,0" Grid.Row="2" Width="100" Background="#FFECB278" Click="buttonClear_Click"/>
-        <Button x:Name="buttonTest" Content="Test" Grid.Column="1" HorizontalAlignment="Center" Margin="136,0,139,0" Grid.Row="2" Width="76" Background="#DF853AE5"   Click="buttonTest_Click"/>
-        <CheckBox x:Name="Led1" Content="Led1" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Height="15" Width="71"  Margin="0,1,0,0" Checked="Led1_Checked" Unchecked="Led1_Unchecked"/>
-        <CheckBox x:Name="Led2" Content="Led2" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Height="15" Width="77" Margin="0,1,0,0" Checked="Led2_Checked" Unchecked="Led2_Unchecked" />
-        <CheckBox x:Name="Led3" Content="Led3" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Height="15" Width="71" Margin="0,1,0,0" Checked="Led3_Checked" Unchecked="Led3_Unchecked" />
-        <Label x:Name="IR_Gauche" Content="IR Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,22,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="112" Grid.RowSpan="3"/>
-        <Label x:Name="IR_Centre" Content="IR Centre : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,11,0,0" Grid.Row="5" VerticalAlignment="Top" Height="25" Width="133" Grid.RowSpan="3"/>
-        <Label x:Name="IR_Droit" Content="IR Droit : " Grid.Column="1" HorizontalAlignment="Left" Margin="90,11,0,0" Grid.Row="6" VerticalAlignment="Top" Height="25" Width="112" Grid.RowSpan="3"/>
-        <Label x:Name="Vitesse_Gauche" Content="Vitesse Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="235,20,0,0" Grid.Row="4" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
-        <Label x:Name="Vitesse_Droit" Content="Vitesse Droit : " Grid.Column="1" HorizontalAlignment="Left" Margin="235,10,0,0" Grid.Row="5" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
-        <GroupBox x:Name="groupBox_Leds" Header="Leds" HorizontalAlignment="Left" Height="84" Grid.Row="4" Grid.RowSpan="5" VerticalAlignment="Top" Width="81" Grid.ColumnSpan="2" Margin="20,0,0,0"/>
-        <GroupBox x:Name="groupBox_telemetre" Grid.Column="1" Header="Télémètres IR " HorizontalAlignment="Left" Height="84" Margin="87,0,0,0" Grid.Row="4" Grid.RowSpan="5" VerticalAlignment="Top" Width="129"/>
-        <GroupBox x:Name="groupBox_Moteurs" Grid.Column="1" Header="Moteurs" HorizontalAlignment="Left" Height="84" Margin="230,0,0,0"  Grid.Row="4" Grid.RowSpan="5" VerticalAlignment="Top" Width="129" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Stretch"   Width="100"  FontSize ="15" Background="#95B5DE"  Click="buttonEnvoyer_Click"/>
+        <Button x:Name="buttonClear" Content="Clear" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Stretch"   Width="100" FontSize ="15"  Background="#95B5DE" Click="buttonClear_Click"  />
+        <Button x:Name="buttonTest" Content="Test" Grid.Column="5"  Grid.Row="3"   HorizontalAlignment="Stretch" Width="100" FontSize ="15" Background="#FCBB77"   Click="buttonTest_Click" />
+
+
+        <GroupBox x:Name="groupBox_Leds" Header="Leds" HorizontalAlignment="Left" Height="149" Background="#FCE1B8" FontSize ="15" BorderBrush ="#FCBB77" BorderThickness ="3" Grid.Row="5" Grid.RowSpan="7" VerticalAlignment="Top" Width="162" Margin="33,3,0,-5" Grid.Column="4"/>
+        <GroupBox x:Name="groupBox_telemetre" Grid.Column="1" Header="Télémètres IR " Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="168" FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="16,28,0,-50" Grid.Row="4" Grid.RowSpan="7" VerticalAlignment="Top" Width="211"/>
+        <GroupBox x:Name="groupBox_Moteurs" Grid.Column="5" Header="Moteurs" HorizontalAlignment="Left" Height="98" FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="15,7,0,0"  Grid.Row="5" Grid.RowSpan="5" VerticalAlignment="Top" Width="171">
+            <Rectangle Fill="#FFFFFF8B" HorizontalAlignment="Left" Height="44" Margin="141,89,-29,-62" Stroke="Black" VerticalAlignment="Top" Width="47"/>
+        </GroupBox>
+        <CheckBox x:Name="Led1" Content="Led1" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Height="30" Width="122" FontSize ="15" Background="#FCBB77"  Margin="48,5,0,0" Checked="Led1_Checked" Unchecked="Led1_Unchecked" Grid.RowSpan="2"/>
+        <CheckBox x:Name="Led2" Content="Led2" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Height="30" Width="132" FontSize ="15" Background ="#95B5DE" Margin="48,5,0,0" Checked="Led2_Checked" Unchecked="Led2_Unchecked" Grid.RowSpan="2" />
+        <CheckBox x:Name="Led3" Content="Led3" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="10" VerticalAlignment="Top" Height="30" Width="122" FontSize ="15" Background ="#FFFFFF" Margin="48,14,0,-2" Checked="Led3_Checked" Unchecked="Led3_Unchecked" Grid.RowSpan="2" />
+        <Label x:Name="IR_Gauche" Content="IR Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,3,0,0" Grid.Row="7" VerticalAlignment="Top" Height="47" Width="124" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <Label x:Name="IR_Centre" Content="IR Centre : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,3,0,0" Grid.Row="8" VerticalAlignment="Top" Height="47" Width="148" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <Label x:Name="IR_Droit" Content="IR Droit : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,3,0,-8" Grid.Row="9" VerticalAlignment="Top" Height="47" Width="124" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label x:Name="IR_ExtremeGauche" Content="IR Extreme Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,0,0,0" Grid.Row="6" VerticalAlignment="Top" Height="24" Width="124"  Grid.ColumnSpan="2"/>
+        <Label x:Name="IR_ExtremeDroite" Content="IR Extreme Droite: " Grid.Column="1" HorizontalAlignment="Left" Margin="123,3,0,-8" Grid.Row="10" VerticalAlignment="Top" Height="47" Width="148" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label x:Name="Vitesse_Gauche" Content="Vitesse Gauche : " Grid.Column="5" HorizontalAlignment="Left" Margin="32,0,0,0" Grid.Row="7" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="2"/>
+        <Label x:Name="Vitesse_Droit" Content="Vitesse Droit : " Grid.Column="5" HorizontalAlignment="Left" Margin="32,0,0,0" Grid.Row="8" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="2"/>
+        <Rectangle Grid.Column="3" Fill="#FF3E3E3E" HorizontalAlignment="Left" Height="24" Margin="356,71,0,-74" Grid.Row="10" Stroke="Black" VerticalAlignment="Top" Width="3"/>
+        <Rectangle Grid.Column="3" Fill="#FF3E3E3E" HorizontalAlignment="Left" Height="24" Margin="380,71,0,-74" Grid.Row="10" Stroke="Black" VerticalAlignment="Top" Width="3"/>
+
     </Grid>
 </Window>
