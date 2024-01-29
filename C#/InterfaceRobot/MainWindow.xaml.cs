@@ -361,6 +361,14 @@ namespace InterfaceRobot
                 Vitesse_Gauche.Content = "Vitesse Gauche : " + msgPayload[0] + "%";
                 Vitesse_Droit.Content = "Vitesse Droite : " + msgPayload[1] + "%";
             }
+
+            //Case 0x61
+            if(msgFunction == 0x61)
+            {
+                robot.positionX0do = BitConverter.ToSingle(msgPayload, 4);
+                robot.positionY0do = BitConverter.ToSingle(msgPayload, 8);
+                textBoxReception.Text += "Position X: " + robot.positionX0do + " Postion Y:  " + robot.positionY0do + "\n";
+            }
         }
 
         private void Led1_Checked(object sender, RoutedEventArgs e)
