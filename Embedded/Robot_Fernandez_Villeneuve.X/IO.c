@@ -31,8 +31,13 @@ void InitIO() {
     _TRISC6 = 0;
     _TRISC7 = 0;
 
-    // Configuration des pins remappables    
-
+    // Configuration des pins remappables  
+    //******************** QEI *****************
+    _QEA2R = 97; //assign QEI A to pin RP97
+    _QEB2R = 96; //assign QEI B to pin RP96
+    _QEA1R = 70; //assign QEI A to pin RP70
+    _QEB1R = 69; //assign QEI B to pin RP69
+    
     //*************************************************************
     // Unlock Registers
     //*************************************************************

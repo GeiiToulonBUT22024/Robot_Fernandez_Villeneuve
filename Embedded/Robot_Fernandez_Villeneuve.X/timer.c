@@ -6,9 +6,11 @@
 #include "main.h"
 #include "UART_Protocol.h"
 
+int subCount = 0;
 unsigned char toggle = 0;
 unsigned long timestamp;
 unsigned long timestamp3;
+
 //Initialisation d?un timer 32 bits
 
 void InitTimer23(void) {
@@ -72,6 +74,13 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     //PWMUpdateSpeed();
     ADC1StartConversionSequence();
     OperatingSystemLoop();
+    QEIUpdateData();
+    subCount +=1;
+    if(subCount>=25){
+        SendPositionData();
+        subCount = 0;
+    }
+    
 }
 
 void InitTimer4(void) {
