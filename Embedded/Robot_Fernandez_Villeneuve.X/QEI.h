@@ -19,7 +19,7 @@ float QeiDroitPosition;
 float QeiGauchePosition;
 float delta_d;
 float delta_g;
-float FREQ_ECH_QEI = 1/250;
+float FREQ_ECH_QEI = 0.004;
 
 #endif	/* QEI_H */
 

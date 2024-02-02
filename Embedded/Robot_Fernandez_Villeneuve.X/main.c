@@ -51,9 +51,9 @@ int main(void) {
 
     //        PWMSetSpeed(50,MOTEUR_GAUCHE);
     //        PWMSetSpeed(50,MOTEUR_DROIT);
-
-    //        PWMSetSpeedConsigne(50, MOTEUR_GAUCHE);
-    //        PWMSetSpeedConsigne(20, MOTEUR_DROIT);
+//
+//            PWMSetSpeedConsigne(50, MOTEUR_GAUCHE);
+//            PWMSetSpeedConsigne(20, MOTEUR_DROIT);
 
 
     //    LED_BLANCHE = 1;
@@ -65,7 +65,7 @@ int main(void) {
     // Boucle Principale
     /****************************************************************************************************/
     while (1) {
-        ADC1StartConversionSequence();
+        
 
         if (ADCIsConversionFinished() == 1) {
             ADCClearConversionFinishedFlag();
@@ -73,22 +73,18 @@ int main(void) {
             float volts = ((float) result [1])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreDroit = 34 / volts - 5;
             tabIR[3]=robotState.distanceTelemetreDroit;
-            //UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
             
             volts = ((float) result [2])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreCentre = 34 / volts - 5;
             tabIR[2]=robotState.distanceTelemetreCentre;
-           // UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
             
             volts = ((float) result [4])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreGauche = 34 / volts - 5;
             tabIR[1]=robotState.distanceTelemetreGauche;
-           // UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
             
             volts = ((float) result [0])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreExtremeDroite = 34 / volts - 5;
             tabIR[4]=robotState.distanceTelemetreExtremeDroite;
-            //UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
             
             volts = ((float) result [3])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreExtremeGauche = 34 / volts - 5;
@@ -101,22 +97,22 @@ int main(void) {
             tabVitesse[1]=vitessed;
             UartEncodeAndSendMessage(0x0040, 2, (unsigned char*) tabVitesse);
             
-            //
-            //            if (robotState.distanceTelemetreExtremeDroite > 30) {
-            //                LED_ORANGE = 1;
-            //            } else {
-            //                LED_ORANGE = 0;
-            //            }
-            //            if (robotState.distanceTelemetreCentre > 30) {
-            //                LED_BLEUE = 1;
-            //            } else {
-            //                LED_BLEUE = 0;
-            //            }
-            //            if (robotState.distanceTelemetreExtremeGauche > 30) {
-            //                LED_BLANCHE = 1;
-            //            } else {
-            //                LED_BLANCHE = 0;
-            //            }
+            
+//                        if (robotState.distanceTelemetreExtremeDroite > 30) {
+//                            LED_ORANGE = 1;
+//                        } else {
+//                            LED_ORANGE = 0;
+//                        }
+//                        if (robotState.distanceTelemetreCentre > 30) {
+//                            LED_BLEUE = 1;
+//                        } else {
+//                            LED_BLEUE = 0;
+//                        }
+//                        if (robotState.distanceTelemetreExtremeGauche > 30) {
+//                            LED_BLANCHE = 1;
+//                        } else {
+//                            LED_BLANCHE = 0;
+//                        }
 
         }
         int i;
@@ -125,7 +121,6 @@ int main(void) {
             UartDecodeMessage(c);
             //                    SendMessage(&c, 1);
         }
-
         __delay32(10000);
 
         //        SendMessage((unsigned char*) "Bonjour", 7);
@@ -205,7 +200,7 @@ void OperatingSystemLoop(void) {
 
 void SetNextRobotStateInAutomaticMode() {
     unsigned char positionObstacle = PAS_D_OBSTACLE;
-    //D?termination de la position des obstacles en fonction des t?l?m?tres
+    //Détermination de la position des obstacles en fonction des télémétres
     if ((robotState.distanceTelemetreDroit < 20 &&
             robotState.distanceTelemetreCentre >= 30 &&
             robotState.distanceTelemetreGauche < 20) ||
@@ -288,7 +283,6 @@ void SetNextRobotStateInAutomaticMode() {
         }
     }
 
-
     // D?termination vitesse 
 
     if (positionObstacle == PAS_D_OBSTACLE) {
@@ -304,15 +298,6 @@ void SetNextRobotStateInAutomaticMode() {
         nextStateRobot = STATE_TOURNE_GAUCHE;
         vitessed = 10;
         vitesseg = 5;
-        //        if (robotState.distanceTelemetreGauche > 40) {
-        //            robotState.distanceTelemetreGauche = 40;
-        //        }
-        //        if (robotState.distanceTelemetreDroit > 40) {
-        //            robotState.distanceTelemetreDroit = 40;
-        //        }
-        //        // int distanceGauchevalue 
-        //        vitessed = (robotState.distanceTelemetreGauche * 0.329 + 12.026);
-        //        vitesseg = (robotState.distanceTelemetreDroit * 0.329 + 12.026);
     } else if (positionObstacle == OBSTACLE_A_GAUCHE) {
         nextStateRobot = STATE_TOURNE_DROITE;
         vitessed = 5;
@@ -325,15 +310,6 @@ void SetNextRobotStateInAutomaticMode() {
         nextStateRobot = STATE_TOURNE_DROITE;
         vitessed = 5;
         vitesseg = 15;
-
-        //        if (robotState.distanceTelemetreExtremeGauche > 40) {
-        //            robotState.distanceTelemetreExtremeGauche = 40;
-        //        }
-        //        if (robotState.distanceTelemetreExtremeDroite > 40) {
-        //            robotState.distanceTelemetreExtremeDroite = 40;
-        //        }
-        //        vitessed = (robotState.distanceTelemetreExtremeGauche * 0.329 + 12.026);
-        //        vitesseg = (robotState.distanceTelemetreExtremeDroite * 0.329 + 12.026);
     } else if (positionObstacle == OBSTACLE_EXTREMEDROITE) {
         nextStateRobot = STATE_TOURNE_GAUCHE;
         vitessed = 15;

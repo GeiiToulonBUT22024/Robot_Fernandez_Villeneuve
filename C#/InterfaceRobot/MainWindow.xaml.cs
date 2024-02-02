@@ -340,11 +340,11 @@ namespace InterfaceRobot
                     tabIR[i] = msgPayload[i];
                 }
 
-                IR_Gauche.Content = " IR Extreme Gauche : " + msgPayload[0] + " cm";
+                IR_ExtremeGauche.Content = " IR Extreme Gauche : " + msgPayload[0] + " cm";
                 IR_Gauche.Content = " IR Gauche : " + msgPayload[1] + " cm";
                 IR_Centre.Content = " IR Centre : " + msgPayload[2] + " cm";
                 IR_Droit.Content = " IR Droite : " + msgPayload[3] + " cm";
-                IR_Droit.Content = " IR Extreme Droite : " + msgPayload[4] + " cm";
+                IR_ExtremeDroite.Content = " IR Extreme Droite : " + msgPayload[4] + " cm";
 
 
             }
@@ -367,7 +367,7 @@ namespace InterfaceRobot
             {
                 robot.positionX0do = BitConverter.ToSingle(msgPayload, 4);
                 robot.positionY0do = BitConverter.ToSingle(msgPayload, 8);
-                textBoxReception.Text += "Position X: " + robot.positionX0do + " Postion Y:  " + robot.positionY0do + "\n";
+                textBoxReception.Text += "Position X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
             }
         }
 

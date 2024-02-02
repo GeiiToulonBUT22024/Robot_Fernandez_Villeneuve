@@ -52,7 +52,7 @@
         <Button x:Name="buttonClear" Content="Clear" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"   Width="100" FontSize ="15"  Background="#95B5DE" Click="buttonClear_Click"  />
 
         <GroupBox x:Name="groupBox_Leds" Header="Leds" HorizontalAlignment="Left" Height="123" Background="#FCE1B8" FontSize ="15" BorderBrush ="#FCBB77" BorderThickness ="3" Grid.Row="5" Grid.RowSpan="7" VerticalAlignment="Top" Width="162" Margin="33,3,0,0" Grid.Column="4"/>
-        <GroupBox x:Name="groupBox_telemetre" Grid.Column="1" Header="Télémètres IR " Grid.ColumnSpan="2" FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="101,8,85,-7" Grid.Row="6" Grid.RowSpan="8"/>
+        <GroupBox x:Name="groupBox_telemetre" Grid.Column="1" Header="Télémètres IR " Grid.ColumnSpan="2" FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="89,3,97,18" Grid.Row="5" Grid.RowSpan="9"/>
         <GroupBox x:Name="groupBox_Moteurs" Grid.Column="5" Header="Moteurs" HorizontalAlignment="Left" Height="119" FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="14,7,0,0"  Grid.Row="5" Grid.RowSpan="7" VerticalAlignment="Top" Width="172">
 
         </GroupBox>
@@ -60,11 +60,11 @@
         <CheckBox x:Name="Led2" Content="Led2" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="8" VerticalAlignment="Top" Height="30" Width="132" FontSize ="15" Background ="#95B5DE" Margin="48,5,0,0" Checked="Led2_Checked" Unchecked="Led2_Unchecked" Grid.RowSpan="2" />
         <CheckBox x:Name="Led3" Content="Led3" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Height="16" Width="122" FontSize ="15" Background ="#FFFFFF" Margin="48,4,0,0" Checked="Led3_Checked" Unchecked="Led3_Unchecked" Grid.RowSpan="2"/>
 
-        <Label x:Name="IR_Gauche" Content="IR Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,0,0,0" Grid.Row="9" VerticalAlignment="Top" Height="46" Width="175"  Grid.ColumnSpan="2" Grid.RowSpan="3"/>
-        <Label x:Name="IR_Centre" Content="IR Centre : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,0,0,0" Grid.Row="10" VerticalAlignment="Top" Height="26" Width="148"  Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Label x:Name="IR_Droit" Content="IR Droit : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,0,0,0" Grid.Row="11" VerticalAlignment="Top" Height="24" Width="175"  Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <Label x:Name="IR_ExtremeGauche" Content="IR Extreme Gauche : " Grid.Column="1" HorizontalAlignment="Left" Margin="123,0,0,0" Grid.Row="8" VerticalAlignment="Top" Height="24" Width="175"  Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Label x:Name="IR_ExtremeDroite" Content="IR Extreme Droite: " Grid.Column="1" HorizontalAlignment="Left" Margin="123,0,0,0" Grid.Row="12" VerticalAlignment="Top" Height="30" Width="175" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label x:Name="IR_Gauche" Content="IR Gauche : " Grid.Column="1" HorizontalAlignment="Center" Margin="0,15,0,0" Grid.Row="7" VerticalAlignment="Top" Height="46" Width="175"  Grid.ColumnSpan="2" Grid.RowSpan="4"/>
+        <Label x:Name="IR_Centre" Content="IR Centre : " Grid.Column="1" HorizontalAlignment="Left" Margin="111,15,0,0" Grid.Row="8" VerticalAlignment="Top" Height="26" Width="148"  Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+        <Label x:Name="IR_Droit" Content="IR Droit : " Grid.Column="1" HorizontalAlignment="Center" Margin="0,15,0,0" Grid.Row="9" VerticalAlignment="Top" Height="24" Width="175"  Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label x:Name="IR_ExtremeGauche" Content="IR Extreme Gauche : " Grid.Column="1" HorizontalAlignment="Center" Margin="0,15,0,0" Grid.Row="6" VerticalAlignment="Top" Height="24" Width="175"  Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label x:Name="IR_ExtremeDroite" Content="IR Extreme Droite: " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" Height="30" Width="175" Grid.ColumnSpan="2"/>
 
         <Label x:Name="Vitesse_Gauche" Content="Vitesse Gauche : " Grid.Column="5" HorizontalAlignment="Left" Margin="32,0,0,0" Grid.Row="7" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="2"/>
         <Label x:Name="Vitesse_Droit" Content="Vitesse Droit : " Grid.Column="5" HorizontalAlignment="Left" Margin="32,0,0,0" Grid.Row="9" VerticalAlignment="Top" Height="25" Width="137" Grid.RowSpan="2"/>
