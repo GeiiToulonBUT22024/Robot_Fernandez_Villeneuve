@@ -43,6 +43,10 @@ namespace InterfaceRobot
             timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
+
+            //oscilloSpeed.AddOrUpdateLine(0, 200, "Ligne1");
+            //oscilloSpeed.ChangeLineColor(0, Color.Blue);
+
         }
 
         private void TimerAffichage_Tick(object sender, EventArgs e)

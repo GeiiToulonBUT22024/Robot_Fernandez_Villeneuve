@@ -96,6 +96,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\GEII Robot\Desktop\Dossier_XAML\Constants\Constants.csproj">
+      <Project>{0540b497-b2ce-40a1-84b5-3109ce2f3146}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Users\GEII Robot\Desktop\Dossier_XAML\Utilities\Utilities.csproj">
+      <Project>{8e7d0da4-9a13-4b18-a90e-0243bbcce40a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Users\GEII Robot\Downloads\WpfAsservissementDisplay\WpfAsservissementDisplay\WpfAsservissementDisplay.csproj">
+      <Project>{f0a887e9-d0a2-47e3-994a-94a0dcae8d4f}</Project>
+      <Name>WpfAsservissementDisplay</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Users\GEII Robot\Downloads\WpfOscilloscope\WpfOscilloscope\WpfOscilloscopeControl.csproj">
+      <Project>{88baa407-3fea-4f4b-bb41-5309ce48884e}</Project>
+      <Name>WpfOscilloscopeControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExtendedSerialPort\ExtendedSerialPort.csproj">
       <Project>{21ac599e-e3d5-4181-aa0f-7c2e00cca016}</Project>
       <Name>ExtendedSerialPort</Name>
