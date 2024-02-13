@@ -61,12 +61,14 @@ void QEIUpdateData() {
 #define POSITION_DATA 0x0061
 
 void SendPositionData() {
-    unsigned char positionPayload[24];
+    unsigned char positionPayload[32];
     getBytesFromInt32(positionPayload, 0, timestamp);
     getBytesFromFloat(positionPayload, 4, (float) (robotState.xPosFromOdometry));
     getBytesFromFloat(positionPayload, 8, (float) (robotState.yPosFromOdometry));
     getBytesFromFloat(positionPayload, 12, (float) (robotState.angleRadianFromOdometry));
     getBytesFromFloat(positionPayload, 16, (float) (robotState.vitesseLineaireFromOdometry));
     getBytesFromFloat(positionPayload, 20, (float) (robotState.vitesseAngulaireFromOdometry));
-    UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload);
+    getBytesFromFloat(positionPayload, 24, (float) (robotState.vitesseGaucheFromOdometry));
+    getBytesFromFloat(positionPayload, 28, (float) (robotState.vitesseDroitFromOdometry));
+    UartEncodeAndSendMessage(POSITION_DATA, 32, positionPayload);
 }

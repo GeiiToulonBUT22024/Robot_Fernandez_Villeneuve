@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ExtendedSerialPort;
 using System.Windows.Threading;
+using Constants;
 
 namespace InterfaceRobot
 {
@@ -44,8 +45,13 @@ namespace InterfaceRobot
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
 
-            //oscilloSpeed.AddOrUpdateLine(0, 200, "Ligne1");
-            //oscilloSpeed.ChangeLineColor(0, Color.Blue);
+            oscilloPos.AddOrUpdateLine(0, 200, "Postion");
+            oscilloPos.ChangeLineColor(0, Colors.DarkCyan);
+            oscilloPos.isDisplayActivated = true;
+
+            oscilloSpeed.AddOrUpdateLine(0, 200, "Speed");
+            oscilloSpeed.ChangeLineColor(0, Colors.HotPink);
+            oscilloSpeed.isDisplayActivated = true;
 
         }
 
@@ -66,6 +72,17 @@ namespace InterfaceRobot
                 //textBoxReception.Text += Convert.ToChar(b);
                 //DecodeMessage(b);
             }
+            asservSpeedDisplay.UpdateDisplay();
+            asservSpeedDisplay.UpdatePolarSpeedCommandValues(5.5, 6.5);
+            asservSpeedDisplay.UpdateIndependantSpeedCommandValues(7.5, 8.5);
+            asservSpeedDisplay.UpdatePolarSpeedErrorValues(0.55, 1.63);
+            asservSpeedDisplay.UpdateIndependantSpeedErrorValues(23.5, 24.3);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(24.26, 25.5,55,56.3,58.2,99999);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(1.1, 2.2, 3.3, 4.4, 5.5, 6.6);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(11, 22, 33, 44, 55, 66);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
@@ -369,9 +386,35 @@ namespace InterfaceRobot
             //Case 0x61
             if(msgFunction == 0x61)
             {
+                robot.timestamp = BitConverter.ToSingle(msgPayload, 0);
                 robot.positionX0do = BitConverter.ToSingle(msgPayload, 4);
                 robot.positionY0do = BitConverter.ToSingle(msgPayload, 8);
-                textBoxReception.Text += "Position X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
+                robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
+                robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
+                robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 24);
+                robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 28);
+                textBoxReception.Text += "Timestamp: " + robot.timestamp.ToString() + "\n";
+                //textBoxReception.Text += "Position X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
+                //textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
+                oscilloPos.AddPointToLine(0, robot.positionX0do, robot.positionY0do);
+                oscilloSpeed.AddPointToLine(0, robot.vitesseLineaireFromOdometry,robot.timestamp);
+
+                asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
+                asservSpeedDisplay.UpdateIndependantOdometrySpeed(robot.vitesseGaucheFromOdometry, robot.vitesseDroitFromOdometry);
+
+
+            }
+
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    this.timestamp += (int)payload[3 - i] << (8 * i);
+            //}
+            //this.timestamp = this.timestamp / 1000;
+
+            //Case 0x70 
+            if (msgFunction  == 0x70)
+            {
+
             }
         }
 
