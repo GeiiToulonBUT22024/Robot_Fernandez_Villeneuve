@@ -4,6 +4,7 @@
 #include "IO.h"
 #include "CB_TX1.h"
 #include "Robot.h"
+#include "asservissement.h"
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction prenant entree la trame et sa longueur pour calculer le checksum
@@ -161,6 +162,23 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
                 LED_BLANCHE = 1;
             }
         }
+
+    }
+    
+    if(function == 0x70){
+       int tabParam[payloadLength];
+       for (int i = 0; i < payloadLength; i++) {
+            tabParam[i] = payload[i];
+        }
+      
+       double Kp = (int)tabParam[0]<<24 | (int)tabParam[1]<<16 | (int)tabParam[2]<<8 | (int)tabParam[3];
+       double Ki = (int)tabParam[4]<<24 | (int)tabParam[5]<<16 | (int)tabParam[6]<<8 | (int)tabParam[7];
+       double Kd = (int)tabParam[8]<<24 | (int)tabParam[9]<<16 | (int)tabParam[10]<<8 | (int)tabParam[11];
+       double LimP = (int)tabParam[12]<<24 | (int)tabParam[13]<<16 | (int)tabParam[14]<<8 | (int)tabParam[15];
+       double LimI = (int)tabParam[16]<<24 | (int)tabParam[17]<<16 | (int)tabParam[18]<<8 | (int)tabParam[19];
+       double LimD = (int)tabParam[20]<<24 | (int)tabParam[21]<<16 | (int)tabParam[22]<<8 | (int)tabParam[23];
+
+       SetupPidAsservissement(0,  Kp,  Ki,  Kd,  LimP, LimI, LimD);
 
     }
 

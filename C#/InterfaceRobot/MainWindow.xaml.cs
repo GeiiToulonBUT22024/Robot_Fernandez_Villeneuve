@@ -77,7 +77,7 @@ namespace InterfaceRobot
             asservSpeedDisplay.UpdateIndependantSpeedCommandValues(7.5, 8.5);
             asservSpeedDisplay.UpdatePolarSpeedErrorValues(0.55, 1.63);
             asservSpeedDisplay.UpdateIndependantSpeedErrorValues(23.5, 24.3);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(24.26, 25.5,55,56.3,58.2,99999);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(24.26, 25.5, 55, 56.3, 58.2, 99999);
             asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(1.1, 2.2, 3.3, 4.4, 5.5, 6.6);
             asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(11, 22, 33, 44, 55, 66);
             asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
@@ -384,9 +384,10 @@ namespace InterfaceRobot
             }
 
             //Case 0x61
-            if(msgFunction == 0x61)
+            if (msgFunction == 0x61)
             {
-                robot.timestamp = BitConverter.ToSingle(msgPayload, 0);
+                var tab = msgPayload.Skip(0).Take(4).Reverse().ToArray(); // retournement Big Endian vers Small Endian
+                robot.timestamp = BitConverter.ToUInt32(tab, 0);
                 robot.positionX0do = BitConverter.ToSingle(msgPayload, 4);
                 robot.positionY0do = BitConverter.ToSingle(msgPayload, 8);
                 robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
@@ -397,25 +398,13 @@ namespace InterfaceRobot
                 //textBoxReception.Text += "Position X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
                 //textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
                 oscilloPos.AddPointToLine(0, robot.positionX0do, robot.positionY0do);
-                oscilloSpeed.AddPointToLine(0, robot.vitesseLineaireFromOdometry,robot.timestamp);
+                oscilloSpeed.AddPointToLine(0, robot.timestamp, robot.vitesseLineaireFromOdometry);
 
                 asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
                 asservSpeedDisplay.UpdateIndependantOdometrySpeed(robot.vitesseGaucheFromOdometry, robot.vitesseDroitFromOdometry);
 
-
             }
 
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    this.timestamp += (int)payload[3 - i] << (8 * i);
-            //}
-            //this.timestamp = this.timestamp / 1000;
-
-            //Case 0x70 
-            if (msgFunction  == 0x70)
-            {
-
-            }
         }
 
         private void Led1_Checked(object sender, RoutedEventArgs e)
@@ -452,6 +441,34 @@ namespace InterfaceRobot
         {
             byte[] arrayLED = { 3, 0 };
             UartEncodeAndSendMessage(0x0020, arrayLED.Length, arrayLED);
+        }
+
+        private void buttonPID_Click(object sender, RoutedEventArgs e)
+        {
+            double Kp = 1.5;
+            double Ki = 2.5;
+            double Kd = 3.5;
+            double LimP = 4.5;
+            double LimI = 5.5;
+            double LimD = 6.5;
+
+            byte[] Kp_byte = BitConverter.GetBytes(Kp);
+            byte[] Ki_byte = BitConverter.GetBytes(Ki); 
+            byte[] Kd_byte = BitConverter.GetBytes(Kd);
+            byte[] LimP_byte = BitConverter.GetBytes(LimP);
+            byte[] LimI_byte = BitConverter.GetBytes(LimI);
+            byte[] LimD_byte = BitConverter.GetBytes(LimD);
+
+            byte[] parametrePID = new byte[24];
+
+            Kp_byte.CopyTo(parametrePID, 0);
+            Ki_byte.CopyTo(parametrePID, 4);
+            Kd_byte.CopyTo(parametrePID, 8);
+            LimP_byte.CopyTo(parametrePID, 12);
+            LimI_byte.CopyTo(parametrePID, 16);
+            LimD_byte.CopyTo(parametrePID, 20);
+
+            UartEncodeAndSendMessage(0x0070, parametrePID.Length,parametrePID);
         }
     }
 }

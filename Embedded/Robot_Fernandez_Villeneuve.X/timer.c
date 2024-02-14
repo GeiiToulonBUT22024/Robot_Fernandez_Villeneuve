@@ -64,23 +64,23 @@ void InitTimer1(void) {
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
     SetFreqTimer1(250.0);
-    
+
 }
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
     //LED_BLEUE = !LED_BLEUE;
-   // LED_BLANCHE = !LED_BLANCHE;
+    // LED_BLANCHE = !LED_BLANCHE;
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
     OperatingSystemLoop();
     QEIUpdateData();
-    subCount +=1;
-    if(subCount>=25){
+    subCount += 1;
+    if (subCount >= 25) {
         SendPositionData();
         subCount = 0;
     }
-    
+
 }
 
 void InitTimer4(void) {
@@ -98,13 +98,13 @@ void InitTimer4(void) {
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
     SetFreqTimer4(3000.0);
-    
+
 }
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
     //LED_ORANGE = !LED_ORANGE;
-    timestamp++;
+        timestamp++;
 }
 
 void SetFreqTimer1(float freq) {
