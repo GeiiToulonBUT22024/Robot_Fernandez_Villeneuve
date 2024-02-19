@@ -5,6 +5,7 @@
 #include "CB_TX1.h"
 #include "Robot.h"
 #include "asservissement.h"
+#include "Utilities.h"
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction prenant entree la trame et sa longueur pour calculer le checksum
@@ -123,19 +124,6 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
     //        }
     //    }
 
-    //    // Case Ox80
-    //    if (function == 0x80) {
-    //
-    //        for (int b = 0; b<sizeof (payload); b++)
-    //            textBoxReception.Text += Convert.ToChar(b);
-    //    }
-    //    char array [] = " : Nyquit";
-    //
-    //    for (int b = 0; b<sizeof (array); b++) {
-    //        textBoxReception.Text += Convert.ToChar(b);
-    //    }
-
-
     // Case 0x20
     if (function == 0x20) {
         int tabLED[payloadLength];
@@ -162,48 +150,21 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
                 LED_BLANCHE = 1;
             }
         }
-
     }
     
+    // Case 0x70
     if(function == 0x70){
-       int tabParam[payloadLength];
-       for (int i = 0; i < payloadLength; i++) {
-            tabParam[i] = payload[i];
-        }
-      
-       double Kp = (int)tabParam[0]<<24 | (int)tabParam[1]<<16 | (int)tabParam[2]<<8 | (int)tabParam[3];
-       double Ki = (int)tabParam[4]<<24 | (int)tabParam[5]<<16 | (int)tabParam[6]<<8 | (int)tabParam[7];
-       double Kd = (int)tabParam[8]<<24 | (int)tabParam[9]<<16 | (int)tabParam[10]<<8 | (int)tabParam[11];
-       double LimP = (int)tabParam[12]<<24 | (int)tabParam[13]<<16 | (int)tabParam[14]<<8 | (int)tabParam[15];
-       double LimI = (int)tabParam[16]<<24 | (int)tabParam[17]<<16 | (int)tabParam[18]<<8 | (int)tabParam[19];
-       double LimD = (int)tabParam[20]<<24 | (int)tabParam[21]<<16 | (int)tabParam[22]<<8 | (int)tabParam[23];
+        
+       float Kp = getFloat(payload, 0);
+       float Ki = getFloat(payload, 4);
+       float Kd = getFloat(payload, 8); 
+       float LimP = getFloat(payload, 12);
+       float LimI = getFloat(payload, 16);
+       float LimD = getFloat(payload, 20);
 
-       SetupPidAsservissement(0,  Kp,  Ki,  Kd,  LimP, LimI, LimD);
-
+       SetupPidAsservissement(&robotState.PidX, Kp, Ki, Kd, LimP, LimI, LimD);
     }
-
 }
-
-
-  // Case 0x30
-//
-//        unsigned char tabIR[payloadLength];
-//
-//        tabIR[0] = robotState.distanceTelemetreGauche;
-//        tabIR[1] = robotState.distanceTelemetreCentre;
-//        tabIR[2] = robotState.distanceTelemetreDroit;
-
-        //SendMessage(tabIR, sizeof (tabIR));
-//
-//    // Case 0x40
-//    if (function == 0x40) {
-//        unsigned char tabVitesse[payloadLength];
-//
-//        tabVitesse[0] = robotState.vitesseDroiteCommandeCourante;
-//        tabVitesse[1] = robotState.vitesseGaucheCommandeCourante;
-//
-//        SendMessage(tabVitesse, sizeof (tabVitesse));
-//    }
 //*************************************************************************/
 //Fonctions correspondant aux messages
 //*************************************************************************/

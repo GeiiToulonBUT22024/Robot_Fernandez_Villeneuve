@@ -5,6 +5,7 @@
 #include "ADC.h"
 #include "main.h"
 #include "UART_Protocol.h"
+#include "QEI.h"
 
 int subCount = 0;
 unsigned char toggle = 0;

@@ -13,13 +13,6 @@ void InitQEI2();
 void QEIUpdateData();
 void SendPositionData();
 
-float QeiDroitPosition_T_1;
-float QeiGauchePosition_T_1;
-float QeiDroitPosition;
-float QeiGauchePosition;
-float delta_d;
-float delta_g;
-float FREQ_ECH_QEI = 250;
 
 #endif	/* QEI_H */
 

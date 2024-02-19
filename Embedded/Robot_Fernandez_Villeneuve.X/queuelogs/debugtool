@@ -1,158 +1,1007 @@
-254 1707226032413 GEN4_CONNECT_DIAGNOSTICS:MPLABCommTool is NOT null
-254 1707226032413 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 9015, AttachedToolVID = 4d8
-254 1707226032413 GEN4_CONNECT_DIAGNOSTICS:transport type = USB
-254 1707226032413 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 9015, AttachedToolVID = 4d8
-254 1707226032452 GEN4_CONNECT_DIAGNOSTICS:Before MPLABCommTool.Connect()
-254 1707226032452 GEN4_CONNECT_DIAGNOSTICS:After MPLABCommTool.Connect()
-254 1707226032461 GEN4_CONNECT_DIAGNOSTICS:Adding new plug and play observer com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@1bc72413
-254 1707226032461 GEN4_CONNECT_DIAGNOSTICS:Begin PlugNPlayObservers list dump:
-254 1707226032461 GEN4_CONNECT_DIAGNOSTICS:com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@1bc72413
-254 1707226032461 GEN4_CONNECT_DIAGNOSTICS:End PlugNPlayObservers list dump:
+4776 1708355152070 XXXX 1708355152070, Thread 4776: XXXX 1708355152070, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152072 XXXX 1708355152072, Thread 4776: XXXX 1708355152072, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152172 XXXX 1708355152172, Thread 4776: XXXX 1708355152172, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152174 XXXX 1708355152174, Thread 4776: XXXX 1708355152174, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152272 XXXX 1708355152272, Thread 4776: XXXX 1708355152272, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152274 XXXX 1708355152274, Thread 4776: XXXX 1708355152274, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152372 XXXX 1708355152372, Thread 4776: XXXX 1708355152372, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152375 XXXX 1708355152375, Thread 4776: XXXX 1708355152375, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152474 XXXX 1708355152474, Thread 4776: XXXX 1708355152474, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152476 XXXX 1708355152476, Thread 4776: XXXX 1708355152476, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152575 XXXX 1708355152575, Thread 4776: XXXX 1708355152575, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152578 XXXX 1708355152578, Thread 4776: XXXX 1708355152578, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152676 XXXX 1708355152676, Thread 4776: XXXX 1708355152676, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152679 XXXX 1708355152679, Thread 4776: XXXX 1708355152679, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152776 XXXX 1708355152776, Thread 4776: XXXX 1708355152776, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152779 XXXX 1708355152779, Thread 4776: XXXX 1708355152779, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152877 XXXX 1708355152877, Thread 4776: XXXX 1708355152877, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152880 XXXX 1708355152880, Thread 4776: XXXX 1708355152880, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355152977 XXXX 1708355152977, Thread 4776: XXXX 1708355152977, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355152979 XXXX 1708355152979, Thread 4776: XXXX 1708355152979, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153077 XXXX 1708355153077, Thread 4776: XXXX 1708355153077, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153081 XXXX 1708355153081, Thread 4776: XXXX 1708355153081, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153177 XXXX 1708355153177, Thread 4776: XXXX 1708355153177, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153180 XXXX 1708355153180, Thread 4776: XXXX 1708355153180, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153277 XXXX 1708355153277, Thread 4776: XXXX 1708355153277, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153279 XXXX 1708355153279, Thread 4776: XXXX 1708355153279, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153378 XXXX 1708355153378, Thread 4776: XXXX 1708355153378, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153381 XXXX 1708355153381, Thread 4776: XXXX 1708355153381, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153479 XXXX 1708355153479, Thread 4776: XXXX 1708355153479, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153481 XXXX 1708355153481, Thread 4776: XXXX 1708355153481, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153579 XXXX 1708355153579, Thread 4776: XXXX 1708355153579, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153581 XXXX 1708355153581, Thread 4776: XXXX 1708355153581, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153679 XXXX 1708355153679, Thread 4776: XXXX 1708355153679, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153681 XXXX 1708355153681, Thread 4776: XXXX 1708355153681, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153778 XXXX 1708355153778, Thread 4776: XXXX 1708355153778, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153781 XXXX 1708355153781, Thread 4776: XXXX 1708355153781, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153878 XXXX 1708355153878, Thread 4776: XXXX 1708355153878, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153881 XXXX 1708355153881, Thread 4776: XXXX 1708355153881, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355153979 XXXX 1708355153979, Thread 4776: XXXX 1708355153979, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355153981 XXXX 1708355153981, Thread 4776: XXXX 1708355153981, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154080 XXXX 1708355154080, Thread 4776: XXXX 1708355154080, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154082 XXXX 1708355154082, Thread 4776: XXXX 1708355154082, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154181 XXXX 1708355154181, Thread 4776: XXXX 1708355154181, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154182 XXXX 1708355154182, Thread 4776: XXXX 1708355154182, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154282 XXXX 1708355154282, Thread 4776: XXXX 1708355154282, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154284 XXXX 1708355154284, Thread 4776: XXXX 1708355154284, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154383 XXXX 1708355154383, Thread 4776: XXXX 1708355154383, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154386 XXXX 1708355154386, Thread 4776: XXXX 1708355154386, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154483 XXXX 1708355154483, Thread 4776: XXXX 1708355154483, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154486 XXXX 1708355154486, Thread 4776: XXXX 1708355154486, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154584 XXXX 1708355154584, Thread 4776: XXXX 1708355154584, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154587 XXXX 1708355154587, Thread 4776: XXXX 1708355154587, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154684 XXXX 1708355154684, Thread 4776: XXXX 1708355154684, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154687 XXXX 1708355154687, Thread 4776: XXXX 1708355154687, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154786 XXXX 1708355154786, Thread 4776: XXXX 1708355154786, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154789 XXXX 1708355154789, Thread 4776: XXXX 1708355154789, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154888 XXXX 1708355154888, Thread 4776: XXXX 1708355154888, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154890 XXXX 1708355154890, Thread 4776: XXXX 1708355154890, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355154989 XXXX 1708355154989, Thread 4776: XXXX 1708355154989, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355154991 XXXX 1708355154991, Thread 4776: XXXX 1708355154991, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155089 XXXX 1708355155089, Thread 4776: XXXX 1708355155089, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155092 XXXX 1708355155092, Thread 4776: XXXX 1708355155092, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155191 XXXX 1708355155191, Thread 4776: XXXX 1708355155191, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155194 XXXX 1708355155194, Thread 4776: XXXX 1708355155194, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155292 XXXX 1708355155292, Thread 4776: XXXX 1708355155292, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155293 XXXX 1708355155293, Thread 4776: XXXX 1708355155293, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155393 XXXX 1708355155393, Thread 4776: XXXX 1708355155393, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155395 XXXX 1708355155395, Thread 4776: XXXX 1708355155395, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155494 XXXX 1708355155494, Thread 4776: XXXX 1708355155494, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155497 XXXX 1708355155497, Thread 4776: XXXX 1708355155497, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155594 XXXX 1708355155594, Thread 4776: XXXX 1708355155594, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155596 XXXX 1708355155596, Thread 4776: XXXX 1708355155596, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155695 XXXX 1708355155695, Thread 4776: XXXX 1708355155695, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155699 XXXX 1708355155699, Thread 4776: XXXX 1708355155699, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155796 XXXX 1708355155796, Thread 4776: XXXX 1708355155796, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155799 XXXX 1708355155799, Thread 4776: XXXX 1708355155799, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155897 XXXX 1708355155897, Thread 4776: XXXX 1708355155897, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355155899 XXXX 1708355155899, Thread 4776: XXXX 1708355155899, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355155998 XXXX 1708355155997, Thread 4776: XXXX 1708355155997, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156000 XXXX 1708355156000, Thread 4776: XXXX 1708355156000, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156098 XXXX 1708355156098, Thread 4776: XXXX 1708355156098, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156101 XXXX 1708355156101, Thread 4776: XXXX 1708355156101, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156200 XXXX 1708355156200, Thread 4776: XXXX 1708355156200, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156203 XXXX 1708355156203, Thread 4776: XXXX 1708355156203, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156303 XXXX 1708355156303, Thread 4776: XXXX 1708355156303, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156306 XXXX 1708355156306, Thread 4776: XXXX 1708355156306, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156403 XXXX 1708355156403, Thread 4776: XXXX 1708355156403, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156406 XXXX 1708355156406, Thread 4776: XXXX 1708355156406, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156503 XXXX 1708355156503, Thread 4776: XXXX 1708355156503, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156506 XXXX 1708355156506, Thread 4776: XXXX 1708355156506, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156604 XXXX 1708355156604, Thread 4776: XXXX 1708355156604, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156606 XXXX 1708355156606, Thread 4776: XXXX 1708355156606, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156703 XXXX 1708355156703, Thread 4776: XXXX 1708355156703, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156707 XXXX 1708355156707, Thread 4776: XXXX 1708355156707, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156804 XXXX 1708355156804, Thread 4776: XXXX 1708355156804, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156806 XXXX 1708355156806, Thread 4776: XXXX 1708355156806, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355156905 XXXX 1708355156905, Thread 4776: XXXX 1708355156905, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355156908 XXXX 1708355156908, Thread 4776: XXXX 1708355156908, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157005 XXXX 1708355157005, Thread 4776: XXXX 1708355157005, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157008 XXXX 1708355157008, Thread 4776: XXXX 1708355157008, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157107 XXXX 1708355157107, Thread 4776: XXXX 1708355157107, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157109 XXXX 1708355157109, Thread 4776: XXXX 1708355157109, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157207 XXXX 1708355157207, Thread 4776: XXXX 1708355157207, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157210 XXXX 1708355157210, Thread 4776: XXXX 1708355157210, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157308 XXXX 1708355157308, Thread 4776: XXXX 1708355157308, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157310 XXXX 1708355157310, Thread 4776: XXXX 1708355157310, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157407 XXXX 1708355157407, Thread 4776: XXXX 1708355157407, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157410 XXXX 1708355157410, Thread 4776: XXXX 1708355157410, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157509 XXXX 1708355157509, Thread 4776: XXXX 1708355157508, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157511 XXXX 1708355157511, Thread 4776: XXXX 1708355157511, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157609 XXXX 1708355157609, Thread 4776: XXXX 1708355157609, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157611 XXXX 1708355157611, Thread 4776: XXXX 1708355157611, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157710 XXXX 1708355157710, Thread 4776: XXXX 1708355157710, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157712 XXXX 1708355157712, Thread 4776: XXXX 1708355157712, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157811 XXXX 1708355157811, Thread 4776: XXXX 1708355157811, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157814 XXXX 1708355157814, Thread 4776: XXXX 1708355157814, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355157912 XXXX 1708355157912, Thread 4776: XXXX 1708355157912, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355157913 XXXX 1708355157913, Thread 4776: XXXX 1708355157913, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158013 XXXX 1708355158013, Thread 4776: XXXX 1708355158013, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158015 XXXX 1708355158015, Thread 4776: XXXX 1708355158015, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158112 XXXX 1708355158112, Thread 4776: XXXX 1708355158112, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158115 XXXX 1708355158115, Thread 4776: XXXX 1708355158115, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158213 XXXX 1708355158213, Thread 4776: XXXX 1708355158212, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158215 XXXX 1708355158215, Thread 4776: XXXX 1708355158215, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158313 XXXX 1708355158313, Thread 4776: XXXX 1708355158313, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158316 XXXX 1708355158316, Thread 4776: XXXX 1708355158316, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158414 XXXX 1708355158414, Thread 4776: XXXX 1708355158414, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158417 XXXX 1708355158417, Thread 4776: XXXX 1708355158417, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158516 XXXX 1708355158516, Thread 4776: XXXX 1708355158516, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158518 XXXX 1708355158518, Thread 4776: XXXX 1708355158518, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158616 XXXX 1708355158616, Thread 4776: XXXX 1708355158616, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158618 XXXX 1708355158618, Thread 4776: XXXX 1708355158618, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158716 XXXX 1708355158716, Thread 4776: XXXX 1708355158716, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158718 XXXX 1708355158718, Thread 4776: XXXX 1708355158718, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158817 XXXX 1708355158817, Thread 4776: XXXX 1708355158817, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158819 XXXX 1708355158819, Thread 4776: XXXX 1708355158819, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355158918 XXXX 1708355158918, Thread 4776: XXXX 1708355158918, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355158921 XXXX 1708355158921, Thread 4776: XXXX 1708355158921, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159020 XXXX 1708355159020, Thread 4776: XXXX 1708355159020, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159023 XXXX 1708355159023, Thread 4776: XXXX 1708355159023, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159121 XXXX 1708355159121, Thread 4776: XXXX 1708355159121, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159123 XXXX 1708355159123, Thread 4776: XXXX 1708355159123, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159221 XXXX 1708355159221, Thread 4776: XXXX 1708355159221, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159224 XXXX 1708355159224, Thread 4776: XXXX 1708355159224, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159322 XXXX 1708355159322, Thread 4776: XXXX 1708355159322, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159324 XXXX 1708355159324, Thread 4776: XXXX 1708355159324, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159424 XXXX 1708355159424, Thread 4776: XXXX 1708355159424, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159427 XXXX 1708355159427, Thread 4776: XXXX 1708355159427, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159527 XXXX 1708355159527, Thread 4776: XXXX 1708355159527, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159530 XXXX 1708355159530, Thread 4776: XXXX 1708355159530, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159628 XXXX 1708355159628, Thread 4776: XXXX 1708355159628, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159631 XXXX 1708355159631, Thread 4776: XXXX 1708355159631, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159729 XXXX 1708355159729, Thread 4776: XXXX 1708355159729, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159731 XXXX 1708355159731, Thread 4776: XXXX 1708355159731, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159830 XXXX 1708355159830, Thread 4776: XXXX 1708355159830, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159832 XXXX 1708355159832, Thread 4776: XXXX 1708355159832, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355159930 XXXX 1708355159930, Thread 4776: XXXX 1708355159930, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355159933 XXXX 1708355159933, Thread 4776: XXXX 1708355159933, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160031 XXXX 1708355160031, Thread 4776: XXXX 1708355160031, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160033 XXXX 1708355160033, Thread 4776: XXXX 1708355160033, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160133 XXXX 1708355160133, Thread 4776: XXXX 1708355160133, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160135 XXXX 1708355160135, Thread 4776: XXXX 1708355160135, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160234 XXXX 1708355160234, Thread 4776: XXXX 1708355160234, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160235 XXXX 1708355160235, Thread 4776: XXXX 1708355160235, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160335 XXXX 1708355160335, Thread 4776: XXXX 1708355160335, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160337 XXXX 1708355160337, Thread 4776: XXXX 1708355160337, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160435 XXXX 1708355160435, Thread 4776: XXXX 1708355160435, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160439 XXXX 1708355160439, Thread 4776: XXXX 1708355160439, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160537 XXXX 1708355160537, Thread 4776: XXXX 1708355160537, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160540 XXXX 1708355160540, Thread 4776: XXXX 1708355160540, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160638 XXXX 1708355160638, Thread 4776: XXXX 1708355160638, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160640 XXXX 1708355160640, Thread 4776: XXXX 1708355160640, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160738 XXXX 1708355160738, Thread 4776: XXXX 1708355160738, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160741 XXXX 1708355160741, Thread 4776: XXXX 1708355160741, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160839 XXXX 1708355160839, Thread 4776: XXXX 1708355160839, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160841 XXXX 1708355160841, Thread 4776: XXXX 1708355160841, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355160940 XXXX 1708355160940, Thread 4776: XXXX 1708355160940, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355160943 XXXX 1708355160943, Thread 4776: XXXX 1708355160943, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161041 XXXX 1708355161041, Thread 4776: XXXX 1708355161041, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161044 XXXX 1708355161044, Thread 4776: XXXX 1708355161044, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161143 XXXX 1708355161143, Thread 4776: XXXX 1708355161143, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161145 XXXX 1708355161145, Thread 4776: XXXX 1708355161145, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161243 XXXX 1708355161243, Thread 4776: XXXX 1708355161243, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161246 XXXX 1708355161246, Thread 4776: XXXX 1708355161246, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161343 XXXX 1708355161343, Thread 4776: XXXX 1708355161343, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161346 XXXX 1708355161346, Thread 4776: XXXX 1708355161346, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161445 XXXX 1708355161445, Thread 4776: XXXX 1708355161445, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161448 XXXX 1708355161448, Thread 4776: XXXX 1708355161448, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161546 XXXX 1708355161546, Thread 4776: XXXX 1708355161546, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161549 XXXX 1708355161549, Thread 4776: XXXX 1708355161549, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161646 XXXX 1708355161646, Thread 4776: XXXX 1708355161646, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161649 XXXX 1708355161649, Thread 4776: XXXX 1708355161649, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161748 XXXX 1708355161748, Thread 4776: XXXX 1708355161748, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161750 XXXX 1708355161750, Thread 4776: XXXX 1708355161750, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161849 XXXX 1708355161849, Thread 4776: XXXX 1708355161849, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161851 XXXX 1708355161851, Thread 4776: XXXX 1708355161851, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355161949 XXXX 1708355161949, Thread 4776: XXXX 1708355161949, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355161951 XXXX 1708355161951, Thread 4776: XXXX 1708355161951, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162051 XXXX 1708355162051, Thread 4776: XXXX 1708355162051, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162053 XXXX 1708355162053, Thread 4776: XXXX 1708355162053, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162152 XXXX 1708355162152, Thread 4776: XXXX 1708355162152, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162154 XXXX 1708355162154, Thread 4776: XXXX 1708355162154, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162253 XXXX 1708355162253, Thread 4776: XXXX 1708355162253, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162256 XXXX 1708355162256, Thread 4776: XXXX 1708355162256, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162355 XXXX 1708355162355, Thread 4776: XXXX 1708355162355, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162357 XXXX 1708355162357, Thread 4776: XXXX 1708355162357, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162456 XXXX 1708355162456, Thread 4776: XXXX 1708355162456, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162458 XXXX 1708355162458, Thread 4776: XXXX 1708355162458, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162556 XXXX 1708355162556, Thread 4776: XXXX 1708355162556, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162559 XXXX 1708355162559, Thread 4776: XXXX 1708355162559, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162656 XXXX 1708355162656, Thread 4776: XXXX 1708355162656, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162659 XXXX 1708355162659, Thread 4776: XXXX 1708355162659, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162758 XXXX 1708355162758, Thread 4776: XXXX 1708355162758, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162760 XXXX 1708355162760, Thread 4776: XXXX 1708355162760, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162860 XXXX 1708355162860, Thread 4776: XXXX 1708355162860, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162862 XXXX 1708355162862, Thread 4776: XXXX 1708355162862, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355162961 XXXX 1708355162961, Thread 4776: XXXX 1708355162961, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355162963 XXXX 1708355162963, Thread 4776: XXXX 1708355162963, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163062 XXXX 1708355163062, Thread 4776: XXXX 1708355163062, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163065 XXXX 1708355163065, Thread 4776: XXXX 1708355163065, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163164 XXXX 1708355163164, Thread 4776: XXXX 1708355163164, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163166 XXXX 1708355163166, Thread 4776: XXXX 1708355163166, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163265 XXXX 1708355163265, Thread 4776: XXXX 1708355163264, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163267 XXXX 1708355163267, Thread 4776: XXXX 1708355163267, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163366 XXXX 1708355163366, Thread 4776: XXXX 1708355163366, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163368 XXXX 1708355163368, Thread 4776: XXXX 1708355163368, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163466 XXXX 1708355163466, Thread 4776: XXXX 1708355163466, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163469 XXXX 1708355163469, Thread 4776: XXXX 1708355163469, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163567 XXXX 1708355163567, Thread 4776: XXXX 1708355163567, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163569 XXXX 1708355163569, Thread 4776: XXXX 1708355163569, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163667 XXXX 1708355163667, Thread 4776: XXXX 1708355163667, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163670 XXXX 1708355163670, Thread 4776: XXXX 1708355163670, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163769 XXXX 1708355163769, Thread 4776: XXXX 1708355163769, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163772 XXXX 1708355163772, Thread 4776: XXXX 1708355163772, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163870 XXXX 1708355163870, Thread 4776: XXXX 1708355163870, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163872 XXXX 1708355163872, Thread 4776: XXXX 1708355163872, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355163972 XXXX 1708355163972, Thread 4776: XXXX 1708355163972, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355163974 XXXX 1708355163974, Thread 4776: XXXX 1708355163974, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164072 XXXX 1708355164072, Thread 4776: XXXX 1708355164072, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164074 XXXX 1708355164074, Thread 4776: XXXX 1708355164074, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164173 XXXX 1708355164173, Thread 4776: XXXX 1708355164173, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164176 XXXX 1708355164176, Thread 4776: XXXX 1708355164176, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164274 XXXX 1708355164274, Thread 4776: XXXX 1708355164274, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164276 XXXX 1708355164276, Thread 4776: XXXX 1708355164276, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164376 XXXX 1708355164376, Thread 4776: XXXX 1708355164376, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164378 XXXX 1708355164378, Thread 4776: XXXX 1708355164378, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164477 XXXX 1708355164477, Thread 4776: XXXX 1708355164477, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164479 XXXX 1708355164479, Thread 4776: XXXX 1708355164479, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164577 XXXX 1708355164577, Thread 4776: XXXX 1708355164577, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164580 XXXX 1708355164580, Thread 4776: XXXX 1708355164580, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164679 XXXX 1708355164679, Thread 4776: XXXX 1708355164679, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164680 XXXX 1708355164680, Thread 4776: XXXX 1708355164680, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164780 XXXX 1708355164780, Thread 4776: XXXX 1708355164780, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164782 XXXX 1708355164782, Thread 4776: XXXX 1708355164782, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164882 XXXX 1708355164882, Thread 4776: XXXX 1708355164882, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164884 XXXX 1708355164884, Thread 4776: XXXX 1708355164884, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355164983 XXXX 1708355164983, Thread 4776: XXXX 1708355164983, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355164984 XXXX 1708355164984, Thread 4776: XXXX 1708355164984, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165084 XXXX 1708355165084, Thread 4776: XXXX 1708355165084, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165086 XXXX 1708355165086, Thread 4776: XXXX 1708355165086, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165185 XXXX 1708355165185, Thread 4776: XXXX 1708355165185, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165187 XXXX 1708355165187, Thread 4776: XXXX 1708355165187, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165286 XXXX 1708355165286, Thread 4776: XXXX 1708355165286, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165288 XXXX 1708355165288, Thread 4776: XXXX 1708355165288, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165388 XXXX 1708355165388, Thread 4776: XXXX 1708355165388, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165390 XXXX 1708355165390, Thread 4776: XXXX 1708355165390, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165490 XXXX 1708355165490, Thread 4776: XXXX 1708355165490, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165492 XXXX 1708355165492, Thread 4776: XXXX 1708355165492, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165591 XXXX 1708355165591, Thread 4776: XXXX 1708355165591, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165593 XXXX 1708355165593, Thread 4776: XXXX 1708355165593, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165693 XXXX 1708355165693, Thread 4776: XXXX 1708355165693, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165695 XXXX 1708355165695, Thread 4776: XXXX 1708355165695, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165794 XXXX 1708355165794, Thread 4776: XXXX 1708355165794, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165796 XXXX 1708355165796, Thread 4776: XXXX 1708355165796, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165895 XXXX 1708355165895, Thread 4776: XXXX 1708355165895, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165897 XXXX 1708355165897, Thread 4776: XXXX 1708355165897, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355165995 XXXX 1708355165995, Thread 4776: XXXX 1708355165995, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355165996 XXXX 1708355165996, Thread 4776: XXXX 1708355165996, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166097 XXXX 1708355166097, Thread 4776: XXXX 1708355166096, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166099 XXXX 1708355166099, Thread 4776: XXXX 1708355166099, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166198 XXXX 1708355166198, Thread 4776: XXXX 1708355166198, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166200 XXXX 1708355166200, Thread 4776: XXXX 1708355166200, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166300 XXXX 1708355166300, Thread 4776: XXXX 1708355166300, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166302 XXXX 1708355166302, Thread 4776: XXXX 1708355166302, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166400 XXXX 1708355166400, Thread 4776: XXXX 1708355166400, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166403 XXXX 1708355166403, Thread 4776: XXXX 1708355166403, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166519 XXXX 1708355166519, Thread 4776: XXXX 1708355166519, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166522 XXXX 1708355166522, Thread 4776: XXXX 1708355166522, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166621 XXXX 1708355166621, Thread 4776: XXXX 1708355166621, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166623 XXXX 1708355166623, Thread 4776: XXXX 1708355166623, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166722 XXXX 1708355166722, Thread 4776: XXXX 1708355166722, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166723 XXXX 1708355166723, Thread 4776: XXXX 1708355166723, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166821 XXXX 1708355166821, Thread 4776: XXXX 1708355166821, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166824 XXXX 1708355166824, Thread 4776: XXXX 1708355166824, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355166921 XXXX 1708355166921, Thread 4776: XXXX 1708355166921, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355166924 XXXX 1708355166924, Thread 4776: XXXX 1708355166924, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167023 XXXX 1708355167023, Thread 4776: XXXX 1708355167023, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167025 XXXX 1708355167025, Thread 4776: XXXX 1708355167025, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167123 XXXX 1708355167123, Thread 4776: XXXX 1708355167123, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167125 XXXX 1708355167125, Thread 4776: XXXX 1708355167125, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167224 XXXX 1708355167224, Thread 4776: XXXX 1708355167224, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167228 XXXX 1708355167228, Thread 4776: XXXX 1708355167228, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167326 XXXX 1708355167326, Thread 4776: XXXX 1708355167326, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167328 XXXX 1708355167328, Thread 4776: XXXX 1708355167328, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167428 XXXX 1708355167428, Thread 4776: XXXX 1708355167428, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167430 XXXX 1708355167430, Thread 4776: XXXX 1708355167430, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167529 XXXX 1708355167529, Thread 4776: XXXX 1708355167529, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167532 XXXX 1708355167532, Thread 4776: XXXX 1708355167532, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167630 XXXX 1708355167630, Thread 4776: XXXX 1708355167630, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167633 XXXX 1708355167633, Thread 4776: XXXX 1708355167633, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167731 XXXX 1708355167731, Thread 4776: XXXX 1708355167731, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167733 XXXX 1708355167733, Thread 4776: XXXX 1708355167733, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167832 XXXX 1708355167832, Thread 4776: XXXX 1708355167832, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167834 XXXX 1708355167834, Thread 4776: XXXX 1708355167834, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355167933 XXXX 1708355167933, Thread 4776: XXXX 1708355167933, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355167936 XXXX 1708355167936, Thread 4776: XXXX 1708355167936, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168035 XXXX 1708355168035, Thread 4776: XXXX 1708355168035, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168037 XXXX 1708355168037, Thread 4776: XXXX 1708355168037, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168135 XXXX 1708355168135, Thread 4776: XXXX 1708355168135, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168137 XXXX 1708355168137, Thread 4776: XXXX 1708355168137, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168237 XXXX 1708355168237, Thread 4776: XXXX 1708355168237, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168239 XXXX 1708355168239, Thread 4776: XXXX 1708355168239, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168338 XXXX 1708355168338, Thread 4776: XXXX 1708355168338, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168340 XXXX 1708355168340, Thread 4776: XXXX 1708355168340, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168439 XXXX 1708355168439, Thread 4776: XXXX 1708355168439, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168441 XXXX 1708355168441, Thread 4776: XXXX 1708355168441, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168540 XXXX 1708355168540, Thread 4776: XXXX 1708355168540, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168542 XXXX 1708355168542, Thread 4776: XXXX 1708355168542, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168642 XXXX 1708355168642, Thread 4776: XXXX 1708355168642, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168644 XXXX 1708355168644, Thread 4776: XXXX 1708355168644, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168742 XXXX 1708355168742, Thread 4776: XXXX 1708355168742, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168744 XXXX 1708355168744, Thread 4776: XXXX 1708355168744, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168844 XXXX 1708355168844, Thread 4776: XXXX 1708355168844, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168846 XXXX 1708355168846, Thread 4776: XXXX 1708355168846, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355168944 XXXX 1708355168944, Thread 4776: XXXX 1708355168944, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355168946 XXXX 1708355168946, Thread 4776: XXXX 1708355168946, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169045 XXXX 1708355169045, Thread 4776: XXXX 1708355169045, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169047 XXXX 1708355169047, Thread 4776: XXXX 1708355169047, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169146 XXXX 1708355169146, Thread 4776: XXXX 1708355169146, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169148 XXXX 1708355169148, Thread 4776: XXXX 1708355169148, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169245 XXXX 1708355169245, Thread 4776: XXXX 1708355169245, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169247 XXXX 1708355169247, Thread 4776: XXXX 1708355169247, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169345 XXXX 1708355169345, Thread 4776: XXXX 1708355169345, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169347 XXXX 1708355169347, Thread 4776: XXXX 1708355169347, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169445 XXXX 1708355169445, Thread 4776: XXXX 1708355169445, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169446 XXXX 1708355169446, Thread 4776: XXXX 1708355169446, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169548 XXXX 1708355169548, Thread 4776: XXXX 1708355169548, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169550 XXXX 1708355169550, Thread 4776: XXXX 1708355169550, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169646 XXXX 1708355169646, Thread 4776: XXXX 1708355169646, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169648 XXXX 1708355169648, Thread 4776: XXXX 1708355169648, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169747 XXXX 1708355169747, Thread 4776: XXXX 1708355169747, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169750 XXXX 1708355169750, Thread 4776: XXXX 1708355169750, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169848 XXXX 1708355169848, Thread 4776: XXXX 1708355169848, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169850 XXXX 1708355169850, Thread 4776: XXXX 1708355169850, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355169949 XXXX 1708355169948, Thread 4776: XXXX 1708355169948, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355169951 XXXX 1708355169951, Thread 4776: XXXX 1708355169951, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170050 XXXX 1708355170050, Thread 4776: XXXX 1708355170050, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170053 XXXX 1708355170053, Thread 4776: XXXX 1708355170053, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170151 XXXX 1708355170151, Thread 4776: XXXX 1708355170151, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170153 XXXX 1708355170153, Thread 4776: XXXX 1708355170153, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170252 XXXX 1708355170252, Thread 4776: XXXX 1708355170252, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170254 XXXX 1708355170253, Thread 4776: XXXX 1708355170253, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170354 XXXX 1708355170354, Thread 4776: XXXX 1708355170354, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170355 XXXX 1708355170355, Thread 4776: XXXX 1708355170355, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170453 XXXX 1708355170453, Thread 4776: XXXX 1708355170453, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170455 XXXX 1708355170455, Thread 4776: XXXX 1708355170455, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170554 XXXX 1708355170554, Thread 4776: XXXX 1708355170554, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170556 XXXX 1708355170556, Thread 4776: XXXX 1708355170556, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170655 XXXX 1708355170655, Thread 4776: XXXX 1708355170655, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170658 XXXX 1708355170658, Thread 4776: XXXX 1708355170658, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170755 XXXX 1708355170755, Thread 4776: XXXX 1708355170755, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170758 XXXX 1708355170758, Thread 4776: XXXX 1708355170758, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170857 XXXX 1708355170857, Thread 4776: XXXX 1708355170857, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170859 XXXX 1708355170859, Thread 4776: XXXX 1708355170859, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355170957 XXXX 1708355170957, Thread 4776: XXXX 1708355170957, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355170959 XXXX 1708355170959, Thread 4776: XXXX 1708355170959, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171057 XXXX 1708355171057, Thread 4776: XXXX 1708355171057, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171059 XXXX 1708355171059, Thread 4776: XXXX 1708355171059, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171158 XXXX 1708355171158, Thread 4776: XXXX 1708355171158, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171161 XXXX 1708355171161, Thread 4776: XXXX 1708355171161, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171258 XXXX 1708355171258, Thread 4776: XXXX 1708355171258, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171260 XXXX 1708355171260, Thread 4776: XXXX 1708355171260, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171361 XXXX 1708355171361, Thread 4776: XXXX 1708355171361, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171364 XXXX 1708355171364, Thread 4776: XXXX 1708355171364, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171461 XXXX 1708355171461, Thread 4776: XXXX 1708355171461, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171463 XXXX 1708355171463, Thread 4776: XXXX 1708355171463, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171560 XXXX 1708355171560, Thread 4776: XXXX 1708355171560, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171563 XXXX 1708355171563, Thread 4776: XXXX 1708355171563, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171662 XXXX 1708355171662, Thread 4776: XXXX 1708355171662, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171664 XXXX 1708355171664, Thread 4776: XXXX 1708355171664, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171762 XXXX 1708355171762, Thread 4776: XXXX 1708355171762, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171765 XXXX 1708355171765, Thread 4776: XXXX 1708355171765, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171863 XXXX 1708355171863, Thread 4776: XXXX 1708355171863, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171865 XXXX 1708355171865, Thread 4776: XXXX 1708355171865, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355171963 XXXX 1708355171963, Thread 4776: XXXX 1708355171963, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355171965 XXXX 1708355171965, Thread 4776: XXXX 1708355171965, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172063 XXXX 1708355172063, Thread 4776: XXXX 1708355172063, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172066 XXXX 1708355172066, Thread 4776: XXXX 1708355172066, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172163 XXXX 1708355172163, Thread 4776: XXXX 1708355172163, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172166 XXXX 1708355172166, Thread 4776: XXXX 1708355172166, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172266 XXXX 1708355172266, Thread 4776: XXXX 1708355172266, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172268 XXXX 1708355172268, Thread 4776: XXXX 1708355172268, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172366 XXXX 1708355172366, Thread 4776: XXXX 1708355172366, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172368 XXXX 1708355172368, Thread 4776: XXXX 1708355172368, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172467 XXXX 1708355172467, Thread 4776: XXXX 1708355172467, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172470 XXXX 1708355172470, Thread 4776: XXXX 1708355172470, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172568 XXXX 1708355172568, Thread 4776: XXXX 1708355172568, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172570 XXXX 1708355172570, Thread 4776: XXXX 1708355172570, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172670 XXXX 1708355172670, Thread 4776: XXXX 1708355172670, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172672 XXXX 1708355172672, Thread 4776: XXXX 1708355172672, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172772 XXXX 1708355172772, Thread 4776: XXXX 1708355172772, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172774 XXXX 1708355172774, Thread 4776: XXXX 1708355172774, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172873 XXXX 1708355172873, Thread 4776: XXXX 1708355172873, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172875 XXXX 1708355172875, Thread 4776: XXXX 1708355172875, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355172975 XXXX 1708355172975, Thread 4776: XXXX 1708355172975, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355172978 XXXX 1708355172978, Thread 4776: XXXX 1708355172978, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173075 XXXX 1708355173075, Thread 4776: XXXX 1708355173075, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173078 XXXX 1708355173078, Thread 4776: XXXX 1708355173078, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173176 XXXX 1708355173176, Thread 4776: XXXX 1708355173176, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173178 XXXX 1708355173178, Thread 4776: XXXX 1708355173178, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173277 XXXX 1708355173277, Thread 4776: XXXX 1708355173277, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173279 XXXX 1708355173279, Thread 4776: XXXX 1708355173279, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173378 XXXX 1708355173378, Thread 4776: XXXX 1708355173378, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173380 XXXX 1708355173380, Thread 4776: XXXX 1708355173380, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173478 XXXX 1708355173478, Thread 4776: XXXX 1708355173478, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173480 XXXX 1708355173480, Thread 4776: XXXX 1708355173480, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173580 XXXX 1708355173580, Thread 4776: XXXX 1708355173580, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173582 XXXX 1708355173582, Thread 4776: XXXX 1708355173582, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173680 XXXX 1708355173680, Thread 4776: XXXX 1708355173680, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173682 XXXX 1708355173682, Thread 4776: XXXX 1708355173682, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173779 XXXX 1708355173779, Thread 4776: XXXX 1708355173779, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173782 XXXX 1708355173782, Thread 4776: XXXX 1708355173782, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173880 XXXX 1708355173880, Thread 4776: XXXX 1708355173880, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173882 XXXX 1708355173882, Thread 4776: XXXX 1708355173882, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355173981 XXXX 1708355173981, Thread 4776: XXXX 1708355173981, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355173983 XXXX 1708355173983, Thread 4776: XXXX 1708355173983, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174081 XXXX 1708355174081, Thread 4776: XXXX 1708355174081, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174083 XXXX 1708355174083, Thread 4776: XXXX 1708355174083, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174183 XXXX 1708355174183, Thread 4776: XXXX 1708355174183, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174185 XXXX 1708355174185, Thread 4776: XXXX 1708355174185, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174285 XXXX 1708355174285, Thread 4776: XXXX 1708355174285, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174287 XXXX 1708355174287, Thread 4776: XXXX 1708355174287, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174385 XXXX 1708355174385, Thread 4776: XXXX 1708355174385, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174388 XXXX 1708355174388, Thread 4776: XXXX 1708355174388, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174485 XXXX 1708355174485, Thread 4776: XXXX 1708355174485, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174488 XXXX 1708355174488, Thread 4776: XXXX 1708355174488, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174586 XXXX 1708355174586, Thread 4776: XXXX 1708355174586, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174588 XXXX 1708355174588, Thread 4776: XXXX 1708355174588, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174686 XXXX 1708355174686, Thread 4776: XXXX 1708355174686, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174688 XXXX 1708355174688, Thread 4776: XXXX 1708355174688, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174787 XXXX 1708355174787, Thread 4776: XXXX 1708355174787, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174789 XXXX 1708355174789, Thread 4776: XXXX 1708355174789, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174889 XXXX 1708355174889, Thread 4776: XXXX 1708355174889, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174891 XXXX 1708355174891, Thread 4776: XXXX 1708355174891, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355174988 XXXX 1708355174988, Thread 4776: XXXX 1708355174988, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355174990 XXXX 1708355174990, Thread 4776: XXXX 1708355174990, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175088 XXXX 1708355175088, Thread 4776: XXXX 1708355175088, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175091 XXXX 1708355175091, Thread 4776: XXXX 1708355175091, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175188 XXXX 1708355175188, Thread 4776: XXXX 1708355175188, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175190 XXXX 1708355175190, Thread 4776: XXXX 1708355175190, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175289 XXXX 1708355175289, Thread 4776: XXXX 1708355175289, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175291 XXXX 1708355175291, Thread 4776: XXXX 1708355175291, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175388 XXXX 1708355175388, Thread 4776: XXXX 1708355175388, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175390 XXXX 1708355175390, Thread 4776: XXXX 1708355175390, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175489 XXXX 1708355175489, Thread 4776: XXXX 1708355175489, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175491 XXXX 1708355175491, Thread 4776: XXXX 1708355175491, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175590 XXXX 1708355175590, Thread 4776: XXXX 1708355175590, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175592 XXXX 1708355175592, Thread 4776: XXXX 1708355175592, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175691 XXXX 1708355175691, Thread 4776: XXXX 1708355175691, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175693 XXXX 1708355175693, Thread 4776: XXXX 1708355175693, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175792 XXXX 1708355175792, Thread 4776: XXXX 1708355175792, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175794 XXXX 1708355175794, Thread 4776: XXXX 1708355175794, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175892 XXXX 1708355175892, Thread 4776: XXXX 1708355175892, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175894 XXXX 1708355175894, Thread 4776: XXXX 1708355175894, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355175994 XXXX 1708355175994, Thread 4776: XXXX 1708355175993, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355175996 XXXX 1708355175996, Thread 4776: XXXX 1708355175996, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176094 XXXX 1708355176094, Thread 4776: XXXX 1708355176094, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176097 XXXX 1708355176097, Thread 4776: XXXX 1708355176097, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176196 XXXX 1708355176196, Thread 4776: XXXX 1708355176195, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176198 XXXX 1708355176198, Thread 4776: XXXX 1708355176198, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176297 XXXX 1708355176297, Thread 4776: XXXX 1708355176297, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176300 XXXX 1708355176300, Thread 4776: XXXX 1708355176300, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176398 XXXX 1708355176397, Thread 4776: XXXX 1708355176397, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176400 XXXX 1708355176400, Thread 4776: XXXX 1708355176400, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176498 XXXX 1708355176498, Thread 4776: XXXX 1708355176498, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176499 XXXX 1708355176499, Thread 4776: XXXX 1708355176499, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176598 XXXX 1708355176598, Thread 4776: XXXX 1708355176598, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176600 XXXX 1708355176600, Thread 4776: XXXX 1708355176600, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176700 XXXX 1708355176700, Thread 4776: XXXX 1708355176700, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176702 XXXX 1708355176702, Thread 4776: XXXX 1708355176702, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176801 XXXX 1708355176801, Thread 4776: XXXX 1708355176801, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176804 XXXX 1708355176804, Thread 4776: XXXX 1708355176804, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355176903 XXXX 1708355176903, Thread 4776: XXXX 1708355176903, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355176906 XXXX 1708355176906, Thread 4776: XXXX 1708355176906, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177004 XXXX 1708355177004, Thread 4776: XXXX 1708355177004, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177006 XXXX 1708355177006, Thread 4776: XXXX 1708355177006, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177104 XXXX 1708355177104, Thread 4776: XXXX 1708355177104, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177106 XXXX 1708355177106, Thread 4776: XXXX 1708355177106, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177204 XXXX 1708355177204, Thread 4776: XXXX 1708355177204, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177206 XXXX 1708355177206, Thread 4776: XXXX 1708355177206, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177305 XXXX 1708355177305, Thread 4776: XXXX 1708355177305, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177307 XXXX 1708355177307, Thread 4776: XXXX 1708355177307, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177407 XXXX 1708355177407, Thread 4776: XXXX 1708355177407, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177410 XXXX 1708355177410, Thread 4776: XXXX 1708355177410, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177508 XXXX 1708355177508, Thread 4776: XXXX 1708355177508, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177511 XXXX 1708355177511, Thread 4776: XXXX 1708355177511, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177608 XXXX 1708355177608, Thread 4776: XXXX 1708355177608, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177610 XXXX 1708355177610, Thread 4776: XXXX 1708355177610, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177709 XXXX 1708355177709, Thread 4776: XXXX 1708355177709, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177712 XXXX 1708355177712, Thread 4776: XXXX 1708355177712, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177810 XXXX 1708355177810, Thread 4776: XXXX 1708355177810, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177813 XXXX 1708355177813, Thread 4776: XXXX 1708355177813, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355177911 XXXX 1708355177911, Thread 4776: XXXX 1708355177911, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355177915 XXXX 1708355177915, Thread 4776: XXXX 1708355177915, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178012 XXXX 1708355178012, Thread 4776: XXXX 1708355178012, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178014 XXXX 1708355178014, Thread 4776: XXXX 1708355178014, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178113 XXXX 1708355178113, Thread 4776: XXXX 1708355178113, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178115 XXXX 1708355178115, Thread 4776: XXXX 1708355178115, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178213 XXXX 1708355178213, Thread 4776: XXXX 1708355178213, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178215 XXXX 1708355178215, Thread 4776: XXXX 1708355178215, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178313 XXXX 1708355178313, Thread 4776: XXXX 1708355178313, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178316 XXXX 1708355178316, Thread 4776: XXXX 1708355178316, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178414 XXXX 1708355178414, Thread 4776: XXXX 1708355178414, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178417 XXXX 1708355178417, Thread 4776: XXXX 1708355178417, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178515 XXXX 1708355178515, Thread 4776: XXXX 1708355178515, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178517 XXXX 1708355178517, Thread 4776: XXXX 1708355178517, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178615 XXXX 1708355178615, Thread 4776: XXXX 1708355178615, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178617 XXXX 1708355178617, Thread 4776: XXXX 1708355178617, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178716 XXXX 1708355178716, Thread 4776: XXXX 1708355178716, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178718 XXXX 1708355178718, Thread 4776: XXXX 1708355178718, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178816 XXXX 1708355178816, Thread 4776: XXXX 1708355178816, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178819 XXXX 1708355178819, Thread 4776: XXXX 1708355178819, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355178916 XXXX 1708355178916, Thread 4776: XXXX 1708355178916, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355178918 XXXX 1708355178918, Thread 4776: XXXX 1708355178918, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179017 XXXX 1708355179017, Thread 4776: XXXX 1708355179017, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179019 XXXX 1708355179019, Thread 4776: XXXX 1708355179019, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179117 XXXX 1708355179117, Thread 4776: XXXX 1708355179117, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179120 XXXX 1708355179120, Thread 4776: XXXX 1708355179120, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179219 XXXX 1708355179219, Thread 4776: XXXX 1708355179219, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179222 XXXX 1708355179222, Thread 4776: XXXX 1708355179222, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179321 XXXX 1708355179321, Thread 4776: XXXX 1708355179321, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179324 XXXX 1708355179324, Thread 4776: XXXX 1708355179324, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179422 XXXX 1708355179422, Thread 4776: XXXX 1708355179422, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179425 XXXX 1708355179425, Thread 4776: XXXX 1708355179425, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179524 XXXX 1708355179524, Thread 4776: XXXX 1708355179524, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179526 XXXX 1708355179526, Thread 4776: XXXX 1708355179526, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179624 XXXX 1708355179624, Thread 4776: XXXX 1708355179624, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179627 XXXX 1708355179627, Thread 4776: XXXX 1708355179627, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179725 XXXX 1708355179725, Thread 4776: XXXX 1708355179725, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179727 XXXX 1708355179727, Thread 4776: XXXX 1708355179727, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179827 XXXX 1708355179827, Thread 4776: XXXX 1708355179827, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179829 XXXX 1708355179829, Thread 4776: XXXX 1708355179829, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355179926 XXXX 1708355179926, Thread 4776: XXXX 1708355179926, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355179929 XXXX 1708355179929, Thread 4776: XXXX 1708355179929, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180027 XXXX 1708355180027, Thread 4776: XXXX 1708355180027, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180030 XXXX 1708355180030, Thread 4776: XXXX 1708355180030, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180127 XXXX 1708355180127, Thread 4776: XXXX 1708355180127, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180130 XXXX 1708355180130, Thread 4776: XXXX 1708355180130, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180227 XXXX 1708355180227, Thread 4776: XXXX 1708355180227, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180230 XXXX 1708355180230, Thread 4776: XXXX 1708355180230, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180328 XXXX 1708355180328, Thread 4776: XXXX 1708355180328, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180330 XXXX 1708355180330, Thread 4776: XXXX 1708355180330, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180429 XXXX 1708355180429, Thread 4776: XXXX 1708355180429, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180431 XXXX 1708355180431, Thread 4776: XXXX 1708355180431, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180530 XXXX 1708355180530, Thread 4776: XXXX 1708355180530, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180532 XXXX 1708355180532, Thread 4776: XXXX 1708355180532, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180631 XXXX 1708355180631, Thread 4776: XXXX 1708355180631, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180633 XXXX 1708355180633, Thread 4776: XXXX 1708355180633, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180733 XXXX 1708355180733, Thread 4776: XXXX 1708355180733, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180736 XXXX 1708355180736, Thread 4776: XXXX 1708355180736, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180833 XXXX 1708355180833, Thread 4776: XXXX 1708355180833, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180836 XXXX 1708355180836, Thread 4776: XXXX 1708355180836, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355180935 XXXX 1708355180933, Thread 4776: XXXX 1708355180933, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355180937 XXXX 1708355180937, Thread 4776: XXXX 1708355180937, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181035 XXXX 1708355181035, Thread 4776: XXXX 1708355181035, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181037 XXXX 1708355181037, Thread 4776: XXXX 1708355181037, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181135 XXXX 1708355181135, Thread 4776: XXXX 1708355181135, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181138 XXXX 1708355181138, Thread 4776: XXXX 1708355181138, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181238 XXXX 1708355181238, Thread 4776: XXXX 1708355181238, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181240 XXXX 1708355181240, Thread 4776: XXXX 1708355181240, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181339 XXXX 1708355181339, Thread 4776: XXXX 1708355181339, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181341 XXXX 1708355181341, Thread 4776: XXXX 1708355181341, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181442 XXXX 1708355181442, Thread 4776: XXXX 1708355181442, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181444 XXXX 1708355181444, Thread 4776: XXXX 1708355181444, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181543 XXXX 1708355181543, Thread 4776: XXXX 1708355181543, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181546 XXXX 1708355181546, Thread 4776: XXXX 1708355181546, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181643 XXXX 1708355181643, Thread 4776: XXXX 1708355181643, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181646 XXXX 1708355181646, Thread 4776: XXXX 1708355181646, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181745 XXXX 1708355181745, Thread 4776: XXXX 1708355181745, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181748 XXXX 1708355181748, Thread 4776: XXXX 1708355181748, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181846 XXXX 1708355181846, Thread 4776: XXXX 1708355181846, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181849 XXXX 1708355181849, Thread 4776: XXXX 1708355181849, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355181947 XXXX 1708355181947, Thread 4776: XXXX 1708355181947, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355181949 XXXX 1708355181949, Thread 4776: XXXX 1708355181949, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182049 XXXX 1708355182049, Thread 4776: XXXX 1708355182049, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182052 XXXX 1708355182052, Thread 4776: XXXX 1708355182052, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182150 XXXX 1708355182150, Thread 4776: XXXX 1708355182150, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182153 XXXX 1708355182153, Thread 4776: XXXX 1708355182153, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182251 XXXX 1708355182251, Thread 4776: XXXX 1708355182251, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182253 XXXX 1708355182253, Thread 4776: XXXX 1708355182253, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182352 XXXX 1708355182352, Thread 4776: XXXX 1708355182352, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182354 XXXX 1708355182354, Thread 4776: XXXX 1708355182354, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182454 XXXX 1708355182454, Thread 4776: XXXX 1708355182453, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182455 XXXX 1708355182455, Thread 4776: XXXX 1708355182455, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182554 XXXX 1708355182554, Thread 4776: XXXX 1708355182554, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182557 XXXX 1708355182557, Thread 4776: XXXX 1708355182557, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182655 XXXX 1708355182655, Thread 4776: XXXX 1708355182655, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182657 XXXX 1708355182657, Thread 4776: XXXX 1708355182657, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182756 XXXX 1708355182756, Thread 4776: XXXX 1708355182756, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182759 XXXX 1708355182759, Thread 4776: XXXX 1708355182759, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182857 XXXX 1708355182857, Thread 4776: XXXX 1708355182857, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182860 XXXX 1708355182860, Thread 4776: XXXX 1708355182860, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355182959 XXXX 1708355182959, Thread 4776: XXXX 1708355182959, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355182962 XXXX 1708355182962, Thread 4776: XXXX 1708355182962, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183060 XXXX 1708355183060, Thread 4776: XXXX 1708355183060, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183063 XXXX 1708355183063, Thread 4776: XXXX 1708355183063, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183161 XXXX 1708355183161, Thread 4776: XXXX 1708355183161, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183164 XXXX 1708355183164, Thread 4776: XXXX 1708355183164, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183261 XXXX 1708355183261, Thread 4776: XXXX 1708355183261, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183263 XXXX 1708355183263, Thread 4776: XXXX 1708355183263, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183363 XXXX 1708355183363, Thread 4776: XXXX 1708355183363, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183365 XXXX 1708355183365, Thread 4776: XXXX 1708355183365, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183464 XXXX 1708355183464, Thread 4776: XXXX 1708355183464, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183466 XXXX 1708355183466, Thread 4776: XXXX 1708355183466, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183565 XXXX 1708355183565, Thread 4776: XXXX 1708355183564, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183567 XXXX 1708355183567, Thread 4776: XXXX 1708355183567, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183667 XXXX 1708355183667, Thread 4776: XXXX 1708355183667, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183669 XXXX 1708355183669, Thread 4776: XXXX 1708355183669, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183768 XXXX 1708355183768, Thread 4776: XXXX 1708355183768, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183771 XXXX 1708355183771, Thread 4776: XXXX 1708355183771, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183868 XXXX 1708355183868, Thread 4776: XXXX 1708355183868, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183871 XXXX 1708355183871, Thread 4776: XXXX 1708355183871, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355183970 XXXX 1708355183970, Thread 4776: XXXX 1708355183970, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355183973 XXXX 1708355183973, Thread 4776: XXXX 1708355183973, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184071 XXXX 1708355184071, Thread 4776: XXXX 1708355184071, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184073 XXXX 1708355184073, Thread 4776: XXXX 1708355184073, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184172 XXXX 1708355184172, Thread 4776: XXXX 1708355184172, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184174 XXXX 1708355184174, Thread 4776: XXXX 1708355184174, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184273 XXXX 1708355184273, Thread 4776: XXXX 1708355184273, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184276 XXXX 1708355184276, Thread 4776: XXXX 1708355184276, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184373 XXXX 1708355184373, Thread 4776: XXXX 1708355184373, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184375 XXXX 1708355184375, Thread 4776: XXXX 1708355184375, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184475 XXXX 1708355184475, Thread 4776: XXXX 1708355184475, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184477 XXXX 1708355184477, Thread 4776: XXXX 1708355184477, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184574 XXXX 1708355184574, Thread 4776: XXXX 1708355184574, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184577 XXXX 1708355184577, Thread 4776: XXXX 1708355184577, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184675 XXXX 1708355184675, Thread 4776: XXXX 1708355184675, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184678 XXXX 1708355184678, Thread 4776: XXXX 1708355184678, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184775 XXXX 1708355184775, Thread 4776: XXXX 1708355184775, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184778 XXXX 1708355184778, Thread 4776: XXXX 1708355184778, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184876 XXXX 1708355184876, Thread 4776: XXXX 1708355184876, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184878 XXXX 1708355184878, Thread 4776: XXXX 1708355184878, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355184978 XXXX 1708355184978, Thread 4776: XXXX 1708355184978, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355184980 XXXX 1708355184980, Thread 4776: XXXX 1708355184980, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185078 XXXX 1708355185078, Thread 4776: XXXX 1708355185078, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185080 XXXX 1708355185080, Thread 4776: XXXX 1708355185080, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185177 XXXX 1708355185177, Thread 4776: XXXX 1708355185177, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185180 XXXX 1708355185180, Thread 4776: XXXX 1708355185180, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185278 XXXX 1708355185278, Thread 4776: XXXX 1708355185278, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185280 XXXX 1708355185280, Thread 4776: XXXX 1708355185280, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185377 XXXX 1708355185377, Thread 4776: XXXX 1708355185377, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185380 XXXX 1708355185380, Thread 4776: XXXX 1708355185380, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185477 XXXX 1708355185477, Thread 4776: XXXX 1708355185477, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185480 XXXX 1708355185480, Thread 4776: XXXX 1708355185480, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185578 XXXX 1708355185578, Thread 4776: XXXX 1708355185578, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185580 XXXX 1708355185580, Thread 4776: XXXX 1708355185580, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185679 XXXX 1708355185679, Thread 4776: XXXX 1708355185679, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185682 XXXX 1708355185682, Thread 4776: XXXX 1708355185682, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185781 XXXX 1708355185781, Thread 4776: XXXX 1708355185781, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185784 XXXX 1708355185784, Thread 4776: XXXX 1708355185784, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185882 XXXX 1708355185882, Thread 4776: XXXX 1708355185882, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185885 XXXX 1708355185885, Thread 4776: XXXX 1708355185885, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355185983 XXXX 1708355185983, Thread 4776: XXXX 1708355185983, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355185986 XXXX 1708355185986, Thread 4776: XXXX 1708355185986, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186084 XXXX 1708355186084, Thread 4776: XXXX 1708355186084, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186087 XXXX 1708355186087, Thread 4776: XXXX 1708355186087, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186185 XXXX 1708355186185, Thread 4776: XXXX 1708355186185, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186187 XXXX 1708355186187, Thread 4776: XXXX 1708355186187, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186285 XXXX 1708355186285, Thread 4776: XXXX 1708355186285, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186288 XXXX 1708355186288, Thread 4776: XXXX 1708355186288, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186386 XXXX 1708355186386, Thread 4776: XXXX 1708355186386, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186388 XXXX 1708355186388, Thread 4776: XXXX 1708355186388, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186487 XXXX 1708355186487, Thread 4776: XXXX 1708355186487, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186490 XXXX 1708355186490, Thread 4776: XXXX 1708355186490, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186588 XXXX 1708355186588, Thread 4776: XXXX 1708355186588, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186590 XXXX 1708355186590, Thread 4776: XXXX 1708355186590, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186690 XXXX 1708355186690, Thread 4776: XXXX 1708355186690, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186692 XXXX 1708355186692, Thread 4776: XXXX 1708355186692, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186790 XXXX 1708355186790, Thread 4776: XXXX 1708355186790, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186793 XXXX 1708355186793, Thread 4776: XXXX 1708355186793, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186890 XXXX 1708355186890, Thread 4776: XXXX 1708355186890, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186893 XXXX 1708355186893, Thread 4776: XXXX 1708355186893, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355186990 XXXX 1708355186990, Thread 4776: XXXX 1708355186990, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355186992 XXXX 1708355186992, Thread 4776: XXXX 1708355186992, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187093 XXXX 1708355187093, Thread 4776: XXXX 1708355187093, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187095 XXXX 1708355187095, Thread 4776: XXXX 1708355187095, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187193 XXXX 1708355187192, Thread 4776: XXXX 1708355187192, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187196 XXXX 1708355187196, Thread 4776: XXXX 1708355187196, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187294 XXXX 1708355187294, Thread 4776: XXXX 1708355187294, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187297 XXXX 1708355187297, Thread 4776: XXXX 1708355187297, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187393 XXXX 1708355187393, Thread 4776: XXXX 1708355187393, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187396 XXXX 1708355187396, Thread 4776: XXXX 1708355187396, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187495 XXXX 1708355187495, Thread 4776: XXXX 1708355187495, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187497 XXXX 1708355187497, Thread 4776: XXXX 1708355187497, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187595 XXXX 1708355187595, Thread 4776: XXXX 1708355187595, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187598 XXXX 1708355187598, Thread 4776: XXXX 1708355187598, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187697 XXXX 1708355187697, Thread 4776: XXXX 1708355187697, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187699 XXXX 1708355187699, Thread 4776: XXXX 1708355187699, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187797 XXXX 1708355187797, Thread 4776: XXXX 1708355187797, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187800 XXXX 1708355187800, Thread 4776: XXXX 1708355187800, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187897 XXXX 1708355187897, Thread 4776: XXXX 1708355187897, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355187899 XXXX 1708355187899, Thread 4776: XXXX 1708355187899, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355187997 XXXX 1708355187997, Thread 4776: XXXX 1708355187997, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188000 XXXX 1708355188000, Thread 4776: XXXX 1708355188000, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188098 XXXX 1708355188098, Thread 4776: XXXX 1708355188098, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188101 XXXX 1708355188101, Thread 4776: XXXX 1708355188101, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188199 XXXX 1708355188199, Thread 4776: XXXX 1708355188199, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188202 XXXX 1708355188202, Thread 4776: XXXX 1708355188202, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188300 XXXX 1708355188300, Thread 4776: XXXX 1708355188300, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188302 XXXX 1708355188302, Thread 4776: XXXX 1708355188302, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188400 XXXX 1708355188400, Thread 4776: XXXX 1708355188400, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188402 XXXX 1708355188402, Thread 4776: XXXX 1708355188402, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188502 XXXX 1708355188502, Thread 4776: XXXX 1708355188502, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188504 XXXX 1708355188504, Thread 4776: XXXX 1708355188504, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188604 XXXX 1708355188604, Thread 4776: XXXX 1708355188604, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188606 XXXX 1708355188606, Thread 4776: XXXX 1708355188606, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188705 XXXX 1708355188705, Thread 4776: XXXX 1708355188705, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188708 XXXX 1708355188708, Thread 4776: XXXX 1708355188708, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188806 XXXX 1708355188806, Thread 4776: XXXX 1708355188806, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188808 XXXX 1708355188808, Thread 4776: XXXX 1708355188808, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355188905 XXXX 1708355188905, Thread 4776: XXXX 1708355188905, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355188908 XXXX 1708355188908, Thread 4776: XXXX 1708355188908, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189007 XXXX 1708355189007, Thread 4776: XXXX 1708355189007, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189009 XXXX 1708355189009, Thread 4776: XXXX 1708355189009, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189108 XXXX 1708355189108, Thread 4776: XXXX 1708355189108, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189110 XXXX 1708355189110, Thread 4776: XXXX 1708355189110, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189209 XXXX 1708355189209, Thread 4776: XXXX 1708355189209, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189212 XXXX 1708355189212, Thread 4776: XXXX 1708355189212, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189309 XXXX 1708355189309, Thread 4776: XXXX 1708355189309, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189312 XXXX 1708355189312, Thread 4776: XXXX 1708355189312, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189411 XXXX 1708355189411, Thread 4776: XXXX 1708355189411, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189413 XXXX 1708355189413, Thread 4776: XXXX 1708355189413, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189511 XXXX 1708355189511, Thread 4776: XXXX 1708355189511, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189513 XXXX 1708355189513, Thread 4776: XXXX 1708355189513, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189613 XXXX 1708355189613, Thread 4776: XXXX 1708355189613, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189615 XXXX 1708355189615, Thread 4776: XXXX 1708355189615, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189715 XXXX 1708355189715, Thread 4776: XXXX 1708355189715, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189717 XXXX 1708355189717, Thread 4776: XXXX 1708355189717, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189815 XXXX 1708355189815, Thread 4776: XXXX 1708355189815, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189817 XXXX 1708355189817, Thread 4776: XXXX 1708355189817, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355189916 XXXX 1708355189916, Thread 4776: XXXX 1708355189916, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355189919 XXXX 1708355189919, Thread 4776: XXXX 1708355189919, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190016 XXXX 1708355190016, Thread 4776: XXXX 1708355190016, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190019 XXXX 1708355190019, Thread 4776: XXXX 1708355190019, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190116 XXXX 1708355190116, Thread 4776: XXXX 1708355190116, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190118 XXXX 1708355190118, Thread 4776: XXXX 1708355190118, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190217 XXXX 1708355190217, Thread 4776: XXXX 1708355190217, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190220 XXXX 1708355190220, Thread 4776: XXXX 1708355190220, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190319 XXXX 1708355190319, Thread 4776: XXXX 1708355190319, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190322 XXXX 1708355190322, Thread 4776: XXXX 1708355190322, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190420 XXXX 1708355190420, Thread 4776: XXXX 1708355190420, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190423 XXXX 1708355190423, Thread 4776: XXXX 1708355190423, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190521 XXXX 1708355190521, Thread 4776: XXXX 1708355190521, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190523 XXXX 1708355190523, Thread 4776: XXXX 1708355190523, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190622 XXXX 1708355190622, Thread 4776: XXXX 1708355190622, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190624 XXXX 1708355190624, Thread 4776: XXXX 1708355190624, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190722 XXXX 1708355190722, Thread 4776: XXXX 1708355190722, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190725 XXXX 1708355190725, Thread 4776: XXXX 1708355190725, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190824 XXXX 1708355190824, Thread 4776: XXXX 1708355190824, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190826 XXXX 1708355190826, Thread 4776: XXXX 1708355190826, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355190925 XXXX 1708355190925, Thread 4776: XXXX 1708355190925, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355190928 XXXX 1708355190928, Thread 4776: XXXX 1708355190928, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191026 XXXX 1708355191026, Thread 4776: XXXX 1708355191026, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191028 XXXX 1708355191028, Thread 4776: XXXX 1708355191028, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191125 XXXX 1708355191125, Thread 4776: XXXX 1708355191125, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191128 XXXX 1708355191128, Thread 4776: XXXX 1708355191128, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191225 XXXX 1708355191225, Thread 4776: XXXX 1708355191225, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191228 XXXX 1708355191228, Thread 4776: XXXX 1708355191228, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191326 XXXX 1708355191326, Thread 4776: XXXX 1708355191326, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191328 XXXX 1708355191328, Thread 4776: XXXX 1708355191328, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191427 XXXX 1708355191427, Thread 4776: XXXX 1708355191427, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191429 XXXX 1708355191429, Thread 4776: XXXX 1708355191429, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191528 XXXX 1708355191528, Thread 4776: XXXX 1708355191528, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191530 XXXX 1708355191530, Thread 4776: XXXX 1708355191530, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191627 XXXX 1708355191627, Thread 4776: XXXX 1708355191627, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191630 XXXX 1708355191630, Thread 4776: XXXX 1708355191630, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191729 XXXX 1708355191729, Thread 4776: XXXX 1708355191729, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191731 XXXX 1708355191731, Thread 4776: XXXX 1708355191731, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191828 XXXX 1708355191828, Thread 4776: XXXX 1708355191828, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191830 XXXX 1708355191830, Thread 4776: XXXX 1708355191830, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355191930 XXXX 1708355191930, Thread 4776: XXXX 1708355191930, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355191932 XXXX 1708355191932, Thread 4776: XXXX 1708355191932, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192031 XXXX 1708355192031, Thread 4776: XXXX 1708355192031, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192033 XXXX 1708355192033, Thread 4776: XXXX 1708355192033, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192131 XXXX 1708355192131, Thread 4776: XXXX 1708355192131, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192133 XXXX 1708355192133, Thread 4776: XXXX 1708355192133, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192231 XXXX 1708355192231, Thread 4776: XXXX 1708355192231, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192234 XXXX 1708355192234, Thread 4776: XXXX 1708355192234, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192331 XXXX 1708355192331, Thread 4776: XXXX 1708355192331, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192333 XXXX 1708355192333, Thread 4776: XXXX 1708355192333, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192432 XXXX 1708355192432, Thread 4776: XXXX 1708355192432, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192434 XXXX 1708355192434, Thread 4776: XXXX 1708355192434, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192532 XXXX 1708355192532, Thread 4776: XXXX 1708355192532, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192535 XXXX 1708355192535, Thread 4776: XXXX 1708355192535, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192633 XXXX 1708355192633, Thread 4776: XXXX 1708355192633, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192635 XXXX 1708355192635, Thread 4776: XXXX 1708355192635, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192734 XXXX 1708355192734, Thread 4776: XXXX 1708355192734, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192736 XXXX 1708355192736, Thread 4776: XXXX 1708355192736, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192836 XXXX 1708355192836, Thread 4776: XXXX 1708355192836, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192838 XXXX 1708355192838, Thread 4776: XXXX 1708355192838, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355192936 XXXX 1708355192936, Thread 4776: XXXX 1708355192936, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355192939 XXXX 1708355192939, Thread 4776: XXXX 1708355192939, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193037 XXXX 1708355193037, Thread 4776: XXXX 1708355193037, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193040 XXXX 1708355193040, Thread 4776: XXXX 1708355193040, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193137 XXXX 1708355193137, Thread 4776: XXXX 1708355193137, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193140 XXXX 1708355193140, Thread 4776: XXXX 1708355193140, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193238 XXXX 1708355193238, Thread 4776: XXXX 1708355193238, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193241 XXXX 1708355193241, Thread 4776: XXXX 1708355193241, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193339 XXXX 1708355193339, Thread 4776: XXXX 1708355193339, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193342 XXXX 1708355193342, Thread 4776: XXXX 1708355193342, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193439 XXXX 1708355193438, Thread 4776: XXXX 1708355193438, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193442 XXXX 1708355193442, Thread 4776: XXXX 1708355193442, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193539 XXXX 1708355193539, Thread 4776: XXXX 1708355193539, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193542 XXXX 1708355193542, Thread 4776: XXXX 1708355193542, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193641 XXXX 1708355193641, Thread 4776: XXXX 1708355193641, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193643 XXXX 1708355193643, Thread 4776: XXXX 1708355193643, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193743 XXXX 1708355193743, Thread 4776: XXXX 1708355193743, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193745 XXXX 1708355193745, Thread 4776: XXXX 1708355193745, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193843 XXXX 1708355193843, Thread 4776: XXXX 1708355193843, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193846 XXXX 1708355193846, Thread 4776: XXXX 1708355193846, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355193945 XXXX 1708355193945, Thread 4776: XXXX 1708355193945, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355193947 XXXX 1708355193947, Thread 4776: XXXX 1708355193947, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194045 XXXX 1708355194045, Thread 4776: XXXX 1708355194045, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194048 XXXX 1708355194048, Thread 4776: XXXX 1708355194048, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194146 XXXX 1708355194146, Thread 4776: XXXX 1708355194146, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194149 XXXX 1708355194149, Thread 4776: XXXX 1708355194149, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194248 XXXX 1708355194248, Thread 4776: XXXX 1708355194248, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194250 XXXX 1708355194250, Thread 4776: XXXX 1708355194250, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194348 XXXX 1708355194348, Thread 4776: XXXX 1708355194348, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194351 XXXX 1708355194351, Thread 4776: XXXX 1708355194351, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194448 XXXX 1708355194448, Thread 4776: XXXX 1708355194448, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194451 XXXX 1708355194451, Thread 4776: XXXX 1708355194451, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194549 XXXX 1708355194549, Thread 4776: XXXX 1708355194549, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194552 XXXX 1708355194552, Thread 4776: XXXX 1708355194552, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194651 XXXX 1708355194651, Thread 4776: XXXX 1708355194651, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194652 XXXX 1708355194652, Thread 4776: XXXX 1708355194652, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194750 XXXX 1708355194750, Thread 4776: XXXX 1708355194750, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194752 XXXX 1708355194752, Thread 4776: XXXX 1708355194752, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194851 XXXX 1708355194851, Thread 4776: XXXX 1708355194851, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194853 XXXX 1708355194853, Thread 4776: XXXX 1708355194853, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355194953 XXXX 1708355194953, Thread 4776: XXXX 1708355194953, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355194955 XXXX 1708355194955, Thread 4776: XXXX 1708355194955, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195054 XXXX 1708355195054, Thread 4776: XXXX 1708355195054, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195057 XXXX 1708355195057, Thread 4776: XXXX 1708355195057, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195156 XXXX 1708355195156, Thread 4776: XXXX 1708355195156, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195158 XXXX 1708355195158, Thread 4776: XXXX 1708355195158, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195257 XXXX 1708355195257, Thread 4776: XXXX 1708355195257, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195259 XXXX 1708355195259, Thread 4776: XXXX 1708355195259, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195358 XXXX 1708355195358, Thread 4776: XXXX 1708355195358, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195360 XXXX 1708355195360, Thread 4776: XXXX 1708355195360, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195460 XXXX 1708355195460, Thread 4776: XXXX 1708355195460, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195462 XXXX 1708355195462, Thread 4776: XXXX 1708355195462, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195561 XXXX 1708355195561, Thread 4776: XXXX 1708355195561, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195563 XXXX 1708355195563, Thread 4776: XXXX 1708355195563, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195660 XXXX 1708355195660, Thread 4776: XXXX 1708355195660, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195663 XXXX 1708355195663, Thread 4776: XXXX 1708355195663, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195761 XXXX 1708355195761, Thread 4776: XXXX 1708355195761, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195763 XXXX 1708355195763, Thread 4776: XXXX 1708355195763, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195862 XXXX 1708355195862, Thread 4776: XXXX 1708355195862, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195865 XXXX 1708355195865, Thread 4776: XXXX 1708355195865, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355195963 XXXX 1708355195963, Thread 4776: XXXX 1708355195963, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355195965 XXXX 1708355195965, Thread 4776: XXXX 1708355195965, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196063 XXXX 1708355196063, Thread 4776: XXXX 1708355196063, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196065 XXXX 1708355196065, Thread 4776: XXXX 1708355196065, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196164 XXXX 1708355196164, Thread 4776: XXXX 1708355196164, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196167 XXXX 1708355196167, Thread 4776: XXXX 1708355196167, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196264 XXXX 1708355196264, Thread 4776: XXXX 1708355196264, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196266 XXXX 1708355196266, Thread 4776: XXXX 1708355196266, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196364 XXXX 1708355196364, Thread 4776: XXXX 1708355196364, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196365 XXXX 1708355196365, Thread 4776: XXXX 1708355196365, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196466 XXXX 1708355196466, Thread 4776: XXXX 1708355196466, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196468 XXXX 1708355196468, Thread 4776: XXXX 1708355196468, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196567 XXXX 1708355196567, Thread 4776: XXXX 1708355196567, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196570 XXXX 1708355196570, Thread 4776: XXXX 1708355196570, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196668 XXXX 1708355196668, Thread 4776: XXXX 1708355196668, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196671 XXXX 1708355196671, Thread 4776: XXXX 1708355196671, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196770 XXXX 1708355196770, Thread 4776: XXXX 1708355196770, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196772 XXXX 1708355196772, Thread 4776: XXXX 1708355196772, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196871 XXXX 1708355196871, Thread 4776: XXXX 1708355196871, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196873 XXXX 1708355196873, Thread 4776: XXXX 1708355196873, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355196974 XXXX 1708355196974, Thread 4776: XXXX 1708355196974, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355196976 XXXX 1708355196976, Thread 4776: XXXX 1708355196976, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197074 XXXX 1708355197074, Thread 4776: XXXX 1708355197074, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197076 XXXX 1708355197076, Thread 4776: XXXX 1708355197076, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197174 XXXX 1708355197174, Thread 4776: XXXX 1708355197174, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197176 XXXX 1708355197176, Thread 4776: XXXX 1708355197176, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197275 XXXX 1708355197275, Thread 4776: XXXX 1708355197275, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197277 XXXX 1708355197277, Thread 4776: XXXX 1708355197277, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197375 XXXX 1708355197375, Thread 4776: XXXX 1708355197375, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197378 XXXX 1708355197378, Thread 4776: XXXX 1708355197378, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197475 XXXX 1708355197475, Thread 4776: XXXX 1708355197475, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197476 XXXX 1708355197476, Thread 4776: XXXX 1708355197476, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197576 XXXX 1708355197576, Thread 4776: XXXX 1708355197576, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197578 XXXX 1708355197578, Thread 4776: XXXX 1708355197578, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197677 XXXX 1708355197677, Thread 4776: XXXX 1708355197677, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197680 XXXX 1708355197680, Thread 4776: XXXX 1708355197680, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197778 XXXX 1708355197778, Thread 4776: XXXX 1708355197778, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197781 XXXX 1708355197780, Thread 4776: XXXX 1708355197780, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197878 XXXX 1708355197878, Thread 4776: XXXX 1708355197878, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197879 XXXX 1708355197879, Thread 4776: XXXX 1708355197879, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355197978 XXXX 1708355197978, Thread 4776: XXXX 1708355197978, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355197981 XXXX 1708355197981, Thread 4776: XXXX 1708355197981, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198079 XXXX 1708355198079, Thread 4776: XXXX 1708355198079, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198081 XXXX 1708355198081, Thread 4776: XXXX 1708355198081, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198180 XXXX 1708355198180, Thread 4776: XXXX 1708355198180, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198182 XXXX 1708355198182, Thread 4776: XXXX 1708355198182, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198279 XXXX 1708355198279, Thread 4776: XXXX 1708355198279, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198282 XXXX 1708355198282, Thread 4776: XXXX 1708355198281, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198380 XXXX 1708355198380, Thread 4776: XXXX 1708355198380, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198382 XXXX 1708355198382, Thread 4776: XXXX 1708355198382, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198481 XXXX 1708355198481, Thread 4776: XXXX 1708355198481, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198484 XXXX 1708355198484, Thread 4776: XXXX 1708355198484, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198582 XXXX 1708355198582, Thread 4776: XXXX 1708355198582, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198584 XXXX 1708355198584, Thread 4776: XXXX 1708355198584, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198684 XXXX 1708355198684, Thread 4776: XXXX 1708355198684, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198685 XXXX 1708355198685, Thread 4776: XXXX 1708355198685, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198785 XXXX 1708355198785, Thread 4776: XXXX 1708355198785, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198786 XXXX 1708355198786, Thread 4776: XXXX 1708355198786, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198886 XXXX 1708355198886, Thread 4776: XXXX 1708355198886, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198887 XXXX 1708355198887, Thread 4776: XXXX 1708355198887, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355198986 XXXX 1708355198986, Thread 4776: XXXX 1708355198986, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355198987 XXXX 1708355198987, Thread 4776: XXXX 1708355198987, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355199087 XXXX 1708355199087, Thread 4776: XXXX 1708355199087, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355199088 XXXX 1708355199088, Thread 4776: XXXX 1708355199088, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355199187 XXXX 1708355199187, Thread 4776: XXXX 1708355199187, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355199189 XXXX 1708355199189, Thread 4776: XXXX 1708355199189, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355199288 XXXX 1708355199288, Thread 4776: XXXX 1708355199288, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355199289 XXXX 1708355199289, Thread 4776: XXXX 1708355199289, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355199388 XXXX 1708355199388, Thread 4776: XXXX 1708355199388, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355199389 XXXX 1708355199389, Thread 4776: XXXX 1708355199389, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355199489 XXXX 1708355199489, Thread 4776: XXXX 1708355199489, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355199492 XXXX 1708355199492, Thread 4776: XXXX 1708355199492, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355200875 XXXX 1708355200875, Thread 4776: XXXX 1708355200875, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355202087 XXXX 1708355202087, Thread 4776: XXXX 1708355202087, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355204484 XXXX 1708355204484, Thread 4776: XXXX 1708355204484, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355204486 XXXX 1708355204486, Thread 4776: XXXX 1708355204486, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355204584 XXXX 1708355204584, Thread 4776: XXXX 1708355204584, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355204587 XXXX 1708355204587, Thread 4776: XXXX 1708355204587, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355205765 XXXX 1708355205765, Thread 4776: XXXX 1708355205765, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355205768 XXXX 1708355205768, Thread 4776: XXXX 1708355205768, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355206932 XXXX 1708355206932, Thread 4776: XXXX 1708355206932, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355207977 XXXX 1708355207977, Thread 4776: XXXX 1708355207977, Exiting Thread 4776: Commands::runScriptBasic  
+4776 1708355209016 XXXX 1708355209016, Thread 4776: XXXX 1708355209016, Entering Thread 4776: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+4776 1708355209018 XXXX 1708355209018, Thread 4776: XXXX 1708355209018, Exiting Thread 4776: Commands::runScriptBasic  
 
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Pre:init
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: Values:
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: pcAddress = 0000002e, Vpp = 3,25, useRowEraseIfVoltageIsLow = false, voltageBelowWhichUseRowErase = 0,00, deviceName = dsPIC33EP512GM706, programmerType = DSPIC33EP
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: MemInfo values:
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = ffffff, exists = true, startAddr = 00000000, endAddr = 000557eb, rowSize = 0400, rowEraseSize = 0400, addrInc = 0002, widthProgram = 0004
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = ffff, exists = true, startAddr = 000557ec, endAddr = 000557ff, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = ffff, exists = true, startAddr = 00800ff8, endAddr = 00800fff, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = ffffff, exists = true, startAddr = 00800000, endAddr = 00800ff7, rowSize = 0400, rowEraseSize = 0400, addrInc = 0002, widthProgram = 0004
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 7fffffff, exists = true, startAddr = 00ff0000, endAddr = 00ff0003, rowSize = 0001, rowEraseSize = 0000, addrInc = 0001, widthProgram = 0001
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-254 1707226032572 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 DeviceInfo: CfgRequiredBitsMask Values:
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557ec, Mask = 00000000
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557ee, Mask = 00000000
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557f0, Mask = 0000002b
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557f2, Mask = 000000f8
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557f4, Mask = 000000ff
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557f6, Mask = 000000e7
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557f8, Mask = 000000c7
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557fa, Mask = 00000003
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557fc, Mask = 00000000
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Address = 000557fe, Mask = 00000000
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 BasicInfo: Values:
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 BasicInfo: InputStream = com.microchip.mplab.libs.toolpacksupport.EquatableFileInputStream@ba330b23, ToolFlavor = PIC32C
-254 1707226032573 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Post:init
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 none
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return End
+4776 1708355209022 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Pre:HaltTarget
+4776 1708355209022 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload
+4776 1708355209022 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 null
+4776 1708355209022 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload End
+4776 1708355209022 XXXX 1708355209022, Thread 4776: XXXX 1708355209022, Entering Thread 4776: Commands::runScriptBasic, script name = Halt, timeOut = -1 ms  
+4776 1708355211024 XXXX 1708355211024, Thread 4776: Type = runScript, Script name = Halt, Status = 0xc04
+ 
 
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Pre:GetInterfaceProvider
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 RI4DebugInterface
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Post:GetInterfaceProvider
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4DebugInterfaceImpl@43c21514
-254 1707226035513 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return End
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Pre:IsTargetInDebugMode
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 null
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload End
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Post:IsTargetInDebugMode
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Return Value
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 true
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Return End
 
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Pre:GetInterfaceProvider
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 RI4ProgramInterface
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Post:GetInterfaceProvider
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ProgramInterfaceImpl@528b7c0c
-254 1707226035530 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return End
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Pre:GetPC
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 null
+12391 1708355211029 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload End
+12391 1708355211029 XXXX 1708355211029, Thread 12391: XXXX 1708355211029, Entering Thread 12391: Commands::runScriptBasic, script name = GetPC, timeOut = -1 ms  
+12391 1708355213032 XXXX 1708355213032, Thread 12391: Type = runScript, Script name = GetPC, Status = 0xc06
+ 
 
-254 1707226035544 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Pre:GetInterfaceProvider
-254 1707226035544 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035544 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 RI4ConnectInterface
-254 1707226035544 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035545 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Post:GetInterfaceProvider
-254 1707226035545 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035545 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 com.microchip.mplab.libs.RI4ArmToolsController.comm.ICD4ArmConnectInterfaceImpl@1ceec688
-254 1707226035545 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return End
+12391 1708355213035 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Pre:IsTargetInDebugMode
+12391 1708355213035 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload
+12391 1708355213035 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 null
+12391 1708355213035 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload End
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Post:IsTargetInDebugMode
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Return Value
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 true
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Return End
 
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Pre:selectCore
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 dsPIC33EP512GM706
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Post:selectCore
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 none
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Return End
-
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Pre:GetInterfaceProvider
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 RI4ControllerDiagnosticsInterface
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Post:GetInterfaceProvider
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ControllerDiagnosticsInterfaceImpl@41c0edcd
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return End
-
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Pre:GetInterfaceProvider
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 ProgrammerToGo
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Post:GetInterfaceProvider
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 null
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return End
-
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Pre:GetInterfaceProvider
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Status
-254 1707226035548 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035549 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Post:GetInterfaceProvider
-254 1707226035549 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035549 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 com.microchip.mplab.libs.RI4ToolsController.implementations.OpStatus@422dfb19
-254 1707226035549 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512GM706 Return End
-
-254 1707226035557 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Pre:SetProgramExec
-254 1707226035557 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035559 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Test
-254 1707226035559 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 800000
-254 1707226035559 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Length = 6126
-254 1707226035559 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035560 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Post:SetProgramExec
-254 1707226035560 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035560 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 true
-254 1707226035560 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Return End
-
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Pre:SetDebugExec
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Test
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 800000
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Length = 2052
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Post:SetDebugExec
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 true
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512GM706 Return End
-
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Pre:EstablishCommunincations
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 com.microchip.mplab.mdbcore.ICD4Tool.ICD4Com@9518cee
-254 1707226035565 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Post:EstablishCommunincations
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Return Value
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 true
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Return End
-
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Pre:GetFirmwareInfo
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Payload
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 null
-254 1707226035570 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512GM706 Payload End
-254 1707226035576 XXXX 1707226035576, Thread 254: com.Send returned false 
-254 1707226035577 XXXX 1707226035577, Thread 254: execCommand: exception after writeSideChanel null 
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Pre:DebugReadTargetMemory
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 FileRegs
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 0
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 1
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Length = 2
+12391 1708355213036 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512GM706 Payload End
+12391 1708355213036 XXXX 1708355213036, Thread 12391: XXXX 1708355213036, Entering Thread 12391: Commands::runScriptWithUpload, script name = ReadSFR  
+12391 1708355213036 XXXX 1708355213036, Thread 12391: XXXX 1708355213036, Entering Thread 12391: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+34 1708358302054 GEN4_CONNECT_DIAGNOSTICS:Calling Update on plug and play observer com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@21e4a607
+34 1708358302054 GEN4_CONNECT_DIAGNOSTICS:Entering plug and play Update(). Attached PID = 9015
+34 1708358302054 GEN4_CONNECT_DIAGNOSTICS:Entering MPLABCommEvent handler
+34 1708358302054 GEN4_CONNECT_DIAGNOSTICS:MPLABCommEvent.pid = 9015
+34 1708358302054 GEN4_CONNECT_DIAGNOSTICS:eventType = MPLABCOMM_TOOL_UNPLUGGED
+34 1708358302068 GEN4_CONNECT_DIAGNOSTICS:Exiting plug and play Update()
+16264 1708358345596 XXXX 1708358345596, Thread 16264: ToolCommUsb::read, com.Received returned -1 
+16264 1708358345597 XXXX 1708358345597, Thread 16264: ToolCommUsb::DataReader::run, fatal RI4ControllerException: {null} 
+12391 1708358345598 XXXX 1708358345598, Thread 12391: com.Send returned false 

@@ -1,5 +1,6 @@
 #ifndef ROBOT_H
 #define ROBOT_H
+#include "asservissement.h"
 
 typedef struct robotStateBITS {
 
@@ -28,8 +29,8 @@ typedef struct robotStateBITS {
             double yPosFromOdometry;
             double angleRadianFromOdometry;
             
-            PidCorrector  PidX;
-            PidCorrector  PidTheta;
+            PidCorrector PidX;
+            PidCorrector PidTheta;
         };
     };
 } ROBOT_STATE_BITS;

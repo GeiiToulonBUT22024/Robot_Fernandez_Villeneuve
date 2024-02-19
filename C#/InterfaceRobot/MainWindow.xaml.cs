@@ -77,12 +77,10 @@ namespace InterfaceRobot
             asservSpeedDisplay.UpdateIndependantSpeedCommandValues(7.5, 8.5);
             asservSpeedDisplay.UpdatePolarSpeedErrorValues(0.55, 1.63);
             asservSpeedDisplay.UpdateIndependantSpeedErrorValues(23.5, 24.3);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(24.26, 25.5, 55, 56.3, 58.2, 99999);
             asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(1.1, 2.2, 3.3, 4.4, 5.5, 6.6);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(11, 22, 33, 44, 55, 66);
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(1, 2, 3, 4, 5, 6);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(11, 22, 33, 44, 55, 66);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(111, 222, 333, 444, 555, 666);
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
@@ -405,6 +403,18 @@ namespace InterfaceRobot
 
             }
 
+            //Case 0x70
+            if (msgFunction == 0x70)
+            {
+                robot.Kp = BitConverter.ToSingle(msgPayload, 0);
+                robot.Ki = BitConverter.ToSingle(msgPayload, 4);
+                robot.Kd = BitConverter.ToSingle(msgPayload, 8);
+                robot.limP = BitConverter.ToSingle(msgPayload, 12);
+                robot.limI = BitConverter.ToSingle(msgPayload, 16);
+                robot.limD = BitConverter.ToSingle(msgPayload, 20);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, 0, robot.Ki, 0, robot.Kd, 0);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.limP, 0, robot.limI, 0, robot.limD, 0);
+            }
         }
 
         private void Led1_Checked(object sender, RoutedEventArgs e)
@@ -445,12 +455,12 @@ namespace InterfaceRobot
 
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
-            double Kp = 1.5;
-            double Ki = 2.5;
-            double Kd = 3.5;
-            double LimP = 4.5;
-            double LimI = 5.5;
-            double LimD = 6.5;
+            float Kp = 1.5f;
+            float Ki = 2.5f;
+            float Kd = 3.5f;
+            float LimP = 4.5f;
+            float LimI = 5.5f;
+            float LimD = 6.5f;
 
             byte[] Kp_byte = BitConverter.GetBytes(Kp);
             byte[] Ki_byte = BitConverter.GetBytes(Ki); 

@@ -39,6 +39,7 @@
 
 
 void OperatingSystemLoop(void);
+void SetNextRobotStateInAutomaticMode();
 
 #endif
 
