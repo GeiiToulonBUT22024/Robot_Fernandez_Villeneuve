@@ -7,21 +7,18 @@
 #include "asservissement.h"
 #include "Utilities.h"
 
+
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction prenant entree la trame et sa longueur pour calculer le checksum
     int checksum = 0;
-
     checksum ^= 0xFE;
-
     checksum ^= (msgFunction >> 8);
     checksum ^= (msgFunction);
     checksum ^= msgPayloadLength >> 8;
     checksum ^= (msgPayloadLength);
-
     for (int i = 0; i < msgPayloadLength; i++) {
         checksum ^= msgPayload[i];
     }
-
     return checksum;
 }
 
@@ -38,7 +35,6 @@ void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, unsigned ch
         tabTrame[5 + i] = msgPayload[i];
     }
     tabTrame[5 + i] = UartCalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
-
     SendMessage(tabTrame, sizeof (tabTrame));
 }
 
@@ -50,7 +46,6 @@ unsigned char msgDecodedPayload[128];
 int msgDecodedPayloadIndex = 0;
 int rcvState = 0;
 unsigned char calculatedChecksum;
-
 void UartDecodeMessage(unsigned char c) {
     //Fonction prenant en entree un octet et servant a reconstituer les trames
     switch (rcvState) {
@@ -112,22 +107,15 @@ void UartDecodeMessage(unsigned char c) {
     }
 }
 
+
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
-    //Fonction appelee apres le decodage pour executer l?action
-    //correspondant au message recu
-
-    // Case Error 404
-    //    if (function == 0x13) {
-    //        char array[] = "Error 404";
-    //        for (int b = 0; b<sizeof (array); b++) {
-    //            ...;
-    //        }
-    //    }
-
-    // Case 0x20
-    if (function == 0x20) {
-        int tabLED[payloadLength];
-
+    int tabLED[payloadLength];
+    float KpX, KiX, KdX, LimPX, LimIX, LimDX;
+    float KpT, KiT, KdT, LimPT, LimIT, LimDT;
+    
+    switch (function){
+        case 0x20:
+            
         for (int i = 0; i < payloadLength; i++) {
             tabLED[i] = payload[i];
         }
@@ -150,21 +138,30 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
                 LED_BLANCHE = 1;
             }
         }
-    }
-    
-    // Case 0x70
-    if(function == 0x70){
-        
-       float Kp = getFloat(payload, 0);
-       float Ki = getFloat(payload, 4);
-       float Kd = getFloat(payload, 8); 
-       float LimP = getFloat(payload, 12);
-       float LimI = getFloat(payload, 16);
-       float LimD = getFloat(payload, 20);
+            break;
 
-       SetupPidAsservissement(&robotState.PidX, Kp, Ki, Kd, LimP, LimI, LimD);
+        case 0x70:
+            KpX = getFloat(payload, 0);
+            KiX = getFloat(payload, 4); 
+            KdX = getFloat(payload, 8); 
+            LimPX = getFloat(payload, 12);
+            LimIX = getFloat(payload, 16);
+            LimDX = getFloat(payload, 20);
+            SetupPidAsservissement(&robotState.PidX, KpX, KiX, KdX, LimPX, LimIX, LimDX);
+            break;
+
+        case 0x71:
+            KpT = getFloat(payload, 0);
+            KiT = getFloat(payload, 4); 
+            KdT = getFloat(payload, 8); 
+            LimPT = getFloat(payload, 12);
+            LimIT = getFloat(payload, 16);
+            LimDT = getFloat(payload, 20);
+            SetupPidAsservissement(&robotState.PidTheta, KpT, KiT, KdT, LimPT, LimIT, LimDT);
+            break;
     }
 }
 //*************************************************************************/
 //Fonctions correspondant aux messages
 //*************************************************************************/
+    

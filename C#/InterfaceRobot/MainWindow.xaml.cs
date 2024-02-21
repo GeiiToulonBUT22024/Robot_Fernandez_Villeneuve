@@ -412,9 +412,26 @@ namespace InterfaceRobot
                 robot.limP = BitConverter.ToSingle(msgPayload, 12);
                 robot.limI = BitConverter.ToSingle(msgPayload, 16);
                 robot.limD = BitConverter.ToSingle(msgPayload, 20);
-                asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, 0, robot.Ki, 0, robot.Kd, 0);
-                asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.limP, 0, robot.limI, 0, robot.limD, 0);
+                //asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, 0, robot.Ki, 0, robot.Kd, 0);
+                //asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.limP, 0, robot.limI, 0, robot.limD, 0);
             }
+
+            //Case 0x71
+            if (msgFunction == 0x71)
+            {
+                robot.KpT = BitConverter.ToSingle(msgPayload, 0);
+                robot.KiT = BitConverter.ToSingle(msgPayload, 4);
+                robot.KdT = BitConverter.ToSingle(msgPayload, 8);
+                robot.limPT = BitConverter.ToSingle(msgPayload, 12);
+                robot.limIT = BitConverter.ToSingle(msgPayload, 16);
+                robot.limDT = BitConverter.ToSingle(msgPayload, 20);
+                //asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(0, robot.Kp, 0, robot.Ki, 0, robot.Kd);
+                //asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(0, robot.limP, 0, robot.limI, 0, robot.limD);
+            }
+
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, robot.KpT, robot.Ki, robot.KiT, robot.Kd, robot.KdT);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.limP, robot.limPT, robot.limI, robot.limIT, robot.limD, robot.limDT);
+
         }
 
         private void Led1_Checked(object sender, RoutedEventArgs e)
@@ -455,30 +472,55 @@ namespace InterfaceRobot
 
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
-            float Kp = 1.5f;
-            float Ki = 2.5f;
-            float Kd = 3.5f;
-            float LimP = 4.5f;
-            float LimI = 5.5f;
-            float LimD = 6.5f;
+            float Kp_X = 1.5f;
+            float Ki_X = 2.5f;
+            float Kd_X = 3.5f;
+            float LimP_X = 4.5f;
+            float LimI_X = 5.5f;
+            float LimD_X = 6.5f;
 
-            byte[] Kp_byte = BitConverter.GetBytes(Kp);
-            byte[] Ki_byte = BitConverter.GetBytes(Ki); 
-            byte[] Kd_byte = BitConverter.GetBytes(Kd);
-            byte[] LimP_byte = BitConverter.GetBytes(LimP);
-            byte[] LimI_byte = BitConverter.GetBytes(LimI);
-            byte[] LimD_byte = BitConverter.GetBytes(LimD);
+            float Kp_T = 10.5f;
+            float Ki_T = 20.5f;
+            float Kd_T = 30.5f;
+            float LimP_T = 40.5f;
+            float LimI_T = 50.5f;
+            float LimD_T = 60.5f;
 
-            byte[] parametrePID = new byte[24];
+            byte[] Kp_byte_X = BitConverter.GetBytes(Kp_X);
+            byte[] Ki_byte_X = BitConverter.GetBytes(Ki_X); 
+            byte[] Kd_byte_X = BitConverter.GetBytes(Kd_X);
+            byte[] LimP_byte_X = BitConverter.GetBytes(LimP_X);
+            byte[] LimI_byte_X = BitConverter.GetBytes(LimI_X);
+            byte[] LimD_byte_X = BitConverter.GetBytes(LimD_X);
 
-            Kp_byte.CopyTo(parametrePID, 0);
-            Ki_byte.CopyTo(parametrePID, 4);
-            Kd_byte.CopyTo(parametrePID, 8);
-            LimP_byte.CopyTo(parametrePID, 12);
-            LimI_byte.CopyTo(parametrePID, 16);
-            LimD_byte.CopyTo(parametrePID, 20);
+            byte[] Kp_byte_T = BitConverter.GetBytes(Kp_T);
+            byte[] Ki_byte_T = BitConverter.GetBytes(Ki_T);
+            byte[] Kd_byte_T = BitConverter.GetBytes(Kd_T);
+            byte[] LimP_byte_T = BitConverter.GetBytes(LimP_T);
+            byte[] LimI_byte_T = BitConverter.GetBytes(LimI_T);
+            byte[] LimD_byte_T = BitConverter.GetBytes(LimD_T);
 
-            UartEncodeAndSendMessage(0x0070, parametrePID.Length,parametrePID);
+            byte[] parametrePIDX = new byte[24];
+
+            Kp_byte_X.CopyTo(parametrePIDX, 0);
+            Ki_byte_X.CopyTo(parametrePIDX, 4);
+            Kd_byte_X.CopyTo(parametrePIDX, 8);
+            LimP_byte_X.CopyTo(parametrePIDX, 12);
+            LimI_byte_X.CopyTo(parametrePIDX, 16);
+            LimD_byte_X.CopyTo(parametrePIDX, 20);
+
+            byte[] parametrePIDT = new byte[24];
+
+            Kp_byte_T.CopyTo(parametrePIDT, 0);
+            Ki_byte_T.CopyTo(parametrePIDT, 4);
+            Kd_byte_T.CopyTo(parametrePIDT, 8);
+            LimP_byte_T.CopyTo(parametrePIDT, 12);
+            LimI_byte_T.CopyTo(parametrePIDT, 16);
+            LimD_byte_T.CopyTo(parametrePIDT, 20);
+
+            UartEncodeAndSendMessage(0x0070, parametrePIDX.Length,parametrePIDX);
+            UartEncodeAndSendMessage(0x0071, parametrePIDT.Length, parametrePIDT);
+
         }
     }
 }

@@ -10,23 +10,24 @@
 
 typedef struct _PidCorrector
 {
-double Kp;
-double Ki;
-double Kd;
-double erreurProportionelleMax;
-double erreurIntegraleMax;
-double erreurDeriveeMax;
-double erreurIntegrale;
-double epsilon_1;
-double erreur;
-//For Debug only
-double corrP;
-double corrI;
-double corrD;
-}PidCorrector;
+    float Kp;
+    float Ki;
+    float Kd;
+    float erreurProportionelleMax;
+    float erreurIntegraleMax;
+    float erreurDeriveeMax;
+    float erreurIntegrale;
+    float epsilon_1;
+    float erreur;
+    //For Debug only
+    float corrP;
+    float corrI;
+    float corrD;
+} PidCorrector;
 
-void SetupPidAsservissement(volatile PidCorrector* PidCorr, double Kp, double Ki, double Kd, double proportionelleMax, double integralMax, double deriveeMax);
-
+void SetupPidAsservissement(volatile PidCorrector* PidCorr, float Kp, float Ki, float Kd, float proportionelleMax, float integralMax, float deriveeMax);
+void SendPidInfo(void);
+float Correcteur(volatile PidCorrector* PidCorr, float erreur);
 
 #endif	/* ASSERVISSEMENT_H */
 

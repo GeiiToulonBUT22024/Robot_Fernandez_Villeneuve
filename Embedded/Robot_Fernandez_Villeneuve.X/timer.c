@@ -6,6 +6,7 @@
 #include "main.h"
 #include "UART_Protocol.h"
 #include "QEI.h"
+#include "asservissement.h"
 
 int subCount = 0;
 unsigned char toggle = 0;
@@ -70,15 +71,15 @@ void InitTimer1(void) {
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
-    //LED_BLEUE = !LED_BLEUE;
-    // LED_BLANCHE = !LED_BLANCHE;
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
     OperatingSystemLoop();
     QEIUpdateData();
-    subCount += 1;
+    
+    subCount += 1; 
     if (subCount >= 25) {
         SendPositionData();
+        SendPidInfo();
         subCount = 0;
     }
 

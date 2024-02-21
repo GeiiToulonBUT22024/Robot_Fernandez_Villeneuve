@@ -26,6 +26,13 @@ namespace InterfaceRobot
         public float limI;
         public float limD;
 
+        public float KpT;
+        public float KiT;
+        public float KdT;
+        public float limPT;
+        public float limIT;
+        public float limDT;
+
 
 
         public Queue<byte> byteListReceived = new Queue<byte>();

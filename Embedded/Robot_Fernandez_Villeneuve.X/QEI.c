@@ -7,8 +7,6 @@
 #include "IO.h"
 #include "xc.h"
 
-#define DISTROUES 281.2
-
 
 float QeiDroitPosition_T_1;
 float QeiGauchePosition_T_1;
@@ -16,7 +14,6 @@ float QeiDroitPosition;
 float QeiGauchePosition;
 float delta_d;
 float delta_g;
-float FREQ_ECH_QEI = 250;
 
 void InitQEI1() {
     QEI1IOCbits.SWPAB = 1; //QEAx and QEBx are swapped
