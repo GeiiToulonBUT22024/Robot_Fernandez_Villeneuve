@@ -54,8 +54,9 @@
 
                 <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Width="100"  FontSize ="15" Background="#95B5DE"  Click="buttonEnvoyer_Click" />
                 <Button x:Name="buttonPID" Content="Config PID" Grid.Column="2"  Grid.ColumnSpan="2" Grid.Row="3" Width="100"  FontSize ="15" Background="#95B5DE" Click="buttonPID_Click" />
-                <Button x:Name="buttonClear" Content="Clear" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3"   Width="100" FontSize ="15"  Background="#95B5DE" Click="buttonClear_Click" />
-
+                <Button x:Name="buttonClear" Content="Clear" Grid.Column="4"  Grid.ColumnSpan="2" Grid.Row="3"  Width="100" FontSize ="15"  Background="#95B5DE" Click="buttonClear_Click" />
+                <Button x:Name="buttonMode" Content="Mode : Auto" Grid.Column="5"  Grid.ColumnSpan="2" Grid.Row="3" Width="100"  FontSize ="15" Background="LightSkyBlue" Click="buttonMode_Click" />
+                
                 <GroupBox x:Name="groupBox_Leds" Header="Leds"  Grid.Column="2" Grid.ColumnSpan="1"  Grid.Row="4" Grid.RowSpan="4"  Background="#FCE1B8" FontSize ="15" BorderBrush ="#FCBB77" BorderThickness ="3"/>
                 <GroupBox x:Name="groupBox_telemetre" Grid.Column="1" Grid.Row="4" Grid.RowSpan="7" Header="Télémètres IR "  FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3"/>
                 <GroupBox x:Name="groupBox_Moteurs" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="8" Grid.RowSpan="3" Header="Moteurs" FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3"/>

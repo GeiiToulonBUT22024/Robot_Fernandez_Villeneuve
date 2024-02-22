@@ -75,11 +75,11 @@ namespace InterfaceRobot
             asservSpeedDisplay.UpdateDisplay();
             asservSpeedDisplay.UpdatePolarSpeedCommandValues(5.5, 6.5);
             asservSpeedDisplay.UpdateIndependantSpeedCommandValues(7.5, 8.5);
-            asservSpeedDisplay.UpdatePolarSpeedErrorValues(0.55, 1.63);
+           
             asservSpeedDisplay.UpdateIndependantSpeedErrorValues(23.5, 24.3);
             asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(1.1, 2.2, 3.3, 4.4, 5.5, 6.6);
             asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(1, 2, 3, 4, 5, 6);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(11, 22, 33, 44, 55, 66);
+            
             asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(111, 222, 333, 444, 555, 666);
         }
 
@@ -400,7 +400,6 @@ namespace InterfaceRobot
 
                 asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
                 asservSpeedDisplay.UpdateIndependantOdometrySpeed(robot.vitesseGaucheFromOdometry, robot.vitesseDroitFromOdometry);
-
             }
 
             //Case 0x70
@@ -412,8 +411,6 @@ namespace InterfaceRobot
                 robot.limP = BitConverter.ToSingle(msgPayload, 12);
                 robot.limI = BitConverter.ToSingle(msgPayload, 16);
                 robot.limD = BitConverter.ToSingle(msgPayload, 20);
-                //asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, 0, robot.Ki, 0, robot.Kd, 0);
-                //asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.limP, 0, robot.limI, 0, robot.limD, 0);
             }
 
             //Case 0x71
@@ -425,13 +422,25 @@ namespace InterfaceRobot
                 robot.limPT = BitConverter.ToSingle(msgPayload, 12);
                 robot.limIT = BitConverter.ToSingle(msgPayload, 16);
                 robot.limDT = BitConverter.ToSingle(msgPayload, 20);
-                //asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(0, robot.Kp, 0, robot.Ki, 0, robot.Kd);
-                //asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(0, robot.limP, 0, robot.limI, 0, robot.limD);
             }
 
             asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, robot.KpT, robot.Ki, robot.KiT, robot.Kd, robot.KdT);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.limP, robot.limPT, robot.limI, robot.limIT, robot.limD, robot.limDT);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(robot.limP, robot.limPT, robot.limI, robot.limIT, robot.limD, robot.limDT);
 
+            //Case 0x72
+            if (msgFunction == 0x72)
+            {
+                robot.corrXP = BitConverter.ToSingle(msgPayload, 0);
+                robot.corrXI = BitConverter.ToSingle(msgPayload, 4);
+                robot.corrXD = BitConverter.ToSingle(msgPayload, 8);
+                robot.corrTP = BitConverter.ToSingle(msgPayload, 12);
+                robot.corrTI = BitConverter.ToSingle(msgPayload, 16);
+                robot.corrTD = BitConverter.ToSingle(msgPayload, 20);
+                robot.erreurX = BitConverter.ToSingle(msgPayload, 24);
+                robot.erreurT = BitConverter.ToSingle(msgPayload, 28);
+            }
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.corrXP, robot.corrTP, robot.corrXI, robot.corrTI, robot.corrXD, robot.corrTD);
+            asservSpeedDisplay.UpdatePolarSpeedErrorValues(robot.erreurX, robot.erreurT);
         }
 
         private void Led1_Checked(object sender, RoutedEventArgs e)
@@ -521,6 +530,25 @@ namespace InterfaceRobot
             UartEncodeAndSendMessage(0x0070, parametrePIDX.Length,parametrePIDX);
             UartEncodeAndSendMessage(0x0071, parametrePIDT.Length, parametrePIDT);
 
+        }
+        byte mode = 0;
+        private void buttonMode_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (buttonMode.Background == Brushes.Orange)
+            {
+                buttonMode.Background = Brushes.LightSkyBlue;
+                buttonMode.Content = "Mode : Auto";
+                mode = 0;
+            }
+            else
+            {
+                buttonMode.Background = Brushes.Orange;
+                buttonMode.Content = "Mode : Asser";
+                mode = 1;
+            }
+            byte[] Mode_byte = {mode};
+            UartEncodeAndSendMessage(0x0080, Mode_byte.Length, Mode_byte);
         }
     }
 }

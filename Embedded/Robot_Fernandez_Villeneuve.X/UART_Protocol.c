@@ -159,6 +159,10 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             LimDT = getFloat(payload, 20);
             SetupPidAsservissement(&robotState.PidTheta, KpT, KiT, KdT, LimPT, LimIT, LimDT);
             break;
+         
+        case 0x80:
+            robotState.mode =  payload[0];
+            break;
     }
 }
 //*************************************************************************/

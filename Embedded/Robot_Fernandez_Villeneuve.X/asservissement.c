@@ -3,6 +3,7 @@
 #include "Utilities.h"
 #include "UART_Protocol.h"
 #include "QEI.h"
+#include "PWM.h"
 
 void SetupPidAsservissement(volatile PidCorrector* PidCorr, float Kp, float Ki, float Kd, float proportionelleMax, float integralMax, float deriveeMax) {
     PidCorr->Kp = Kp;
@@ -31,6 +32,17 @@ void SendPidInfo() {
     getBytesFromFloat(tabParamTheta, 16, robotState.PidTheta.erreurIntegraleMax);
     getBytesFromFloat(tabParamTheta, 20, robotState.PidTheta.erreurDeriveeMax);
     UartEncodeAndSendMessage(0x71, 24, tabParamTheta);
+    
+    unsigned char tabCorrecteur[32];
+    getBytesFromFloat(tabCorrecteur, 0, robotState.PidX.corrP);
+    getBytesFromFloat(tabCorrecteur, 4, robotState.PidX.corrI);
+    getBytesFromFloat(tabCorrecteur, 8, robotState.PidX.corrD);
+    getBytesFromFloat(tabCorrecteur, 12, robotState.PidTheta.corrP);
+    getBytesFromFloat(tabCorrecteur, 16, robotState.PidTheta.corrI);
+    getBytesFromFloat(tabCorrecteur, 20, robotState.PidTheta.corrD);
+    getBytesFromFloat(tabCorrecteur, 24, robotState.PidX.erreur);
+    getBytesFromFloat(tabCorrecteur, 28, robotState.PidTheta.erreur);
+    UartEncodeAndSendMessage(0x72, 32, tabCorrecteur);
 }
 
 float Correcteur(volatile PidCorrector* PidCorr, float erreur) {
@@ -49,11 +61,9 @@ float Correcteur(volatile PidCorrector* PidCorr, float erreur) {
 }
 
 void UpdateAsservissement() {
-    robotState.PidX.erreur = ...;
-    robotState.PidTheta.erreur = ...;
-    robotState.xCorrectionVitessePourcent =
-            Correcteur(&robotState.PidX, robotState.PidX.erreur);
-    robotState.thetaCorrectionVitessePourcent = ...;
-    PWMSetSpeedConsignePolaire(robotState.xCorrectionVitessePourcent,
-            robotState.thetaCorrectionVitessePourcent);
+    robotState.PidX.erreur = (robotState.vitesseDroiteConsigne + robotState.vitesseGaucheConsigne) / 2 - robotState.vitesseLineaireFromOdometry;
+    robotState.PidTheta.erreur = (robotState.vitesseDroiteConsigne - robotState.vitesseGaucheConsigne) - robotState.vitesseAngulaireFromOdometry;
+    robotState.xCorrectionVitessePourcent = Correcteur(&robotState.PidX, robotState.PidX.erreur);
+    robotState.thetaCorrectionVitessePourcent = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
+    PWMSetSpeedConsignePolaire(robotState.xCorrectionVitessePourcent,robotState.thetaCorrectionVitessePourcent);
 }

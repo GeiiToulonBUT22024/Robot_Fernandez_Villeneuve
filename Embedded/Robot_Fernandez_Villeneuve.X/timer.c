@@ -7,11 +7,11 @@
 #include "UART_Protocol.h"
 #include "QEI.h"
 #include "asservissement.h"
+#include "Robot.h"
 
 int subCount = 0;
 unsigned char toggle = 0;
 unsigned long timestamp;
-unsigned long timestamp3;
 
 //Initialisation d?un timer 32 bits
 
@@ -71,18 +71,21 @@ void InitTimer1(void) {
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
-    PWMUpdateSpeed();
     ADC1StartConversionSequence();
     OperatingSystemLoop();
     QEIUpdateData();
-    
-    subCount += 1; 
+
+    if (robotState.mode == 0) {
+        PWMUpdateSpeed();
+    } else if (robotState.mode == 1) {
+        UpdateAsservissement();
+    }
+    subCount += 1;
     if (subCount >= 25) {
         SendPositionData();
         SendPidInfo();
         subCount = 0;
     }
-
 }
 
 void InitTimer4(void) {
@@ -106,7 +109,7 @@ void InitTimer4(void) {
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
     //LED_ORANGE = !LED_ORANGE;
-        timestamp++;
+    timestamp++;
 }
 
 void SetFreqTimer1(float freq) {

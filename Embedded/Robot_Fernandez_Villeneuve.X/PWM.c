@@ -4,8 +4,11 @@
 #include "PWM.h"
 #include "Robot.h"
 #include "Utilities.h"
+#include "QEI.h"
+
 
 #define PWMPER 40.0
+#define MsenPourcent 40.0
 unsigned char acceleration = 5;
 
 void InitPWM(void) {
@@ -104,10 +107,25 @@ void PWMUpdateSpeed() {
 }
 
 void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
+
     if (moteur == 0) {
         robotState.vitesseDroiteConsigne = vitesseEnPourcents;
     }
     else if (moteur == 1) {
         robotState.vitesseGaucheConsigne = vitesseEnPourcents;
     }
+}
+
+void PWMSetSpeedConsigneLineaire(float vitesseEnMs, char moteur){
+     if (moteur == 0) {
+        robotState.vitesseDroiteConsigne = vitesseEnMs*MsenPourcent;
+    }
+    else if (moteur == 1) {
+        robotState.vitesseGaucheConsigne = vitesseEnMs*MsenPourcent;
+    }
+}
+
+void PWMSetSpeedConsignePolaire(float xcorrection, float thetacorrection){
+    robotState.vitesseDroiteConsigne = MsenPourcent * (xcorrection + thetacorrection*DISTROUES/2);
+    robotState.vitesseGaucheConsigne = MsenPourcent * (xcorrection - thetacorrection*DISTROUES/2);
 }

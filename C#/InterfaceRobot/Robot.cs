@@ -33,6 +33,16 @@ namespace InterfaceRobot
         public float limIT;
         public float limDT;
 
+        public float corrXP;
+        public float corrXI;
+        public float corrXD;
+        public float corrTP;
+        public float corrTI;
+        public float corrTD;
+
+        public float erreurX;
+        public float erreurT;
+
 
 
         public Queue<byte> byteListReceived = new Queue<byte>();
