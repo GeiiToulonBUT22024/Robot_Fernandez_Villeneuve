@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "CB_TX1.h"
-#define CBTX1_BUFFER_SIZE 128
+#define CBTX1_BUFFER_SIZE 256
 int cbTx1Head = 0;
 int cbTx1Tail = 0;
 unsigned char cbTx1Buffer[CBTX1_BUFFER_SIZE];
@@ -65,7 +65,7 @@ int CB_TX1_GetDataSize(void) {
         dataSize = cbTx1Head - cbTx1Tail;
     }
     else {
-        dataSize = 128 - (cbTx1Tail - cbTx1Head);
+        dataSize = CBTX1_BUFFER_SIZE - (cbTx1Tail - cbTx1Head);
     }
     return dataSize;
 }

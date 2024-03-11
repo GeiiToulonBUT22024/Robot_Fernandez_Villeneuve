@@ -39,8 +39,8 @@ void QEIUpdateData() {
     long QEI2RawValue = POS2CNTL;
     QEI2RawValue += ((long) POS2HLD << 16);
     //Conversion en mm (regle pour la taille des roues codeuses)
-    QeiDroitPosition = 0.01620 * QEI1RawValue;
-    QeiGauchePosition = -0.01620 * QEI2RawValue;
+    QeiDroitPosition = 0.00001620 * QEI1RawValue;
+    QeiGauchePosition = -0.00001620 * QEI2RawValue;
     //Calcul des deltas de position
     delta_d = QeiDroitPosition - QeiDroitPosition_T_1;
     delta_g = QeiGauchePosition - QeiGauchePosition_T_1;

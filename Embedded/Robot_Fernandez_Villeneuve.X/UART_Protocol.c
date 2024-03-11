@@ -112,6 +112,7 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
     int tabLED[payloadLength];
     float KpX, KiX, KdX, LimPX, LimIX, LimDX;
     float KpT, KiT, KdT, LimPT, LimIT, LimDT;
+    float Consigne_X, Consigne_Theta;
     
     switch (function){
         case 0x20:
@@ -162,6 +163,11 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
          
         case 0x80:
             robotState.mode =  payload[0];
+            break;
+            
+        case 0x90:
+            robotState.vitesseConsigneLineaire = getFloat(payload, 0);
+            robotState.vitesseConsigneAngulaire = getFloat(payload, 4);
             break;
     }
 }

@@ -43,6 +43,8 @@ namespace InterfaceRobot
         public float erreurX;
         public float erreurT;
 
+        public float ConsigneLineaire;
+        public float ConsigneAngulaire;
 
 
         public Queue<byte> byteListReceived = new Queue<byte>();

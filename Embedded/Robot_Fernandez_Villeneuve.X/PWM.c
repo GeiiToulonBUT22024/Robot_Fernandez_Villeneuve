@@ -8,7 +8,7 @@
 
 
 #define PWMPER 40.0
-#define MsenPourcent 40.0
+#define SPEED_TO_PERCENT 55.0
 unsigned char acceleration = 5;
 
 void InitPWM(void) {
@@ -118,14 +118,14 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
 
 void PWMSetSpeedConsigneLineaire(float vitesseEnMs, char moteur){
      if (moteur == 0) {
-        robotState.vitesseDroiteConsigne = vitesseEnMs*MsenPourcent;
+        robotState.vitesseDroiteConsigne = vitesseEnMs * SPEED_TO_PERCENT ;
     }
     else if (moteur == 1) {
-        robotState.vitesseGaucheConsigne = vitesseEnMs*MsenPourcent;
+        robotState.vitesseGaucheConsigne = vitesseEnMs * SPEED_TO_PERCENT ;
     }
 }
 
 void PWMSetSpeedConsignePolaire(float xcorrection, float thetacorrection){
-    robotState.vitesseDroiteConsigne = MsenPourcent * (xcorrection + thetacorrection*DISTROUES/2);
-    robotState.vitesseGaucheConsigne = MsenPourcent * (xcorrection - thetacorrection*DISTROUES/2);
+    robotState.vitesseDroiteConsigne = SPEED_TO_PERCENT * (xcorrection + thetacorrection*DISTROUES/2);
+    robotState.vitesseGaucheConsigne = SPEED_TO_PERCENT * (xcorrection - thetacorrection*DISTROUES/2);
 }

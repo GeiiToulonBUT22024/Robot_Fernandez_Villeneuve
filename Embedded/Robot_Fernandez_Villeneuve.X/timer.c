@@ -74,11 +74,15 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     ADC1StartConversionSequence();
     OperatingSystemLoop();
     QEIUpdateData();
+    PWMUpdateSpeed();
 
     if (robotState.mode == 0) {
-        PWMUpdateSpeed();
+        
+        LED_ORANGE = 1;
+        
     } else if (robotState.mode == 1) {
         UpdateAsservissement();
+        LED_ORANGE = 0;
     }
     subCount += 1;
     if (subCount >= 25) {
@@ -102,7 +106,7 @@ void InitTimer4(void) {
     IFS1bits.T4IF = 0; // Clear Timer Interrupt Flag
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
-    SetFreqTimer4(3000.0);
+    SetFreqTimer4(1000.0);
 
 }
 
@@ -137,12 +141,12 @@ void SetFreqTimer4(float freq) {
             T4CONbits.TCKPS = 0b10; //10 = 1:64 prescaler value
             if (FCY / freq / 64 > 65535) {
                 T4CONbits.TCKPS = 0b11; //11 = 1:256 prescaler value
-                PR1 = (int) (FCY / freq / 256);
+                PR4 = (int) (FCY / freq / 256);
             } else
-                PR1 = (int) (FCY / freq / 64);
+                PR4 = (int) (FCY / freq / 64);
         } else
-            PR1 = (int) (FCY / freq / 8);
+            PR4 = (int) (FCY / freq / 8);
     } else
-        PR1 = (int) (FCY / freq);
+        PR4 = (int) (FCY / freq);
 }
 

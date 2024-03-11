@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using ExtendedSerialPort;
 using System.Windows.Threading;
 using Constants;
+using System.Collections;
 
 namespace InterfaceRobot
 {
@@ -240,7 +241,8 @@ namespace InterfaceRobot
                     break;
 
                 case StateReception.Payload:
-
+                    if(msgDecodedPayloadLength == 0)
+                        rcvState = StateReception.CheckSum;
                     if (msgDecodedPayloadLength > 1024)
                     {
                         rcvState = StateReception.Waiting;
@@ -292,7 +294,7 @@ namespace InterfaceRobot
             }
 
             // Case Ox80
-            if (msgFunction == 0x80)
+            else if (msgFunction == 0x80)
             {
                 foreach (byte b in msgPayload)
                 {
@@ -306,7 +308,7 @@ namespace InterfaceRobot
             }
 
             // Case 0x20
-            if (msgFunction == 0x20)
+            else if (msgFunction == 0x20)
             {
                 byte[] tabLED = new byte[msgPayloadLength];
 
@@ -350,7 +352,7 @@ namespace InterfaceRobot
             }
 
             // Case 0x30
-            if (msgFunction == 0x30)
+            else if (msgFunction == 0x30)
             {
                 byte[] tabIR = new byte[msgPayloadLength];
 
@@ -369,7 +371,7 @@ namespace InterfaceRobot
             }
 
             // Case 0x40
-            if (msgFunction == 0x40)
+            else if (msgFunction == 0x40)
             {
                 byte[] tabVitesse = new byte[msgPayloadLength];
 
@@ -382,7 +384,7 @@ namespace InterfaceRobot
             }
 
             //Case 0x61
-            if (msgFunction == 0x61)
+            else if (msgFunction == 0x61)
             {
                 var tab = msgPayload.Skip(0).Take(4).Reverse().ToArray(); // retournement Big Endian vers Small Endian
                 robot.timestamp = BitConverter.ToUInt32(tab, 0);
@@ -403,7 +405,7 @@ namespace InterfaceRobot
             }
 
             //Case 0x70
-            if (msgFunction == 0x70)
+            else if (msgFunction == 0x70)
             {
                 robot.Kp = BitConverter.ToSingle(msgPayload, 0);
                 robot.Ki = BitConverter.ToSingle(msgPayload, 4);
@@ -411,10 +413,14 @@ namespace InterfaceRobot
                 robot.limP = BitConverter.ToSingle(msgPayload, 12);
                 robot.limI = BitConverter.ToSingle(msgPayload, 16);
                 robot.limD = BitConverter.ToSingle(msgPayload, 20);
+
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, robot.KpT, robot.Ki, robot.KiT, robot.Kd, robot.KdT);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(robot.limP, robot.limPT, robot.limI, robot.limIT, robot.limD, robot.limDT);
+
             }
 
             //Case 0x71
-            if (msgFunction == 0x71)
+            else if (msgFunction == 0x71)
             {
                 robot.KpT = BitConverter.ToSingle(msgPayload, 0);
                 robot.KiT = BitConverter.ToSingle(msgPayload, 4);
@@ -422,13 +428,15 @@ namespace InterfaceRobot
                 robot.limPT = BitConverter.ToSingle(msgPayload, 12);
                 robot.limIT = BitConverter.ToSingle(msgPayload, 16);
                 robot.limDT = BitConverter.ToSingle(msgPayload, 20);
+
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, robot.KpT, robot.Ki, robot.KiT, robot.Kd, robot.KdT);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(robot.limP, robot.limPT, robot.limI, robot.limIT, robot.limD, robot.limDT);
+
             }
 
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.Kp, robot.KpT, robot.Ki, robot.KiT, robot.Kd, robot.KdT);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(robot.limP, robot.limPT, robot.limI, robot.limIT, robot.limD, robot.limDT);
-
+          
             //Case 0x72
-            if (msgFunction == 0x72)
+            else if (msgFunction == 0x72)
             {
                 robot.corrXP = BitConverter.ToSingle(msgPayload, 0);
                 robot.corrXI = BitConverter.ToSingle(msgPayload, 4);
@@ -438,9 +446,18 @@ namespace InterfaceRobot
                 robot.corrTD = BitConverter.ToSingle(msgPayload, 20);
                 robot.erreurX = BitConverter.ToSingle(msgPayload, 24);
                 robot.erreurT = BitConverter.ToSingle(msgPayload, 28);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.corrXP, robot.corrTP, robot.corrXI, robot.corrTI, robot.corrXD, robot.corrTD);
+                asservSpeedDisplay.UpdatePolarSpeedErrorValues(robot.erreurX, robot.erreurT);
             }
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.corrXP, robot.corrTP, robot.corrXI, robot.corrTI, robot.corrXD, robot.corrTD);
-            asservSpeedDisplay.UpdatePolarSpeedErrorValues(robot.erreurX, robot.erreurT);
+
+            //Case 0x90
+            else if (msgFunction == 0x90)
+            {
+                robot.ConsigneLineaire = BitConverter.ToSingle(msgPayload, 0);
+                robot.ConsigneAngulaire = BitConverter.ToSingle(msgPayload, 4);
+                asservSpeedDisplay.UpdatePolarSpeedConsigneValues(robot.ConsigneLineaire, robot.ConsigneAngulaire);
+            }
+
         }
 
         private void Led1_Checked(object sender, RoutedEventArgs e)
@@ -481,19 +498,19 @@ namespace InterfaceRobot
 
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
-            float Kp_X = 1.5f;
-            float Ki_X = 2.5f;
-            float Kd_X = 3.5f;
-            float LimP_X = 4.5f;
-            float LimI_X = 5.5f;
-            float LimD_X = 6.5f;
+            float Kp_X = 3.0f;
+            float Ki_X = 0.0f;
+            float Kd_X = 0.0f;
+            float LimP_X = 100.0f;
+            float LimI_X = 100.0f;
+            float LimD_X = 100.0f;
 
-            float Kp_T = 10.5f;
-            float Ki_T = 20.5f;
-            float Kd_T = 30.5f;
-            float LimP_T = 40.5f;
-            float LimI_T = 50.5f;
-            float LimD_T = 60.5f;
+            float Kp_T = 0.0f;
+            float Ki_T = 0.0f;
+            float Kd_T = 0.0f;
+            float LimP_T = 100.0f;
+            float LimI_T = 100.0f;
+            float LimD_T = 100.0f;
 
             byte[] Kp_byte_X = BitConverter.GetBytes(Kp_X);
             byte[] Ki_byte_X = BitConverter.GetBytes(Ki_X); 
@@ -546,6 +563,20 @@ namespace InterfaceRobot
                 buttonMode.Background = Brushes.Orange;
                 buttonMode.Content = "Mode : Asser";
                 mode = 1;
+
+                float Consigne_X = 1.0f;
+                float Consigne_Theta = 0.0f;
+
+                byte[] Consigne_X_byte = BitConverter.GetBytes(Consigne_X);
+                byte[] Consigne_Theta_byte = BitConverter.GetBytes(Consigne_Theta);
+
+                byte[] parametreConsigne = new byte[8];
+
+                Consigne_X_byte.CopyTo(parametreConsigne, 0);
+                Consigne_Theta_byte.CopyTo(parametreConsigne, 4);
+
+                UartEncodeAndSendMessage(0x0090, parametreConsigne.Length, parametreConsigne);
+
             }
             byte[] Mode_byte = {mode};
             UartEncodeAndSendMessage(0x0080, Mode_byte.Length, Mode_byte);
