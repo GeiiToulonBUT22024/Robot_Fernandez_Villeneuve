@@ -7,7 +7,6 @@
 #include "asservissement.h"
 #include "Utilities.h"
 
-
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction prenant entree la trame et sa longueur pour calculer le checksum
     int checksum = 0;
@@ -46,6 +45,7 @@ unsigned char msgDecodedPayload[128];
 int msgDecodedPayloadIndex = 0;
 int rcvState = 0;
 unsigned char calculatedChecksum;
+
 void UartDecodeMessage(unsigned char c) {
     //Fonction prenant en entree un octet et servant a reconstituer les trames
     switch (rcvState) {
@@ -107,44 +107,42 @@ void UartDecodeMessage(unsigned char c) {
     }
 }
 
-
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     int tabLED[payloadLength];
     float KpX, KiX, KdX, LimPX, LimIX, LimDX;
     float KpT, KiT, KdT, LimPT, LimIT, LimDT;
-    float Consigne_X, Consigne_Theta;
-    
-    switch (function){
+
+    switch (function) {
         case 0x20:
-            
-        for (int i = 0; i < payloadLength; i++) {
-            tabLED[i] = payload[i];
-        }
-        if (tabLED[0] == 1) {
-            if (tabLED[1] == 0) {
-                LED_ORANGE = 0;
-            } else if (tabLED[1] == 1) {
-                LED_ORANGE = 1;
+
+            for (int i = 0; i < payloadLength; i++) {
+                tabLED[i] = payload[i];
             }
-        } else if (tabLED[0] == 2) {
-            if (tabLED[1] == 0) {
-                LED_BLEUE = 0;
-            } else if (tabLED[1] == 1) {
-                LED_BLEUE = 1;
+            if (tabLED[0] == 1) {
+                if (tabLED[1] == 0) {
+                    LED_ORANGE = 0;
+                } else if (tabLED[1] == 1) {
+                    LED_ORANGE = 1;
+                }
+            } else if (tabLED[0] == 2) {
+                if (tabLED[1] == 0) {
+                    LED_BLEUE = 0;
+                } else if (tabLED[1] == 1) {
+                    LED_BLEUE = 1;
+                }
+            } else if (tabLED[0] == 3) {
+                if (tabLED[1] == 0) {
+                    LED_BLANCHE = 0;
+                } else if (tabLED[1] == 1) {
+                    LED_BLANCHE = 1;
+                }
             }
-        } else if (tabLED[0] == 3) {
-            if (tabLED[1] == 0) {
-                LED_BLANCHE = 0;
-            } else if (tabLED[1] == 1) {
-                LED_BLANCHE = 1;
-            }
-        }
             break;
 
         case 0x70:
             KpX = getFloat(payload, 0);
-            KiX = getFloat(payload, 4); 
-            KdX = getFloat(payload, 8); 
+            KiX = getFloat(payload, 4);
+            KdX = getFloat(payload, 8);
             LimPX = getFloat(payload, 12);
             LimIX = getFloat(payload, 16);
             LimDX = getFloat(payload, 20);
@@ -153,25 +151,27 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
         case 0x71:
             KpT = getFloat(payload, 0);
-            KiT = getFloat(payload, 4); 
-            KdT = getFloat(payload, 8); 
+            KiT = getFloat(payload, 4);
+            KdT = getFloat(payload, 8);
             LimPT = getFloat(payload, 12);
             LimIT = getFloat(payload, 16);
             LimDT = getFloat(payload, 20);
             SetupPidAsservissement(&robotState.PidTheta, KpT, KiT, KdT, LimPT, LimIT, LimDT);
             break;
-         
+
         case 0x80:
-            robotState.mode =  payload[0];
+            robotState.mode = payload[0];
             break;
-            
+
         case 0x90:
             robotState.vitesseConsigneLineaire = getFloat(payload, 0);
-            robotState.vitesseConsigneAngulaire = getFloat(payload, 4);
+            break;
+
+        case 0x91:
+            robotState.vitesseConsigneAngulaire = getFloat(payload, 0);
             break;
     }
 }
 //*************************************************************************/
 //Fonctions correspondant aux messages
 //*************************************************************************/
-    

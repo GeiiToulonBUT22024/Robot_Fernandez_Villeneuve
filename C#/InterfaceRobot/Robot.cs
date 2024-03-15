@@ -46,6 +46,10 @@ namespace InterfaceRobot
         public float ConsigneLineaire;
         public float ConsigneAngulaire;
 
+        public float CommandeLineaire;
+        public float CommandeAngulaire;
+
+
 
         public Queue<byte> byteListReceived = new Queue<byte>();
         public Robot()

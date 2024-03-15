@@ -17,6 +17,7 @@ using ExtendedSerialPort;
 using System.Windows.Threading;
 using Constants;
 using System.Collections;
+using System.Globalization;
 
 namespace InterfaceRobot
 {
@@ -74,14 +75,13 @@ namespace InterfaceRobot
                 //DecodeMessage(b);
             }
             asservSpeedDisplay.UpdateDisplay();
-            asservSpeedDisplay.UpdatePolarSpeedCommandValues(5.5, 6.5);
-            asservSpeedDisplay.UpdateIndependantSpeedCommandValues(7.5, 8.5);
+            asservSpeedDisplay.UpdateIndependantSpeedCommandValues(0, 0);
            
-            asservSpeedDisplay.UpdateIndependantSpeedErrorValues(23.5, 24.3);
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(1.1, 2.2, 3.3, 4.4, 5.5, 6.6);
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(1, 2, 3, 4, 5, 6);
+            asservSpeedDisplay.UpdateIndependantSpeedErrorValues(0, 0);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(0, 0, 0, 0, 0, 0);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(0, 0, 0, 0, 0, 0);
             
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(111, 222, 333, 444, 555, 666);
+            asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(0, 0, 0, 0, 0, 0);
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
@@ -457,6 +457,13 @@ namespace InterfaceRobot
                 robot.ConsigneAngulaire = BitConverter.ToSingle(msgPayload, 4);
                 asservSpeedDisplay.UpdatePolarSpeedConsigneValues(robot.ConsigneLineaire, robot.ConsigneAngulaire);
             }
+            //case 0x91
+            else if (msgFunction == 0x91)
+            {
+                robot.CommandeLineaire = BitConverter.ToSingle(msgPayload, 0);
+                robot.CommandeAngulaire = BitConverter.ToSingle(msgPayload, 4);
+                asservSpeedDisplay.UpdatePolarSpeedCommandValues(robot.CommandeLineaire, robot.CommandeAngulaire);
+            }
 
         }
 
@@ -498,15 +505,15 @@ namespace InterfaceRobot
 
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
-            float Kp_X = 3.0f;
+            float Kp_X = 0.0f;
             float Ki_X = 0.0f;
             float Kd_X = 0.0f;
             float LimP_X = 100.0f;
             float LimI_X = 100.0f;
             float LimD_X = 100.0f;
 
-            float Kp_T = 0.0f;
-            float Ki_T = 0.0f;
+            float Kp_T = 2.0f;
+            float Ki_T = 4.0f;
             float Kd_T = 0.0f;
             float LimP_T = 100.0f;
             float LimI_T = 100.0f;
@@ -564,22 +571,55 @@ namespace InterfaceRobot
                 buttonMode.Content = "Mode : Asser";
                 mode = 1;
 
-                float Consigne_X = 1.0f;
-                float Consigne_Theta = 0.0f;
+                //float Consigne_X = 1.0f;
+                //float Consigne_Theta = 0.0f;
 
-                byte[] Consigne_X_byte = BitConverter.GetBytes(Consigne_X);
-                byte[] Consigne_Theta_byte = BitConverter.GetBytes(Consigne_Theta);
+                //byte[] Consigne_X_byte = BitConverter.GetBytes(Consigne_X);
+                //byte[] Consigne_Theta_byte = BitConverter.GetBytes(Consigne_Theta);
 
-                byte[] parametreConsigne = new byte[8];
+                //byte[] parametreConsigne = new byte[8];
 
-                Consigne_X_byte.CopyTo(parametreConsigne, 0);
-                Consigne_Theta_byte.CopyTo(parametreConsigne, 4);
+                //Consigne_X_byte.CopyTo(parametreConsigne, 0);
+                //Consigne_Theta_byte.CopyTo(parametreConsigne, 4);
 
-                UartEncodeAndSendMessage(0x0090, parametreConsigne.Length, parametreConsigne);
+                //UartEncodeAndSendMessage(0x0090, parametreConsigne.Length, parametreConsigne);
 
             }
             byte[] Mode_byte = {mode};
             UartEncodeAndSendMessage(0x0080, Mode_byte.Length, Mode_byte);
+        }
+
+        private void textBoxVitesseLineaire_KeyUp(object sender, KeyEventArgs e)
+        {
+            float linearSpeedConsigne;
+            if (e.Key == Key.Enter)
+            {
+                if (float.TryParse(textBoxVitesseLineaire.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out linearSpeedConsigne))
+                {
+                    byte[] ConsigneL_byte = BitConverter.GetBytes(linearSpeedConsigne);
+                    byte[] parametreConsigne = new byte[4];
+                    ConsigneL_byte.CopyTo(parametreConsigne, 0);
+                    UartEncodeAndSendMessage(0x0090, parametreConsigne.Length, parametreConsigne);
+                    textBoxVitesseLineaire.Text = "";
+
+                }
+            }
+        }
+
+        private void textBoxVitesseAngulaire_KeyUp(object sender, KeyEventArgs e)
+        {
+            float angularSpeedConsigne;
+            if (e.Key == Key.Enter)
+            {
+                if (float.TryParse(textBoxVitesseAngulaire.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out angularSpeedConsigne))
+                {
+                    byte[] ConsigneA_byte = BitConverter.GetBytes(angularSpeedConsigne);
+                    byte[] parametreConsigne = new byte[4];
+                    ConsigneA_byte.CopyTo(parametreConsigne, 0);
+                    UartEncodeAndSendMessage(0x0091, parametreConsigne.Length, parametreConsigne);
+                    textBoxVitesseAngulaire.Text = "";
+                }
+            }
         }
     }
 }

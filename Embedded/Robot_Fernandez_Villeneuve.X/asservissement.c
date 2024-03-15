@@ -72,4 +72,9 @@ void SendPidInfo() {
     getBytesFromFloat(paramConsigne, 0, robotState.vitesseConsigneLineaire);
     getBytesFromFloat(paramConsigne, 4, robotState.vitesseConsigneAngulaire);
     UartEncodeAndSendMessage(0x90, 8, paramConsigne);
+    
+    unsigned char paramCommande[8];
+    getBytesFromFloat(paramCommande, 0, robotState.xCorrectionVitessePourcent);
+    getBytesFromFloat(paramCommande, 4, robotState.thetaCorrectionVitessePourcent);
+    UartEncodeAndSendMessage(0x91, 8, paramCommande);
 }
