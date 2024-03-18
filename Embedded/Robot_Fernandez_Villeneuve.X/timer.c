@@ -77,10 +77,11 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     PWMUpdateSpeed();
 
     if (robotState.mode == 0) {
-        
+
         LED_ORANGE = 1;
-        
-    } else if (robotState.mode == 1) {
+
+    }
+    else if (robotState.mode == 1) {
         UpdateAsservissement();
         LED_ORANGE = 0;
     }

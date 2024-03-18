@@ -43,7 +43,7 @@ namespace InterfaceRobot
             serialPort1.Open();
 
             timerAffichage = new DispatcherTimer();
-            timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 50);
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
 
@@ -68,6 +68,7 @@ namespace InterfaceRobot
             # endregion
             while (robot.byteListReceived.Count != 0)
             {
+
                 byte b = robot.byteListReceived.Dequeue();
                 DecodeMessage(b);
                 ////textBoxReception.Text += "0x" + b.ToString("X2") + " ";
@@ -287,6 +288,7 @@ namespace InterfaceRobot
             if (msgFunction == 0x13)
             {
                 byte[] array = Encoding.ASCII.GetBytes(" Error 404");
+                textBoxReception.Text += msgPayload;
                 foreach (byte b in array)
                 {
                     textBoxReception.Text += Convert.ToChar(b);
@@ -394,9 +396,10 @@ namespace InterfaceRobot
                 robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
                 robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 24);
                 robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 28);
-                textBoxReception.Text += "Timestamp: " + robot.timestamp.ToString() + "\n";
-                //textBoxReception.Text += "Position X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
-                //textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
+                //textBoxReception.Text += "Timestamp: " + robot.timestamp.ToString() + "\n";
+                textBoxReception.Text = "Bytes recieved : "+ robot.byteListReceived.Count().ToString();
+                textBoxReception.Text += "\nPosition X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
+                textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
                 oscilloPos.AddPointToLine(0, robot.positionX0do, robot.positionY0do);
                 oscilloSpeed.AddPointToLine(0, robot.timestamp, robot.vitesseLineaireFromOdometry);
 
@@ -505,15 +508,15 @@ namespace InterfaceRobot
 
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
-            float Kp_X = 0.0f;
-            float Ki_X = 0.0f;
+            float Kp_X = 3.0f;
+            float Ki_X = 50.0f;
             float Kd_X = 0.0f;
             float LimP_X = 100.0f;
             float LimI_X = 100.0f;
             float LimD_X = 100.0f;
 
-            float Kp_T = 2.0f;
-            float Ki_T = 4.0f;
+            float Kp_T = 3.0f;
+            float Ki_T =50.0f;
             float Kd_T = 0.0f;
             float LimP_T = 100.0f;
             float LimI_T = 100.0f;
