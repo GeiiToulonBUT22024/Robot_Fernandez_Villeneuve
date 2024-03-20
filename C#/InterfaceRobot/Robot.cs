@@ -51,7 +51,7 @@ namespace InterfaceRobot
 
 
 
-        public Queue<byte> byteListReceived = new Queue<byte>();
+        public Queue<string> TextToDisplay = new Queue<string>();
         public Robot()
         {
 

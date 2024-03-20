@@ -18,6 +18,7 @@ float Correcteur(volatile PidCorrector* PidCorr, float erreur) {
     PidCorr->erreur = erreur;
     float erreurProportionnelle = LimitToInterval(erreur, -PidCorr->erreurProportionelleMax / PidCorr->Kp, PidCorr->erreurProportionelleMax / PidCorr->Kp);
     PidCorr->corrP = erreurProportionnelle * PidCorr->Kp;
+    
     PidCorr->erreurIntegrale += erreur / FREQ_ECH_QEI;
     PidCorr->erreurIntegrale = LimitToInterval(erreur, -PidCorr->erreurIntegraleMax / PidCorr->Ki, PidCorr->erreurIntegraleMax / PidCorr->Ki);
     PidCorr->corrI = PidCorr->erreurIntegrale * PidCorr->Ki;
@@ -32,9 +33,9 @@ float Correcteur(volatile PidCorrector* PidCorr, float erreur) {
 void UpdateAsservissement() {
     robotState.PidX.erreur = robotState.vitesseConsigneLineaire - robotState.vitesseLineaireFromOdometry;
     robotState.PidTheta.erreur = robotState.vitesseConsigneAngulaire - robotState.vitesseAngulaireFromOdometry;
-    robotState.xCorrectionVitessePourcent = Correcteur(&robotState.PidX, robotState.PidX.erreur);
-    robotState.thetaCorrectionVitessePourcent = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
-    PWMSetSpeedConsignePolaire(robotState.xCorrectionVitessePourcent, robotState.thetaCorrectionVitessePourcent);
+    robotState.xCorrectionVitesse = Correcteur(&robotState.PidX, robotState.PidX.erreur);
+    robotState.thetaCorrectionVitesse = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
+    PWMSetSpeedConsignePolaire(robotState.xCorrectionVitesse, robotState.thetaCorrectionVitesse);
 }
 
 void SendPidInfo() {
@@ -74,7 +75,7 @@ void SendPidInfo() {
     UartEncodeAndSendMessage(0x90, 8, paramConsigne);
     
     unsigned char paramCommande[8];
-    getBytesFromFloat(paramCommande, 0, robotState.xCorrectionVitessePourcent);
-    getBytesFromFloat(paramCommande, 4, robotState.thetaCorrectionVitessePourcent);
+    getBytesFromFloat(paramCommande, 0, robotState.xCorrectionVitesse);
+    getBytesFromFloat(paramCommande, 4, robotState.thetaCorrectionVitesse);
     UartEncodeAndSendMessage(0x91, 8, paramCommande);
 }

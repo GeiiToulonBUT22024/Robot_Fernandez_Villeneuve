@@ -32,8 +32,8 @@ typedef struct robotStateBITS {
             //            double vitesseLineaireConsigne;
             //            double vitesseAngulaireConsigne;
 
-            float xCorrectionVitessePourcent;
-            float thetaCorrectionVitessePourcent;
+            float xCorrectionVitesse;
+            float thetaCorrectionVitesse;
 
             float vitesseConsigneLineaire;
             float vitesseConsigneAngulaire;

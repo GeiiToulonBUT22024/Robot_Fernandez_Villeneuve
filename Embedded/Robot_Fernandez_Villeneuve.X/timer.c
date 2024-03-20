@@ -77,10 +77,8 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     PWMUpdateSpeed();
 
     if (robotState.mode == 0) {
-
         LED_ORANGE = 1;
-
-    }
+    } 
     else if (robotState.mode == 1) {
         UpdateAsservissement();
         LED_ORANGE = 0;
@@ -108,7 +106,6 @@ void InitTimer4(void) {
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
     SetFreqTimer4(1000.0);
-
 }
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {

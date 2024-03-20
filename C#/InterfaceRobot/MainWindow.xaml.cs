@@ -18,6 +18,7 @@ using System.Windows.Threading;
 using Constants;
 using System.Collections;
 using System.Globalization;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace InterfaceRobot
 {
@@ -66,11 +67,10 @@ namespace InterfaceRobot
             //    robot.receivedText = "";
             //}
             # endregion
-            while (robot.byteListReceived.Count != 0)
+            while (robot.TextToDisplay.Count != 0)
             {
 
-                byte b = robot.byteListReceived.Dequeue();
-                DecodeMessage(b);
+                textBoxReception.Text +=  robot.TextToDisplay.Dequeue();
                 ////textBoxReception.Text += "0x" + b.ToString("X2") + " ";
                 //textBoxReception.Text += Convert.ToChar(b);
                 //DecodeMessage(b);
@@ -87,11 +87,11 @@ namespace InterfaceRobot
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
-            robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
+            //robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
 
             for (int i = 0; i < e.Data.Length; i++)
             {
-                robot.byteListReceived.Enqueue(e.Data[i]);
+                DecodeMessage(e.Data[i]);
             }
             //serialPort1.WriteLine(robot.receivedText.ToString());
         }
@@ -268,6 +268,8 @@ namespace InterfaceRobot
                     if (calculatedChecksum == receivedChecksum)
                     {
                         ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+                                              
+
                     }
                     else
                     {
@@ -294,7 +296,7 @@ namespace InterfaceRobot
                     textBoxReception.Text += Convert.ToChar(b);
                 }
             }
-
+            
             // Case Ox80
             else if (msgFunction == 0x80)
             {
@@ -397,7 +399,7 @@ namespace InterfaceRobot
                 robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 24);
                 robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 28);
                 //textBoxReception.Text += "Timestamp: " + robot.timestamp.ToString() + "\n";
-                textBoxReception.Text = "Bytes recieved : "+ robot.byteListReceived.Count().ToString();
+                textBoxReception.Text = "Bytes recieved : "+ robot.TextToDisplay.Count().ToString();
                 textBoxReception.Text += "\nPosition X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
                 textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
                 oscilloPos.AddPointToLine(0, robot.positionX0do, robot.positionY0do);
@@ -468,6 +470,14 @@ namespace InterfaceRobot
                 asservSpeedDisplay.UpdatePolarSpeedCommandValues(robot.CommandeLineaire, robot.CommandeAngulaire);
             }
 
+            if (msgFunction != 0x13)
+            {
+                    for (int i = 0; i < msgPayloadLength; i++)
+                    {
+                        robot.TextToDisplay.Enqueue(Convert.ToString(msgPayload[i]));
+                    }
+            }
+
         }
 
         private void Led1_Checked(object sender, RoutedEventArgs e)
@@ -508,15 +518,15 @@ namespace InterfaceRobot
 
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
-            float Kp_X = 3.0f;
-            float Ki_X = 50.0f;
+            float Kp_X = 2.0f;
+            float Ki_X = 30.0f;
             float Kd_X = 0.0f;
             float LimP_X = 100.0f;
             float LimI_X = 100.0f;
             float LimD_X = 100.0f;
 
-            float Kp_T = 3.0f;
-            float Ki_T =50.0f;
+            float Kp_T = 2.0f;
+            float Ki_T =30.0f;
             float Kd_T = 0.0f;
             float LimP_T = 100.0f;
             float LimI_T = 100.0f;
