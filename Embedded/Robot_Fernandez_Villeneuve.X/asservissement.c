@@ -16,14 +16,26 @@ void SetupPidAsservissement(volatile PidCorrector* PidCorr, float Kp, float Ki, 
 
 float Correcteur(volatile PidCorrector* PidCorr, float erreur) {
     PidCorr->erreur = erreur;
-    float erreurProportionnelle = LimitToInterval(erreur, -PidCorr->erreurProportionelleMax / PidCorr->Kp, PidCorr->erreurProportionelleMax / PidCorr->Kp);
+    float erreurProportionnelle;
+    if(PidCorr->Kp!=0)
+        erreurProportionnelle = LimitToInterval(erreur, -PidCorr->erreurProportionelleMax / PidCorr->Kp, PidCorr->erreurProportionelleMax / PidCorr->Kp);
+    else
+        erreurProportionnelle = erreur;
     PidCorr->corrP = erreurProportionnelle * PidCorr->Kp;
     
     PidCorr->erreurIntegrale += erreur / FREQ_ECH_QEI;
-    PidCorr->erreurIntegrale = LimitToInterval(erreur, -PidCorr->erreurIntegraleMax / PidCorr->Ki, PidCorr->erreurIntegraleMax / PidCorr->Ki);
+    if(PidCorr->Ki!=0)
+        PidCorr->erreurIntegrale = LimitToInterval(PidCorr->erreurIntegrale, -PidCorr->erreurIntegraleMax / PidCorr->Ki, PidCorr->erreurIntegraleMax / PidCorr->Ki);
+    else
+        PidCorr->erreurIntegrale = erreur;
     PidCorr->corrI = PidCorr->erreurIntegrale * PidCorr->Ki;
     float erreurDerivee = (erreur - PidCorr->epsilon_1) * FREQ_ECH_QEI;
-    float deriveeBornee = LimitToInterval(erreurDerivee, -PidCorr->erreurDeriveeMax / PidCorr->Kd, PidCorr->erreurDeriveeMax / PidCorr->Kd);
+       
+    float deriveeBornee;
+    if(PidCorr->Kd!=0)
+        deriveeBornee = LimitToInterval(erreurDerivee, -PidCorr->erreurDeriveeMax / PidCorr->Kd, PidCorr->erreurDeriveeMax / PidCorr->Kd);
+    else
+        deriveeBornee = erreurDerivee;
     PidCorr->epsilon_1 = erreur;
     PidCorr->corrD = deriveeBornee * PidCorr->Kd;
 

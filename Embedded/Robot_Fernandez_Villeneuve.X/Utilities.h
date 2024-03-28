@@ -13,7 +13,7 @@
 double Abs(double value);
 double Max(double value, double value2);
 double Min(double value, double value2);
-double LimitToInterval(double value, double min, double max);
+float LimitToInterval(float value, float min, float max);
 double Modulo2PIAngleRadian(double angleRadian);
 float getFloat(unsigned char *p, int index);
 double getDouble(unsigned char *p, int index);

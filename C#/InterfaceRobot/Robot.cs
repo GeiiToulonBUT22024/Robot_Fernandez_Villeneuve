@@ -51,7 +51,7 @@ namespace InterfaceRobot
 
 
 
-        public Queue<string> TextToDisplay = new Queue<string>();
+        //public Queue<string> TextToDisplay = new Queue<string>();
         public Robot()
         {
 

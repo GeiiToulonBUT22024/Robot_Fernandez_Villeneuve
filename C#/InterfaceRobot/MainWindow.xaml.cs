@@ -67,33 +67,30 @@ namespace InterfaceRobot
             //    robot.receivedText = "";
             //}
             # endregion
-            while (robot.TextToDisplay.Count != 0)
-            {
+            //while (robot.TextToDisplay.Count != 0)
+            //{
 
-                textBoxReception.Text +=  robot.TextToDisplay.Dequeue();
-                ////textBoxReception.Text += "0x" + b.ToString("X2") + " ";
-                //textBoxReception.Text += Convert.ToChar(b);
-                //DecodeMessage(b);
-            }
+            //    textBoxReception.Text +=  robot.TextToDisplay.Dequeue();
+            //    ////textBoxReception.Text += "0x" + b.ToString("X2") + " ";
+            //    //textBoxReception.Text += Convert.ToChar(b);
+            //    //DecodeMessage(b);
+            //}
             asservSpeedDisplay.UpdateDisplay();
-            asservSpeedDisplay.UpdateIndependantSpeedCommandValues(0, 0);
+            //asservSpeedDisplay.UpdateIndependantSpeedCommandValues(0, 0);
            
-            asservSpeedDisplay.UpdateIndependantSpeedErrorValues(0, 0);
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(0, 0, 0, 0, 0, 0);
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(0, 0, 0, 0, 0, 0);
+            //asservSpeedDisplay.UpdateIndependantSpeedErrorValues(0, 0);
+            //asservSpeedDisplay.UpdateIndependantSpeedCorrectionValues(0, 0, 0, 0, 0, 0);
+            //asservSpeedDisplay.UpdateIndependantSpeedCorrectionGains(0, 0, 0, 0, 0, 0);
             
-            asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(0, 0, 0, 0, 0, 0);
+            //asservSpeedDisplay.UpdateIndependantSpeedCorrectionLimits(0, 0, 0, 0, 0, 0);
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
-        {
-            //robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
-
+        {   
             for (int i = 0; i < e.Data.Length; i++)
             {
                 DecodeMessage(e.Data[i]);
             }
-            //serialPort1.WriteLine(robot.receivedText.ToString());
         }
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
@@ -238,24 +235,25 @@ namespace InterfaceRobot
                 case StateReception.PayloadLengthLSB:
                     msgDecodedPayloadLength += c;
                     msgDecodedPayload = new byte[msgDecodedPayloadLength];
-                    rcvState = StateReception.Payload;
+                    if (msgDecodedPayloadLength == 0)
+                        rcvState = StateReception.CheckSum;
+                    else if (msgDecodedPayloadLength >= 256)
+                        rcvState = StateReception.Waiting;
+                    else
+                    {
+                        rcvState = StateReception.Payload;
+                        msgDecodedPayload = new byte[msgDecodedPayloadLength];
+                        msgDecodedPayloadIndex = 0;
+                    }
                     break;
 
                 case StateReception.Payload:
-                    if(msgDecodedPayloadLength == 0)
-                        rcvState = StateReception.CheckSum;
-                    if (msgDecodedPayloadLength > 1024)
+                    if (msgDecodedPayloadIndex < msgDecodedPayloadLength)
                     {
-                        rcvState = StateReception.Waiting;
-                    }
-                    else if (msgDecodedPayloadIndex < msgDecodedPayloadLength)
-                    {
-                        msgDecodedPayload[msgDecodedPayloadIndex] = c;
-                        msgDecodedPayloadIndex++;
+                        msgDecodedPayload[msgDecodedPayloadIndex++] = c;
 
-                        if (msgDecodedPayloadIndex == msgDecodedPayloadLength)
+                        if (msgDecodedPayloadIndex >= msgDecodedPayloadLength)
                         {
-                            msgDecodedPayloadIndex = 0;
                             rcvState = StateReception.CheckSum;
                         }
                     }
@@ -268,12 +266,6 @@ namespace InterfaceRobot
                     if (calculatedChecksum == receivedChecksum)
                     {
                         ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-                                              
-
-                    }
-                    else
-                    {
-                        ProcessDecodedMessage(0x13, msgDecodedPayloadLength, msgDecodedPayload);
                     }
                     rcvState = StateReception.Waiting;
                     break;
@@ -286,29 +278,13 @@ namespace InterfaceRobot
 
         private void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
-            // Case Error 404
-            if (msgFunction == 0x13)
-            {
-                byte[] array = Encoding.ASCII.GetBytes(" Error 404");
-                textBoxReception.Text += msgPayload;
-                foreach (byte b in array)
-                {
-                    textBoxReception.Text += Convert.ToChar(b);
-                }
-            }
-            
             // Case Ox80
-            else if (msgFunction == 0x80)
+            if (msgFunction == 0x80)
             {
-                foreach (byte b in msgPayload)
+                Dispatcher.BeginInvoke((Action)(() =>
                 {
-                    textBoxReception.Text += Convert.ToChar(b);
-                }
-                byte[] array = Encoding.ASCII.GetBytes(" : Nyquit");
-                foreach (byte b in array)
-                {
-                    textBoxReception.Text += Convert.ToChar(b);
-                }
+                    textBoxReception.Text += Encoding.ASCII.GetString(msgPayload);
+                }));
             }
 
             // Case 0x20
@@ -324,33 +300,51 @@ namespace InterfaceRobot
                 {
                     if (tabLED[1] == 0)
                     {
-                        Led1.IsChecked = false;
+                        Dispatcher.BeginInvoke((Action)(() =>
+                        {
+                            Led1.IsChecked = false;
+                        }));
                     }
                     else if (tabLED[1] == 1)
                     {
-                        Led1.IsChecked = true;
-                    }
+                        Dispatcher.BeginInvoke((Action)(() =>
+                        {
+                            Led1.IsChecked = true;
+                    }));
+                }
                 }
                 else if (tabLED[0] == 2)
                 {
                     if (tabLED[1] == 0)
                     {
-                        Led2.IsChecked = false;
-                    }
+                        Dispatcher.BeginInvoke((Action)(() =>
+                        {
+                            Led2.IsChecked = false;
+                }));
+            }
                     else if (tabLED[1] == 1)
                     {
-                        Led2.IsChecked = true;
+                        Dispatcher.BeginInvoke((Action)(() =>
+                        {
+                            Led2.IsChecked = true;
+                        }));
                     }
                 }
                 else if (tabLED[0] == 3)
                 {
                     if (tabLED[1] == 0)
                     {
-                        Led3.IsChecked = false;
+                        Dispatcher.BeginInvoke((Action)(() =>
+                        {
+                            Led3.IsChecked = false;
+                        }));
                     }
                     else if (tabLED[1] == 1)
-                    {
-                        Led3.IsChecked = true;
+                        {
+                            Dispatcher.BeginInvoke((Action)(() =>
+                            {
+                                Led3.IsChecked = true;
+                            }));
                     }
                 }
             }
@@ -365,11 +359,14 @@ namespace InterfaceRobot
                     tabIR[i] = msgPayload[i];
                 }
 
-                IR_ExtremeGauche.Content = " IR Extreme Gauche : " + msgPayload[0] + " cm";
-                IR_Gauche.Content = " IR Gauche : " + msgPayload[1] + " cm";
-                IR_Centre.Content = " IR Centre : " + msgPayload[2] + " cm";
-                IR_Droit.Content = " IR Droite : " + msgPayload[3] + " cm";
-                IR_ExtremeDroite.Content = " IR Extreme Droite : " + msgPayload[4] + " cm";
+                Dispatcher.BeginInvoke((Action)(() =>
+                {
+                    IR_ExtremeGauche.Content = " IR Extreme Gauche : " + msgPayload[0] + " cm";
+                    IR_Gauche.Content = " IR Gauche : " + msgPayload[1] + " cm";
+                    IR_Centre.Content = " IR Centre : " + msgPayload[2] + " cm";
+                    IR_Droit.Content = " IR Droite : " + msgPayload[3] + " cm";
+                    IR_ExtremeDroite.Content = " IR Extreme Droite : " + msgPayload[4] + " cm";
+                }));
 
 
             }
@@ -383,8 +380,12 @@ namespace InterfaceRobot
                 {
                     tabVitesse[i] = msgPayload[i];
                 }
-                Vitesse_Gauche.Content = "Vitesse Gauche : " + msgPayload[0] + "%";
-                Vitesse_Droit.Content = "Vitesse Droite : " + msgPayload[1] + "%";
+
+                Dispatcher.BeginInvoke((Action)(() =>
+                {
+                    Vitesse_Gauche.Content = "Vitesse Gauche : " + msgPayload[0] + "%";
+                    Vitesse_Droit.Content = "Vitesse Droite : " + msgPayload[1] + "%";
+                }));
             }
 
             //Case 0x61
@@ -399,12 +400,16 @@ namespace InterfaceRobot
                 robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 24);
                 robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 28);
                 //textBoxReception.Text += "Timestamp: " + robot.timestamp.ToString() + "\n";
-                textBoxReception.Text = "Bytes recieved : "+ robot.TextToDisplay.Count().ToString();
-                textBoxReception.Text += "\nPosition X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
-                textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
+                //textBoxReception.Text = "Bytes received : "+ robot.TextToDisplay.Count().ToString();
+                
+                Dispatcher.BeginInvoke((Action)(() =>
+                {
+                    textBoxReception.Text += "\nPosition X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
+                    textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
+                }));
+
                 oscilloPos.AddPointToLine(0, robot.positionX0do, robot.positionY0do);
                 oscilloSpeed.AddPointToLine(0, robot.timestamp, robot.vitesseLineaireFromOdometry);
-
                 asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
                 asservSpeedDisplay.UpdateIndependantOdometrySpeed(robot.vitesseGaucheFromOdometry, robot.vitesseDroitFromOdometry);
             }
@@ -470,13 +475,7 @@ namespace InterfaceRobot
                 asservSpeedDisplay.UpdatePolarSpeedCommandValues(robot.CommandeLineaire, robot.CommandeAngulaire);
             }
 
-            if (msgFunction != 0x13)
-            {
-                    for (int i = 0; i < msgPayloadLength; i++)
-                    {
-                        robot.TextToDisplay.Enqueue(Convert.ToString(msgPayload[i]));
-                    }
-            }
+     
 
         }
 
@@ -519,14 +518,14 @@ namespace InterfaceRobot
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
             float Kp_X = 2.0f;
-            float Ki_X = 30.0f;
+            float Ki_X = 100f;
             float Kd_X = 0.0f;
             float LimP_X = 100.0f;
             float LimI_X = 100.0f;
             float LimD_X = 100.0f;
 
             float Kp_T = 2.0f;
-            float Ki_T =30.0f;
+            float Ki_T = 100f;
             float Kd_T = 0.0f;
             float LimP_T = 100.0f;
             float LimI_T = 100.0f;
@@ -584,6 +583,7 @@ namespace InterfaceRobot
                 buttonMode.Content = "Mode : Asser";
                 mode = 1;
 
+                #region old code
                 //float Consigne_X = 1.0f;
                 //float Consigne_Theta = 0.0f;
 
@@ -596,7 +596,7 @@ namespace InterfaceRobot
                 //Consigne_Theta_byte.CopyTo(parametreConsigne, 4);
 
                 //UartEncodeAndSendMessage(0x0090, parametreConsigne.Length, parametreConsigne);
-
+                #endregion
             }
             byte[] Mode_byte = {mode};
             UartEncodeAndSendMessage(0x0080, Mode_byte.Length, Mode_byte);

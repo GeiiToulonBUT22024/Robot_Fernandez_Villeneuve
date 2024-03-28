@@ -25,7 +25,7 @@ double Min(double value,double value2)
         return value2;    
 }
 
-double LimitToInterval(double value, double min, double max)
+float LimitToInterval(float value, float min, float max)
 {
     if(value < min)
         return min;

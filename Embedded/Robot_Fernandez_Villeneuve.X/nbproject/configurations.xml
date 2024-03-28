@@ -14,7 +14,6 @@
       <itemPath>UART.h</itemPath>
       <itemPath>CB_TX1.h</itemPath>
       <itemPath>CB_RX1.h</itemPath>
-      <itemPath>Toolbox.h</itemPath>
       <itemPath>UART_Protocol.h</itemPath>
       <itemPath>QEI.h</itemPath>
       <itemPath>Utilities.h</itemPath>
@@ -32,7 +31,6 @@
       <itemPath>IO.c</itemPath>
       <itemPath>timer.c</itemPath>
       <itemPath>Robot.c</itemPath>
-      <itemPath>Toolbox.c</itemPath>
       <itemPath>PWM.c</itemPath>
       <itemPath>ADC.c</itemPath>
       <itemPath>UART.c</itemPath>
