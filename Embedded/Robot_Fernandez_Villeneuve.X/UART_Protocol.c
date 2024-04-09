@@ -6,6 +6,7 @@
 #include "Robot.h"
 #include "asservissement.h"
 #include "Utilities.h"
+#include "Trajectoire.h"
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction prenant entree la trame et sa longueur pour calculer le checksum
@@ -137,6 +138,14 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
                     LED_BLANCHE = 1;
                 }
             }
+            break;
+
+        case 0x51:
+            ghostPosition.posX = getFloat(payload, 0);
+            break;
+
+        case 0x52:
+            ghostPosition.posY = getFloat(payload, 0);
             break;
 
         case 0x70:

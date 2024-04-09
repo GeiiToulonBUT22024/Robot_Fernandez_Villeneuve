@@ -76,3 +76,10 @@ void getBytesFromDouble(unsigned char *p, int index, double d)
     for (i = 0; i < 8; i++)
         p[index + i] = f_ptr[i];
 }
+
+double ModuloByAngle(double angleVoulu , double angleActuel)
+{
+    int decalageNbTours = (int) round((angleActuel - angleVoulu) / (2 * M_PI));
+    double angle = angleActuel - decalageNbTours * 2 * M_PI;
+    return angle;
+}

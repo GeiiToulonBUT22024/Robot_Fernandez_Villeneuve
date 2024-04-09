@@ -43,6 +43,7 @@ typedef struct robotStateBITS {
             PidCorrector PidTheta;
 
             int mode;
+            
         };
     };
 } ROBOT_STATE_BITS;
