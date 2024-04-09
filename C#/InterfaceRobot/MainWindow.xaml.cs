@@ -30,6 +30,7 @@ namespace InterfaceRobot
     public partial class MainWindow : Window
     {
         Robot robot = new Robot();
+        Ghost ghost = new Ghost();
         ReliableSerialPort serialPort1;
         DispatcherTimer timerAffichage;
         byte[] byteList = new byte[20];
@@ -388,6 +389,21 @@ namespace InterfaceRobot
                 }));
             }
 
+            //Case 50
+            else if (msgFunction == 0x50)
+            {
+                ghost.posX = BitConverter.ToSingle(msgPayload, 0);
+                ghost.posY = BitConverter.ToSingle(msgPayload, 4);
+                ghost.thetaRobot = BitConverter.ToSingle(msgPayload, 8);
+
+
+                Dispatcher.BeginInvoke((Action)(() =>
+                {
+                    textBoxReception.Text += "\nGhost PosX: " + ghost.posX.ToString() + " Ghost PosY:  " + ghost.posY.ToString() + "\n";
+                    textBoxReception.Text += "Ghost thetaRobot: " + ghost.thetaRobot.ToString() + "\n";
+                }));
+            }
+
             //Case 0x61
             else if (msgFunction == 0x61)
             {
@@ -402,11 +418,11 @@ namespace InterfaceRobot
                 //textBoxReception.Text += "Timestamp: " + robot.timestamp.ToString() + "\n";
                 //textBoxReception.Text = "Bytes received : "+ robot.TextToDisplay.Count().ToString();
                 
-                Dispatcher.BeginInvoke((Action)(() =>
-                {
-                    textBoxReception.Text += "\nPosition X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
-                    textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
-                }));
+                //Dispatcher.BeginInvoke((Action)(() =>
+                //{
+                //    textBoxReception.Text += "\nPosition X: " + robot.positionX0do.ToString() + " Postion Y:  " + robot.positionY0do.ToString() + "\n";
+                //    textBoxReception.Text += "vitesse L: " + robot.vitesseLineaireFromOdometry.ToString() + " vitesse A:  " + robot.vitesseAngulaireFromOdometry.ToString() + "\n";
+                //}));
 
                 oscilloPos.AddPointToLine(0, robot.positionX0do, robot.positionY0do);
                 oscilloSpeed.AddPointToLine(0, robot.timestamp, robot.vitesseLineaireFromOdometry);
@@ -634,5 +650,40 @@ namespace InterfaceRobot
                 }
             }
         }
+
+        private void textBoxGhostPositionX_KeyUp(object sender, KeyEventArgs e)
+        {
+            float GhostPosX;
+            if (e.Key == Key.Enter)
+            {
+                if (float.TryParse(textBoxGhostPositionX.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out GhostPosX))
+                {
+                    byte[] PosX_byte = BitConverter.GetBytes(GhostPosX);
+                    byte[] tabPosX = new byte[4];
+                    PosX_byte.CopyTo(tabPosX, 0);
+                    UartEncodeAndSendMessage(0x0051, tabPosX.Length, tabPosX);
+                    textBoxGhostPositionX.Text = "";
+
+                }
+            }
+        }
+        private void textBoxGhostPositionY_KeyUp(object sender, KeyEventArgs e)
+        {
+            float GhostPosY;
+            if (e.Key == Key.Enter)
+            {
+                if (float.TryParse(textBoxGhostPositionY.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out GhostPosY))
+                {
+                    byte[] PosY_byte = BitConverter.GetBytes(GhostPosY);
+                    byte[] tabPosY = new byte[4];
+                    PosY_byte.CopyTo(tabPosY, 0);
+                    UartEncodeAndSendMessage(0x0052, tabPosY.Length, tabPosY);
+                    textBoxGhostPositionY.Text = "";
+
+                }
+            }
+        }
+
+        
     }
 }

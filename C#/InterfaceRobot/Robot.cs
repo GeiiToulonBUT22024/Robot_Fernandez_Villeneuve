@@ -57,4 +57,10 @@ namespace InterfaceRobot
 
         }
     }
+    public class Ghost
+    {
+        public float posX;
+        public float posY;
+        public float thetaRobot;
+    }
 }

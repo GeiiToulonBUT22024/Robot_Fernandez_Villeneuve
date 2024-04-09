@@ -16,4 +16,6 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur);
 void PWMSetSpeedConsignePolaire(float xcorrection, float thetacorrection);
 void PWMSetSpeedConsigneLineaire(float vitesseEnMs, char moteur);
 
+#define acceleration 2
+
 #endif	/* PWM_H */

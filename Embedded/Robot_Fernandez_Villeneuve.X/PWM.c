@@ -9,7 +9,7 @@
 
 #define PWMPER 40.0
 #define SPEED_TO_PERCENT 55.0
-unsigned char acceleration = 2;
+
 
 void InitPWM(void) {
     PTCON2bits.PCLKDIV = 0b000; //Divide by 1

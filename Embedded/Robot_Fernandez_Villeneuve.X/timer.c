@@ -8,6 +8,8 @@
 #include "QEI.h"
 #include "asservissement.h"
 #include "Robot.h"
+#include "Trajectoire.h"
+
 
 int subCount = 0;
 unsigned char toggle = 0;
@@ -87,6 +89,7 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     if (subCount >= 25) {
         SendPositionData();
         SendPidInfo();
+        SendGhostInfo();
         subCount = 0;
     }
 }
