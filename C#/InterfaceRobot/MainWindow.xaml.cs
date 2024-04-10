@@ -686,17 +686,20 @@ namespace InterfaceRobot
 
         private void button0_0_Click(object sender, RoutedEventArgs e)
         {
-            ghost.objectif = 0;
+            byte[] arrayPos = { 0, 0 };
+            UartEncodeAndSendMessage(0x0050, arrayPos.Length, arrayPos);
         }
 
         private void button0_1_Click(object sender, RoutedEventArgs e)
         {
-            ghost.objectif = 1;
+            byte[] arrayPos = { 0, 1 };
+            UartEncodeAndSendMessage(0x0050, arrayPos.Length, arrayPos);
         }
 
         private void button1_0_Click(object sender, RoutedEventArgs e)
         {
-            ghost.objectif = 2;
+            byte[] arrayPos = { 1, 0 };
+            UartEncodeAndSendMessage(0x0050, arrayPos.Length, arrayPos);
         }
     }
 }

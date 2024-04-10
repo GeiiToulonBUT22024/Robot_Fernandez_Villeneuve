@@ -8,6 +8,8 @@
 #include "Utilities.h"
 #include "Trajectoire.h"
 
+volatile GhostPosition ghostPosition;
+
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction prenant entree la trame et sa longueur pour calculer le checksum
     int checksum = 0;
@@ -110,6 +112,7 @@ void UartDecodeMessage(unsigned char c) {
 
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     int tabLED[payloadLength];
+    int tabPos[payloadLength];
     float KpX, KiX, KdX, LimPX, LimIX, LimDX;
     float KpT, KiT, KdT, LimPT, LimIT, LimDT;
 
@@ -140,13 +143,22 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             }
             break;
 
-        case 0x51:
-            ghostPosition.posX = getFloat(payload, 0);
+        case 0x50:
+            for (int i = 0; i < payloadLength; i++) {
+                tabPos[i] = payload[i];
+            }
+            ghostPosition.waypointX = getFloat(payload, tabPos[0]);
+            ghostPosition.waypointY = getFloat(payload, tabPos[1]);
+            
             break;
 
-        case 0x52:
-            ghostPosition.posY = getFloat(payload, 0);
-            break;
+//        case 0x51:
+//            ghostPosition.waypointX = getFloat(payload, 0);
+//            break;
+//
+//        case 0x52:
+//            ghostPosition.waypointY = getFloat(payload, 0);
+//            break;
 
         case 0x70:
             KpX = getFloat(payload, 0);

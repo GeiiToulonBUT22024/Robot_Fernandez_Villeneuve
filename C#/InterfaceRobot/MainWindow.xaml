@@ -68,9 +68,9 @@
                 <Button x:Name="buttonPID" Content="Config PID" Grid.Column="2" Grid.Row="3" Width="100"  FontSize ="15" Background="#95B5DE" Click="buttonPID_Click" Margin="63,0,34,0" />
                 <Button x:Name="buttonClear" Content="Clear" Grid.Column="4"  Grid.ColumnSpan="2" Grid.Row="3"  Width="100" FontSize ="15"  Background="#95B5DE" Click="buttonClear_Click" Margin="147,0,147,0" />
                 <Button x:Name="buttonMode" Content="Mode : Auto" Grid.Column="5" Grid.Row="3" Width="100"  FontSize ="15" Background="LightSkyBlue" Click="buttonMode_Click" Margin="63,0,34,0" />
-                <Button x:Name="button0_0" Content="0:0" Grid.Column="1" Grid.Row="1"  FontSize ="15" Background="#FCBB77"  Click="button0_0_Click" Margin="89,180,58,9" Grid.RowSpan="2" Grid.ColumnSpan="1"/>
-                <Button x:Name="button0_1" Content="0:1" Grid.Column="1" Grid.Row="1"  FontSize ="15" Background="#FCBB77" Click="button0_1_Click" Margin="170,180,174,10" Grid.RowSpan="2" Grid.ColumnSpan="2" />
-                <Button x:Name="button1_0" Content="1:0" Grid.Column="2" Grid.Row="1"  FontSize ="15" Background="#FCBB77" Click="button1_0_Click" Margin="49,180,98,9" Grid.RowSpan="2" Grid.ColumnSpan="1"/>
+                <Button x:Name="button0_0" Content="0:0" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="2" Width="50" FontSize ="15" Background="#FCBB77"  Click="button0_0_Click" Margin="89,180,58,9" />
+                <Button x:Name="button0_1" Content="0:1" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Width="50" FontSize ="15" Background="#FCBB77" Click="button0_1_Click" Margin="170,180,174,10" />
+                <Button x:Name="button1_0" Content="1:0" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="2" Width="50" FontSize ="15" Background="#FCBB77" Click="button1_0_Click" Margin="49,180,98,9" />
 
                 <GroupBox x:Name="groupBox_Leds" Header="Leds"  Grid.Column="2" Grid.ColumnSpan="1"  Grid.Row="4" Grid.RowSpan="4"  Background="#FCE1B8" FontSize ="15" BorderBrush ="#FCBB77" BorderThickness ="3"/>
                 <GroupBox x:Name="groupBox_telemetre" Grid.Column="1" Grid.Row="4" Grid.RowSpan="7" Header="Télémètres IR "  FontSize ="15" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Grid.ColumnSpan="1"/>

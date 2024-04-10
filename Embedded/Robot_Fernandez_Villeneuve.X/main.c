@@ -21,6 +21,7 @@
 #include "UART_Protocol.h"
 #include "ADC.h"
 #include "QEI.h"
+#include "Trajectoire.h"
 
 unsigned int*result;
 int var1;
@@ -54,7 +55,7 @@ int main(void) {
     InitQEI1();
     InitQEI2();
 
-
+    InitTrajectory();
     //        PWMSetSpeed(50,MOTEUR_GAUCHE);
     //        PWMSetSpeed(50,MOTEUR_DROIT);
     //
