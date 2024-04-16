@@ -37,12 +37,13 @@ typedef struct {
     float distanceToTarget;
     float target_angle;
     double distance;
-    //float waypointX_projette;
-    //float waypointY_projette; 
+    float last_waypointX;
+    float last_waypointY; 
 
     EtatTraj state;
 
 } GhostPosition;
+
 extern volatile GhostPosition ghostPosition;
 
 void InitTrajectory(void);

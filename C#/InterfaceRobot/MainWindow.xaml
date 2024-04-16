@@ -101,5 +101,11 @@
         <TabItem Header="Speed">
             <oscillo:WpfOscilloscope x:Name="oscilloSpeed" VerticalAlignment="Stretch" />
         </TabItem>
+        <TabItem Header="GhostPos">
+            <oscillo:WpfOscilloscope x:Name="oscilloGhostPos" VerticalAlignment="Stretch" />
+        </TabItem>
+        <TabItem Header="GhostVitesse">
+            <oscillo:WpfOscilloscope x:Name="oscilloGhostVitesse" VerticalAlignment="Stretch" />
+        </TabItem>
     </TabControl>
 </Window>

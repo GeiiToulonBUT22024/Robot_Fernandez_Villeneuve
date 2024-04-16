@@ -19,6 +19,7 @@ using Constants;
 using System.Collections;
 using System.Globalization;
 using static System.Net.Mime.MediaTypeNames;
+using Utilities;
 
 namespace InterfaceRobot
 {
@@ -395,13 +396,20 @@ namespace InterfaceRobot
                 ghost.posX = BitConverter.ToSingle(msgPayload, 0);
                 ghost.posY = BitConverter.ToSingle(msgPayload, 4);
                 ghost.thetaRobot = BitConverter.ToSingle(msgPayload, 8);
-
+                ghost.vitL = BitConverter.ToSingle(msgPayload, 12);
+                ghost.vitA = BitConverter.ToSingle(msgPayload, 16);
+                ghost.timestamp = BitConverter.ToSingle(msgPayload, 20);
 
                 Dispatcher.BeginInvoke((Action)(() =>
                 {
                     textBoxReception.Text += "\nGhost PosX: " + ghost.posX.ToString() + " Ghost PosY:  " + ghost.posY.ToString() + "\n";
                     textBoxReception.Text += "Ghost thetaRobot: " + ghost.thetaRobot.ToString() + "\n";
                 }));
+
+                oscilloGhostPos.AddPointToLine(0, ghost.posX, ghost.posY);
+                oscilloGhostVitesse.AddPointToLine(0, ghost.timestamp, ghost.vitL);
+                oscilloGhostVitesse.AddPointToLine(1, ghost.timestamp, ghost.vitA);
+
             }
 
             //Case 0x61
@@ -686,20 +694,38 @@ namespace InterfaceRobot
 
         private void button0_0_Click(object sender, RoutedEventArgs e)
         {
-            byte[] arrayPos = { 0, 0 };
-            UartEncodeAndSendMessage(0x0050, arrayPos.Length, arrayPos);
+            PointD pt = new PointD(0, 0);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
         }
 
         private void button0_1_Click(object sender, RoutedEventArgs e)
         {
-            byte[] arrayPos = { 0, 1 };
-            UartEncodeAndSendMessage(0x0050, arrayPos.Length, arrayPos);
+            PointD pt = new PointD(0, 1);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);            
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
         }
 
         private void button1_0_Click(object sender, RoutedEventArgs e)
         {
-            byte[] arrayPos = { 1, 0 };
-            UartEncodeAndSendMessage(0x0050, arrayPos.Length, arrayPos);
+            PointD pt = new PointD(1, 0);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
         }
     }
 }

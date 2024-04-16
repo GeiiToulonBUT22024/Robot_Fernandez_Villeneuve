@@ -8,7 +8,7 @@
 #include "Utilities.h"
 #include "Trajectoire.h"
 
-volatile GhostPosition ghostPosition;
+extern volatile GhostPosition ghostPosition;
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction prenant entree la trame et sa longueur pour calculer le checksum
@@ -144,12 +144,11 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             break;
 
         case 0x50:
-            for (int i = 0; i < payloadLength; i++) {
-                tabPos[i] = payload[i];
-            }
-            ghostPosition.waypointX = getFloat(payload, tabPos[0]);
-            ghostPosition.waypointY = getFloat(payload, tabPos[1]);
-            
+            if(payloadLength == 8)
+            {
+                ghostPosition.waypointX = getFloat(payload, 0);
+                ghostPosition.waypointY = getFloat(payload, 4);
+            }            
             break;
 
 //        case 0x51:

@@ -62,6 +62,9 @@ namespace InterfaceRobot
         public float posX;
         public float posY;
         public float thetaRobot;
+        public float vitL;
+        public float vitA;
+        public float timestamp;
         public float objectif;
     }
 }
