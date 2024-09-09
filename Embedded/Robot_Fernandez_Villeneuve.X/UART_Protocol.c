@@ -124,21 +124,21 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             }
             if (tabLED[0] == 1) {
                 if (tabLED[1] == 0) {
-                    LED_ORANGE = 0;
+                    LED_ORANGE_1 = 0;
                 } else if (tabLED[1] == 1) {
-                    LED_ORANGE = 1;
+                    LED_ORANGE_1 = 1;
                 }
             } else if (tabLED[0] == 2) {
                 if (tabLED[1] == 0) {
-                    LED_BLEUE = 0;
+                    LED_BLEUE_1 = 0;
                 } else if (tabLED[1] == 1) {
-                    LED_BLEUE = 1;
+                    LED_BLEUE_1 = 1;
                 }
             } else if (tabLED[0] == 3) {
                 if (tabLED[1] == 0) {
-                    LED_BLANCHE = 0;
+                    LED_BLANCHE_1 = 0;
                 } else if (tabLED[1] == 1) {
-                    LED_BLANCHE = 1;
+                    LED_BLANCHE_1 = 1;
                 }
             }
             break;

@@ -67,7 +67,7 @@ int main(void) {
     //    LED_BLEUE = 1;
     //    LED_ORANGE = 1;
 
-
+// droit(11b6) = gauche, centre=centre, gauche(11be)=extreme_droite, extreme_droite(11c2)=extreme_gauche, extremegauche(11c6)=droite
     /****************************************************************************************************/
     // Boucle Principale
     /****************************************************************************************************/
@@ -79,7 +79,7 @@ int main(void) {
             unsigned int * result = ADCGetResult();
             float volts = ((float) result [1])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreDroit = 34 / volts - 5;
-            tabIR[3] = robotState.distanceTelemetreDroit;
+            tabIR[0] = robotState.distanceTelemetreDroit;
 
             volts = ((float) result [2])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreCentre = 34 / volts - 5;
@@ -87,15 +87,15 @@ int main(void) {
 
             volts = ((float) result [4])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreGauche = 34 / volts - 5;
-            tabIR[1] = robotState.distanceTelemetreGauche;
+            tabIR[3] = robotState.distanceTelemetreGauche;
 
             volts = ((float) result [0])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreExtremeDroite = 34 / volts - 5;
-            tabIR[4] = robotState.distanceTelemetreExtremeDroite;
+            tabIR[1] = robotState.distanceTelemetreExtremeDroite;
 
             volts = ((float) result [3])* 3.3 / 4096 * 3.2;
             robotState.distanceTelemetreExtremeGauche = 34 / volts - 5;
-            tabIR[0] = robotState.distanceTelemetreExtremeGauche;
+            tabIR[4] = robotState.distanceTelemetreExtremeGauche;
 
             UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
 

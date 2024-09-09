@@ -77,14 +77,14 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     OperatingSystemLoop();
     QEIUpdateData();
     PWMUpdateSpeed();
-
+    
     if (robotState.mode == 0) {
-        LED_ORANGE = 1;
+        LED_ORANGE_1 = 1;
     } 
     else if (robotState.mode == 1) {
         UpdateAsservissement();
         UpdateTrajectory();
-        LED_ORANGE = 0;
+        LED_ORANGE_1 = 0;
     }
     subCount += 1;
     if (subCount >= 25) {

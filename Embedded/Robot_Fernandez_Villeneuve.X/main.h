@@ -8,7 +8,7 @@
 #ifndef MAIN_H
 #define	MAIN_H
 
-#define FCY 40000000 
+#define FCY 60000000 
 
 #define STATE_ATTENTE 0
 #define STATE_ATTENTE_EN_COURS 1

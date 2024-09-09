@@ -11,6 +11,7 @@
 #define MOTEUR_GAUCHE 1
 
 void InitPWM(void);
+void PWMSetSpeed(float vitesseEnPourcents);
 void PWMUpdateSpeed();
 void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur);
 void PWMSetSpeedConsignePolaire(float xcorrection, float thetacorrection);
