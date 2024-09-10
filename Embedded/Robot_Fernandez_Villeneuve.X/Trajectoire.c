@@ -109,8 +109,6 @@ void UpdateTrajectory() {
 //            lastUpdateTime = timestamp;
 //    }
 
-
-
         if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) {
     
             ghostPosition.last_waypointX = ghostPosition.waypointX;
