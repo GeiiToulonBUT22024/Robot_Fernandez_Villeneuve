@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/GitHub/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/IO.h</file>
             <file>file:/C:/GitHub/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/timer.h</file>
             <file>file:/C:/GitHub/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/ChipConfig.c</file>
@@ -10,6 +11,30 @@
             <file>file:/C:/GitHub/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/timer.c</file>
             <file>file:/C:/GitHub/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/main.c</file>
             <file>file:/C:/GitHub/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/PWM.c</file>
+=======
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/ADC.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/IO.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/UART.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/Trajectoire.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/UART.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/IO.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/ADC.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/timer.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/main.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/UART_Protocol.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/UART_Protocol.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/PWM.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/Trajectoire.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/PWM.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/asservissement.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/main.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/timer.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/ChipConfig.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/QEI.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/Robot.h</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/Robot.c</file>
+            <file>file:/C:/Github/Robot_Fernandez_Villeneuve/Embedded/Robot_Fernandez_Villeneuve.X/ChipConfig.c</file>
+>>>>>>> dc80d1ae0372e0253816d1482f01b25eb29f9e73
         </group>
     </open-files>
 </project-private>
