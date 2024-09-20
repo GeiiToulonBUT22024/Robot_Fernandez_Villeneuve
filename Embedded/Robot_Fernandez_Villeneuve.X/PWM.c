@@ -153,7 +153,7 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
     if (moteur == 0) {
         robotState.vitesseDroiteConsigne = vitesseEnPourcents;
     } else if (moteur == 1) {
-        robotState.vitesseGaucheConsigne = vitesseEnPourcents;
+        robotState.vitesseGaucheConsigne = -vitesseEnPourcents;
     }
 }
 

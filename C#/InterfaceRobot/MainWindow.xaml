@@ -7,7 +7,7 @@
         xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay;assembly=WpfAsservissementDisplay"
         xmlns:local="clr-namespace:InterfaceRobot"
         mc:Ignorable="d"
-        Title="MainWindow" Height="545" Width="884">
+        Title="MainWindow" Height="600" Width="1200">
     <Window.Background>
         <SolidColorBrush Color="#E0EFFF"/>
     </Window.Background>
@@ -90,7 +90,7 @@
 
 
                 <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Grid.Column="4" Grid.ColumnSpan="2" 
-                Grid.Row="4" Grid.RowSpan="7" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3"/>
+                Grid.Row="4" Grid.RowSpan="7" BorderThickness ="3" Loaded="asservSpeedDisplay_Loaded"/>
 
             </Grid>
         </TabItem>

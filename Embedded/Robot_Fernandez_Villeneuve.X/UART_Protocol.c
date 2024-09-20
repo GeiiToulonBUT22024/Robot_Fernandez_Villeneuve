@@ -112,7 +112,7 @@ void UartDecodeMessage(unsigned char c) {
 
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     int tabLED[payloadLength];
-    int tabPos[payloadLength];
+    //int tabPos[payloadLength];
     float KpX, KiX, KdX, LimPX, LimIX, LimDX;
     float KpT, KiT, KdT, LimPT, LimIT, LimDT;
 
@@ -124,21 +124,21 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             }
             if (tabLED[0] == 1) {
                 if (tabLED[1] == 0) {
-                    LED_ORANGE_1 = 0;
+                    LED_ROUGE_2 = 0;
                 } else if (tabLED[1] == 1) {
-                    LED_ORANGE_1 = 1;
+                    LED_ROUGE_2 = 1;
                 }
             } else if (tabLED[0] == 2) {
                 if (tabLED[1] == 0) {
-                    LED_BLEUE_1 = 0;
+                    LED_BLEUE_2 = 0;
                 } else if (tabLED[1] == 1) {
-                    LED_BLEUE_1 = 1;
+                    LED_BLEUE_2 = 1;
                 }
             } else if (tabLED[0] == 3) {
                 if (tabLED[1] == 0) {
-                    LED_BLANCHE_1 = 0;
+                    LED_BLANCHE_2 = 0;
                 } else if (tabLED[1] == 1) {
-                    LED_BLANCHE_1 = 1;
+                    LED_BLANCHE_2 = 1;
                 }
             }
             break;

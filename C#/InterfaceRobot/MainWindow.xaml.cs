@@ -41,7 +41,7 @@ namespace InterfaceRobot
         public MainWindow()
         {
             InitializeComponent();
-            serialPort1 = new ReliableSerialPort("COM8", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ReliableSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             serialPort1.OnDataReceivedEvent += SerialPort1_DataReceived;
             serialPort1.Open();
 
@@ -725,6 +725,11 @@ namespace InterfaceRobot
             PosX_byte.CopyTo(messagePayload, 0);
             PosY_byte.CopyTo(messagePayload, 4);
             UartEncodeAndSendMessage(0x0050, 8, messagePayload);
+        }
+
+        private void asservSpeedDisplay_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
