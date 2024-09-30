@@ -79,7 +79,7 @@ int main(void) {
             unsigned int * result = ADCGetResult();
             float volts = ((float) result [3])* 3.3 / 4096;
             robotState.distanceTelemetreDroit = 34 / volts - 5;
-            tabIR[0] = robotState.distanceTelemetreDroit;
+            tabIR[3] = robotState.distanceTelemetreDroit;
 
             volts = ((float) result [2])* 3.3 / 4096;
             robotState.distanceTelemetreCentre = 34 / volts - 5;
@@ -87,15 +87,15 @@ int main(void) {
 
             volts = ((float) result [1])* 3.3 / 4096;
             robotState.distanceTelemetreGauche = 34 / volts - 5;
-            tabIR[3] = robotState.distanceTelemetreGauche;
+            tabIR[1] = robotState.distanceTelemetreGauche;
 
             volts = ((float) result [4])* 3.3 / 4096;
             robotState.distanceTelemetreExtremeDroite = 34 / volts - 5;
-            tabIR[1] = robotState.distanceTelemetreExtremeDroite;
+            tabIR[4] = robotState.distanceTelemetreExtremeDroite;
 
             volts = ((float) result [0])* 3.3 / 4096;
             robotState.distanceTelemetreExtremeGauche = 34 / volts - 5;
-            tabIR[4] = robotState.distanceTelemetreExtremeGauche;
+            tabIR[0] = robotState.distanceTelemetreExtremeGauche;
 
             UartEncodeAndSendMessage(0x0030, 5, (unsigned char*) tabIR);
 
