@@ -45,7 +45,7 @@ namespace InterfaceRobot
             SciChartSurface.SetRuntimeLicenseKey("8L8Domw9EVJTqFNHPJXR8O72sgntF/LrZ/QeRja6vGCH++6f5Enq+A80BybUfxkgDqkyEcpjwIqIj2sV6AET6Su7V8mztAT+KZHXAW0YEHeVuXLgKE3jvhkb9zWvY8rUXROUCMWe21018UUccZzOv4+yypUXKv98VjOaI/QseVczFKYUPVUOjkUyP5OF1TrwHg+H+j/8UN7DRqi24mWePFx8Wl78JlmJw3qNaKacZ++pb5Fk5AcTwPlMOgyf9dYh0D0w8TDO0eDlNRGILi2tC06IicTtm0tCYgDE3aUbxuJR4xu8I3ZPZ9cwmkavOWKZOF3ejzYhxhJKQDeuU2lcc2WksvOib5m3B1lCWaTrNdQvgJAzpvlKGPJwpU6kLd5RrXsqVglU8kvIuSa/rzkJHqJtvKFHzrEmGW1Nu/1xp5X4L06k2H5hp5O9z2Sdbq+Z5fhlf+l/3dgIH5xAj6vFHMQkm92z0uCHF052aIsDCdrFaQgSomkb+UnBUxnBl+k/BIBFJtem");
 
             InitializeComponent();
-            serialPort1 = new ReliableSerialPort("COM4", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ReliableSerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
             serialPort1.OnDataReceivedEvent += SerialPort1_DataReceived;
             serialPort1.Open();
 
@@ -544,15 +544,15 @@ namespace InterfaceRobot
 
         private void buttonPID_Click(object sender, RoutedEventArgs e)
         {
-            float Kp_X = 0.0f;
-            float Ki_X = 0.0f;
+            float Kp_X = 2.5f;
+            float Ki_X = 30.0f;
             float Kd_X = 0.0f;
             float LimP_X = 100.0f;
             float LimI_X = 100.0f;
             float LimD_X = 100.0f;
 
-            float Kp_T = 0.0f;
-            float Ki_T = 0.0f;
+            float Kp_T = 1.5f;
+            float Ki_T = 20.0f;
             float Kd_T = 0.0f;
             float LimP_T = 100.0f;
             float LimI_T = 100.0f;

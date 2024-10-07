@@ -79,13 +79,13 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
 
 void PWMSetSpeedConsigneLineaire(float vitesseEnMs, char moteur) {
     if (moteur == 0) {
-        robotState.vitesseDroiteConsigne = vitesseEnMs * SPEED_TO_PERCENT;
+        robotState.vitesseDroiteConsigne = -vitesseEnMs * SPEED_TO_PERCENT;
     } else if (moteur == 1) {
         robotState.vitesseGaucheConsigne = vitesseEnMs * SPEED_TO_PERCENT;
     }
 }
 
 void PWMSetSpeedConsignePolaire(float xcorrection, float thetacorrection) {
-    robotState.vitesseDroiteConsigne = SPEED_TO_PERCENT * (xcorrection + thetacorrection * DISTROUES / 2);
+    robotState.vitesseDroiteConsigne = - SPEED_TO_PERCENT * (xcorrection + thetacorrection * DISTROUES / 2);
     robotState.vitesseGaucheConsigne = SPEED_TO_PERCENT * (xcorrection - thetacorrection * DISTROUES / 2);
 }
