@@ -26,12 +26,15 @@ typedef enum {
 typedef struct {
     float thetaWaypoint;
     float thetaRobot;
+    float thetaGhost;
     float thetaRestant;
     float thetaArret;
+    float incrementeAngulaire;
     float vitesseLineaire;
     float vitesseAngulaire;
     float posX;
     float posY;
+    float waypoint;
     float waypointX;
     float waypointY;
     float distanceToTarget;
