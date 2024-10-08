@@ -56,6 +56,7 @@ int main(void) {
     InitQEI2();
 
     InitTrajectory();
+    
     //        PWMSetSpeed(50,MOTEUR_GAUCHE);
     //        PWMSetSpeed(50,MOTEUR_DROIT);
     //

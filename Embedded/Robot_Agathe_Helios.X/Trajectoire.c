@@ -189,9 +189,10 @@ void UpdateTrajectory() {
     //            ghostPosition.vitesseAngulaire = 0;
     //        }
 
-  
-    if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) {  //Rotation
 
+    if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) { //Rotation
+
+        ghostPosition.waypoint = atan2((ghostPosition.waypointY - ghostPosition.posY), (ghostPosition.waypointX - ghostPosition.posX));
         ghostPosition.thetaRestant = ModuloByAngle(ghostPosition.thetaGhost, ghostPosition.waypoint) - ghostPosition.thetaGhost;
         ghostPosition.thetaArret = pow(ghostPosition.vitesseAngulaire, 2) / (2 * accelerationAngulaire);
         ghostPosition.incrementeAngulaire = ghostPosition.vitesseAngulaire * FCY;
@@ -212,15 +213,13 @@ void UpdateTrajectory() {
             } else {
                 ghostPosition.vitesseAngulaire = 0;
             }
-        }
+        } 
         else {
             if (ghostPosition.thetaRestant > 0) {
                 ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-            }
-            else if (ghostPosition.thetaRestant < 0) {
+            } else if (ghostPosition.thetaRestant < 0) {
                 ghostPosition.vitesseAngulaire += accelerationAngulaire;
-            }
-            else {
+            } else {
                 ghostPosition.vitesseAngulaire = 0;
             }
 
@@ -230,8 +229,7 @@ void UpdateTrajectory() {
         }
         ghostPosition.thetaGhost = ghostPosition.thetaGhost + ghostPosition.incrementeAngulaire;
     }
-    
-    else {                                                                      //IDLE
+    else { //IDLE
         ghostPosition.vitesseLineaire = 0;
         ghostPosition.vitesseAngulaire = 0;
     }
