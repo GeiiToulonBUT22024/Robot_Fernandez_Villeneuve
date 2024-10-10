@@ -15,6 +15,7 @@ void InitTrajectory(void) {
     ghostPosition.posX = 0.0;
     ghostPosition.posY = 0.0;
     ghostPosition.thetaRobot = 0.0;
+    ghostPosition.thetaGhost = 0.0;
     ghostPosition.vitesseLineaire = 0.0;
     ghostPosition.vitesseAngulaire = 0.0;
     ghostPosition.waypointX = 0.0;
@@ -24,7 +25,7 @@ void InitTrajectory(void) {
     ghostPosition.last_waypointX = 100.0;
     ghostPosition.last_waypointY = 100.0;
 
-    ghostPosition.state = IDLE;
+    //ghostPosition.state = IDLE;
 }
 
 void UpdateTrajectory() {
@@ -167,7 +168,7 @@ void UpdateTrajectory() {
     //            }
     //    
     //            if (ghostPosition.distance <= (distanceDecel + Tolerancedistance)) {
-    //                ghostPosition.vitesseLineaire -= accelerationLineaire * deltaTime;
+    //               ghostPosition.vitesseLineaire -= accelerationLineaire * deltaTime;
     //                ghostPosition.vitesseLineaire = fmax(ghostPosition.vitesseLineaire, 0);
     //            } else if (ghostPosition.distance > distanceDecel + distanceAccel) {
     //                ghostPosition.vitesseLineaire += accelerationLineaire * deltaTime;
@@ -189,37 +190,48 @@ void UpdateTrajectory() {
     //            ghostPosition.vitesseAngulaire = 0;
     //        }
 
-
     if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) { //Rotation
 
-        ghostPosition.waypoint = atan2((ghostPosition.waypointY - ghostPosition.posY), (ghostPosition.waypointX - ghostPosition.posX));
-        ghostPosition.thetaRestant = ModuloByAngle(ghostPosition.thetaGhost, ghostPosition.waypoint) - ghostPosition.thetaGhost;
-        ghostPosition.thetaArret = pow(ghostPosition.vitesseAngulaire, 2) / (2 * accelerationAngulaire);
-        ghostPosition.incrementeAngulaire = ghostPosition.vitesseAngulaire * FCY;
+        ghostPosition.thetaWaypoint = atan2((ghostPosition.waypointY - ghostPosition.posY), (ghostPosition.waypointX - ghostPosition.posX));
+        ghostPosition.thetaRestant = ModuloByAngle(ghostPosition.thetaGhost, ghostPosition.thetaWaypoint) - ghostPosition.thetaGhost;
+        ghostPosition.thetaArret = ghostPosition.vitesseAngulaire * ghostPosition.vitesseAngulaire / (2 * accelerationAngulaire);
+        ghostPosition.incrementeAngulaire = ghostPosition.vitesseAngulaire / FCY;
+        
+        if(ghostPosition.vitesseAngulaire<0){
+            ghostPosition.thetaArret = - ghostPosition.thetaArret;
+        }
 
-        if (((ghostPosition.thetaArret >= 0 && ghostPosition.thetaRestant >= 0) || (ghostPosition.thetaArret <= 0 && ghostPosition.thetaRestant <= 0)) && Abs(ghostPosition.thetaRestant) >= Abs(ghostPosition.thetaArret)) {
+        if (((ghostPosition.thetaArret >= 0 && ghostPosition.thetaRestant >= 0) || (ghostPosition.thetaArret <= 0 && ghostPosition.thetaRestant <= 0))
+                && Abs(ghostPosition.thetaRestant) >= Abs(ghostPosition.thetaArret)) {
+
             if (ghostPosition.thetaRestant > 0) {
                 if (ghostPosition.vitesseAngulaire < VitesseMaxAngulaire) {
                     ghostPosition.vitesseAngulaire += accelerationAngulaire;
-                } else {
+                }
+                else {
                     ghostPosition.vitesseAngulaire = VitesseMaxAngulaire;
                 }
-            } else if (ghostPosition.thetaRestant < 0) {
+            }
+            else if (ghostPosition.thetaRestant < 0) {
                 if (ghostPosition.vitesseAngulaire > -VitesseMaxAngulaire) {
                     ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-                } else {
+                }
+                else {
                     ghostPosition.vitesseAngulaire = -VitesseMaxAngulaire;
                 }
-            } else {
+            }
+            else {
                 ghostPosition.vitesseAngulaire = 0;
             }
-        } 
+        }
         else {
             if (ghostPosition.thetaRestant > 0) {
                 ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-            } else if (ghostPosition.thetaRestant < 0) {
+            }
+            else if (ghostPosition.thetaRestant < 0) {
                 ghostPosition.vitesseAngulaire += accelerationAngulaire;
-            } else {
+            }
+            else {
                 ghostPosition.vitesseAngulaire = 0;
             }
 
@@ -241,7 +253,7 @@ void SendGhostInfo() {
     unsigned char tabGhost[24];
     getBytesFromFloat(tabGhost, 0, ghostPosition.posX);
     getBytesFromFloat(tabGhost, 4, ghostPosition.posY);
-    getBytesFromFloat(tabGhost, 8, ghostPosition.thetaRobot);
+    getBytesFromFloat(tabGhost, 8, ghostPosition.thetaGhost);
     getBytesFromFloat(tabGhost, 12, ghostPosition.vitesseLineaire);
     getBytesFromFloat(tabGhost, 16, ghostPosition.vitesseAngulaire);
     getBytesFromFloat(tabGhost, 20, timestamp);

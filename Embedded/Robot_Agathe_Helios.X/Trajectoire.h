@@ -9,7 +9,7 @@
 #define	TRAJECTOIRE_H
 
 
-#define VitesseMaxAngulaire 3
+#define VitesseMaxAngulaire 2*PI
 #define ToleranceAngulaire 0.5
 #define accelerationAngulaire 0.01
 #define VitesseMaxLineaire 1 // 1m.s-1

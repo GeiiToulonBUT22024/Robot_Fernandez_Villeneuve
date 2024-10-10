@@ -78,7 +78,8 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
 
     if (robotState.mode == 0) {
         LED_ORANGE_2 = 1;
-    } else if (robotState.mode == 1) {
+    } 
+    else if (robotState.mode == 1) {
         UpdateAsservissement();
         UpdateTrajectory();
         LED_ORANGE_2 = 0;
