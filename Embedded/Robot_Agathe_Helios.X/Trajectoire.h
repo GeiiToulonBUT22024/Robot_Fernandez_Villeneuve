@@ -11,7 +11,7 @@
 
 #define VitesseMaxAngulaire 2*PI
 #define ToleranceAngulaire 0.5
-#define accelerationAngulaire 0.01
+#define accelerationAngulaire 2*PI
 #define VitesseMaxLineaire 1 // 1m.s-1
 #define Tolerancedistance 0.1 // 10 cm
 #define accelerationLineaire 0.1
