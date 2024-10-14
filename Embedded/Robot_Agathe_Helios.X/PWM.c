@@ -26,7 +26,7 @@ void InitPWM(void) {
     PTCONbits.PTEN = 1;
 }
 
-double talon = 20;
+double talon = 50;
 
 void PWMSetSpeed(float vitesseEnPourcents) {
     PDC1 = vitesseEnPourcents * PWMPER + talon;

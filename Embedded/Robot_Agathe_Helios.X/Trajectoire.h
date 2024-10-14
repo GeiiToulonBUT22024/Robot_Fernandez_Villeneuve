@@ -9,9 +9,9 @@
 #define	TRAJECTOIRE_H
 
 
-#define VitesseMaxAngulaire 2*PI
-#define ToleranceAngulaire 0.5
-#define accelerationAngulaire 2*PI
+#define VitesseMaxAngulaire 0.2
+#define ToleranceAngulaire 0.005
+#define accelerationAngulaire 0.2
 #define VitesseMaxLineaire 1 // 1m.s-1
 #define Tolerancedistance 0.1 // 10 cm
 #define accelerationLineaire 0.1
@@ -42,6 +42,8 @@ typedef struct {
     double distance;
     float last_waypointX;
     float last_waypointY; 
+    float erreurAngulaire;
+    float erreurLineaire;
 
     EtatTraj state;
 
@@ -52,6 +54,7 @@ extern volatile GhostPosition ghostPosition;
 void InitTrajectory(void);
 void UpdateTrajectory();
 void SendGhostInfo();
+void PIDPosition();
 
 #endif	/* TRAJECTOIRE_H */
 

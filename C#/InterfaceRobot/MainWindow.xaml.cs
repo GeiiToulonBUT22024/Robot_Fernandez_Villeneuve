@@ -62,6 +62,13 @@ namespace InterfaceRobot
             oscilloSpeed.ChangeLineColor(0, Colors.HotPink);
             oscilloSpeed.isDisplayActivated = true;
 
+            oscilloGhostPos.AddOrUpdateLine(0, 200, "Angle Ghost");
+            oscilloGhostPos.ChangeLineColor(0, Colors.HotPink);
+            oscilloGhostPos.isDisplayActivated = true;
+
+            oscilloGhostVitesse.AddOrUpdateLine(0, 200, "Vitesse Angulaire Ghost");
+            oscilloGhostVitesse.ChangeLineColor(0, Colors.HotPink);
+            oscilloGhostVitesse.isDisplayActivated = true;
         }
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
@@ -410,9 +417,8 @@ namespace InterfaceRobot
                     textBoxReception.Text += "Ghost thetaRobot: " + ghost.thetaRobot.ToString() + "\n";
                 }));
 
-                oscilloGhostPos.AddPointToLine(0, ghost.posX, ghost.posY);
-                oscilloGhostVitesse.AddPointToLine(0, ghost.timestamp, ghost.vitL);
-                oscilloGhostVitesse.AddPointToLine(1, ghost.timestamp, ghost.vitA);
+                oscilloGhostPos.AddPointToLine(0, ghost.timestamp, ghost.thetaRobot);
+                oscilloGhostVitesse.AddPointToLine(0, ghost.timestamp, ghost.vitA);
 
             }
 

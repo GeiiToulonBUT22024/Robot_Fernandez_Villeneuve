@@ -1,6 +1,7 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#define FREQ_T1 250.0
 
 void InitTimer23(void);
 void InitTimer1(void);
