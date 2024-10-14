@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ExtendedSerialPort;
+using SciChart.Charting.Visuals;
+using System;
+using System.Globalization;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ExtendedSerialPort;
 using System.Windows.Threading;
-using Constants;
-using System.Collections;
-using System.Globalization;
-using static System.Net.Mime.MediaTypeNames;
 using Utilities;
-using SciChart.Charting.Visuals;
 
 namespace InterfaceRobot
 {
@@ -55,19 +44,19 @@ namespace InterfaceRobot
             timerAffichage.Start();
 
             oscilloPos.AddOrUpdateLine(0, 200, "Postion");
-            oscilloPos.ChangeLineColor(0, Colors.DarkCyan);
+            oscilloPos.ChangeLineColor(0, Colors.Red);
             oscilloPos.isDisplayActivated = true;
 
             oscilloSpeed.AddOrUpdateLine(0, 200, "Speed");
-            oscilloSpeed.ChangeLineColor(0, Colors.HotPink);
+            oscilloSpeed.ChangeLineColor(0, Colors.LawnGreen);
             oscilloSpeed.isDisplayActivated = true;
 
             oscilloGhostPos.AddOrUpdateLine(0, 200, "Angle Ghost");
-            oscilloGhostPos.ChangeLineColor(0, Colors.HotPink);
+            oscilloGhostPos.ChangeLineColor(0, Colors.DeepSkyBlue);
             oscilloGhostPos.isDisplayActivated = true;
 
             oscilloGhostVitesse.AddOrUpdateLine(0, 200, "Vitesse Angulaire Ghost");
-            oscilloGhostVitesse.ChangeLineColor(0, Colors.HotPink);
+            oscilloGhostVitesse.ChangeLineColor(0, Colors.Yellow);
             oscilloGhostVitesse.isDisplayActivated = true;
         }
 
@@ -745,6 +734,66 @@ namespace InterfaceRobot
         private void button1_1_Click(object sender, RoutedEventArgs e)
         {
             PointD pt = new PointD(1, 1);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
+        }
+
+        private void button1__1_Click(object sender, RoutedEventArgs e)
+        {
+            PointD pt = new PointD(1, -1);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
+        }
+
+        private void button0__1_Click(object sender, RoutedEventArgs e)
+        {
+            PointD pt = new PointD(0, -1);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
+        }
+
+        private void button_1__1_Click(object sender, RoutedEventArgs e)
+        {
+            PointD pt = new PointD(-1, -1);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
+        }
+
+        private void button_1_0_Click(object sender, RoutedEventArgs e)
+        {
+            PointD pt = new PointD(-1, 0);
+
+            byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
+            byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);
+            byte[] messagePayload = new byte[8];
+            PosX_byte.CopyTo(messagePayload, 0);
+            PosY_byte.CopyTo(messagePayload, 4);
+            UartEncodeAndSendMessage(0x0050, 8, messagePayload);
+        }
+
+        private void button_1_1_Click(object sender, RoutedEventArgs e)
+        {
+            PointD pt = new PointD(-1, -1);
 
             byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
             byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);

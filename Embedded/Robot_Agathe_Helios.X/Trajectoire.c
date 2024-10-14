@@ -210,43 +210,26 @@ void UpdateTrajectory() {
             else if (ghostPosition.thetaRestant < 0) {
                 ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, -VitesseMaxAngulaire);
             }
-//            else {
-//                ghostPosition.vitesseAngulaire = 0;
-//            }
         }
         else {
-            if (ghostPosition.thetaRestant > 0 && ghostPosition.vitesseAngulaire>0) {
+            if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire>0) {
                 ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, 0);
             }
-            else if (ghostPosition.thetaRestant > 0 && ghostPosition.vitesseAngulaire<0) {
+            else if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire<0) {
                 ghostPosition.vitesseAngulaire = Min(ghostPosition.vitesseAngulaire + accelerationAngulaire / FREQ_T1, 0);
             }
-            else if (ghostPosition.thetaRestant < 0 && ghostPosition.vitesseAngulaire>0) {
+            else if (ghostPosition.thetaRestant <= 0 && ghostPosition.vitesseAngulaire>0) {
                 ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, 0);
             }
-            else if (ghostPosition.thetaRestant < 0 && ghostPosition.vitesseAngulaire<0) {
+            else if (ghostPosition.thetaRestant <= 0 && ghostPosition.vitesseAngulaire<0) {
                 ghostPosition.vitesseAngulaire = Min(ghostPosition.vitesseAngulaire + accelerationAngulaire / FREQ_T1, 0);
             }
-//            else {
-//                ghostPosition.vitesseAngulaire = 0;
-//            }
-
             if (Abs(ghostPosition.thetaRestant) < Abs(ghostPosition.incrementeAngulaire)) {
                 ghostPosition.incrementeAngulaire = ghostPosition.thetaRestant;
             }
-        }
-//        
-//        if(ghostPosition.vitesseAngulaire == 0)
-//            ghostPosition.vitesseAngulaire= -ghostPosition.vitesseAngulaire;
-//        
+        }   
         
         ghostPosition.thetaGhost = ghostPosition.thetaGhost + ghostPosition.incrementeAngulaire;
-//    }
-//    else { //IDLE
-//        ghostPosition.vitesseLineaire = 0;
-//        ghostPosition.vitesseAngulaire = 0;
-//    }
-
 }
 
 void PIDPosition(){

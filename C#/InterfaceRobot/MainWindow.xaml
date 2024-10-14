@@ -95,7 +95,8 @@
 
         <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <GroupBox x:Name="groupBox_telemetre" Grid.Column="0" Header="Télémètres IR "  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="10">
@@ -114,45 +115,56 @@
                     <Label x:Name="IR_ExtremeDroite" Content="IR Extreme Droite: " Grid.Row="4" FontSize ="15" VerticalAlignment="Center"/>
                 </Grid>
             </GroupBox>
-
+            
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
+                    <GroupBox x:Name="groupBox_Moteurs" Header="Moteurs" Grid.Row="1" Grid.RowSpan="2" FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Vitesse_Gauche" Content="Vitesse Gauche : " Grid.Row="0" FontSize ="15"/>
+                    <Label x:Name="Vitesse_Droit" Content="Vitesse Droit : "  Grid.Row="1" FontSize ="15"/>
+                </Grid>
+                </GroupBox>
+                <GroupBox x:Name="groupBox_Leds" Header="Leds" Grid.Row="0" Grid.Column="0" Background="#FCE1B8" FontSize ="18" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="Led1" Content="Led1" Grid.Column="0" VerticalAlignment="Center" FontSize ="15" Background="#FCBB77"  Checked="Led1_Checked" Unchecked="Led1_Unchecked"/>
+                        <CheckBox x:Name="Led2" Content="Led2" Grid.Column="1" VerticalAlignment="Center" FontSize ="15" Background ="#95B5DE" Checked="Led2_Checked" Unchecked="Led2_Unchecked"/>
+                        <CheckBox x:Name="Led3" Content="Led3" Grid.Column="2" VerticalAlignment="Center" FontSize ="15" Background ="#FFFFFF"  Checked="Led3_Checked" Unchecked="Led3_Unchecked"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="button0_0" Content="0:0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77"  Click="button0_0_Click" Width="70" Margin="15" />
-                <Button x:Name="button1_0" Content="1:0" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button1_0_Click" Width="70" Margin="15"/>
-                <Button x:Name="button0_1" Content="0:1" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button0_1_Click" Width="70" Margin="15" />
-                <Button x:Name="button1_1" Content="1:1" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button1_1_Click" Width="70" Margin="15" />
+                <Button x:Name="button0_0" Content="0:0" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77"  Click="button0_0_Click" Width="50" Margin="10" />
+                <Button x:Name="button1_0" Content="1:0" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button1_0_Click" Width="50" Margin="10"/>
+                <Button x:Name="button0_1" Content="0:1" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button0_1_Click" Width="50" Margin="10" />
+                <Button x:Name="button1_1" Content="1:1" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button1_1_Click" Width="50" Margin="10" />
+                <Button x:Name="button1__1" Content="1:-1" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button1__1_Click" Width="50" Margin="10" />
+                <Button x:Name="button0__1" Content="0:-1" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button0__1_Click" Width="50" Margin="10" />
+                <Button x:Name="button_1__1" Content="-1:-1" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button_1__1_Click" Width="50" Margin="10" />
+                <Button x:Name="button_1_0" Content="-1:0" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button_1_0_Click" Width="50" Margin="10" />
+                <Button x:Name="button_1_1" Content="-1:1" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize ="18" Background="#FCBB77" Click="button_1_1_Click" Width="50" Margin="10" />
 
-                <GroupBox x:Name="groupBox_Moteurs" Header="Moteurs" Grid.Row="2" Grid.ColumnSpan="2" FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="10" >
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Label x:Name="Vitesse_Gauche" Content="Vitesse Gauche : " Grid.Row="0" FontSize ="15"/>
-                        <Label x:Name="Vitesse_Droit" Content="Vitesse Droit : "  Grid.Row="1" FontSize ="15"/>
-                    </Grid>
-                </GroupBox>
-                <GroupBox x:Name="groupBox_Leds" Header="Leds" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Background="#FCE1B8" FontSize ="18" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="10">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <CheckBox x:Name="Led1" Content="Led1" Grid.Row="0" VerticalAlignment="Center" FontSize ="15" Background="#FCBB77"  Checked="Led1_Checked" Unchecked="Led1_Unchecked"/>
-                        <CheckBox x:Name="Led2" Content="Led2" Grid.Row="1" VerticalAlignment="Center" FontSize ="15" Background ="#95B5DE" Checked="Led2_Checked" Unchecked="Led2_Unchecked"/>
-                        <CheckBox x:Name="Led3" Content="Led3" Grid.Row="2" VerticalAlignment="Center" FontSize ="15" Background ="#FFFFFF"  Checked="Led3_Checked" Unchecked="Led3_Unchecked"/>
-                    </Grid>
-                </GroupBox>
             </Grid>
         </Grid>
         <GroupBox x:Name="Asservissement" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Header="Asservissement "  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
