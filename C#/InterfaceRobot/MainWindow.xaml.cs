@@ -34,7 +34,7 @@ namespace InterfaceRobot
             SciChartSurface.SetRuntimeLicenseKey("8L8Domw9EVJTqFNHPJXR8O72sgntF/LrZ/QeRja6vGCH++6f5Enq+A80BybUfxkgDqkyEcpjwIqIj2sV6AET6Su7V8mztAT+KZHXAW0YEHeVuXLgKE3jvhkb9zWvY8rUXROUCMWe21018UUccZzOv4+yypUXKv98VjOaI/QseVczFKYUPVUOjkUyP5OF1TrwHg+H+j/8UN7DRqi24mWePFx8Wl78JlmJw3qNaKacZ++pb5Fk5AcTwPlMOgyf9dYh0D0w8TDO0eDlNRGILi2tC06IicTtm0tCYgDE3aUbxuJR4xu8I3ZPZ9cwmkavOWKZOF3ejzYhxhJKQDeuU2lcc2WksvOib5m3B1lCWaTrNdQvgJAzpvlKGPJwpU6kLd5RrXsqVglU8kvIuSa/rzkJHqJtvKFHzrEmGW1Nu/1xp5X4L06k2H5hp5O9z2Sdbq+Z5fhlf+l/3dgIH5xAj6vFHMQkm92z0uCHF052aIsDCdrFaQgSomkb+UnBUxnBl+k/BIBFJtem");
 
             InitializeComponent();
-            serialPort1 = new ReliableSerialPort("COM6", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ReliableSerialPort("COM11", 115200, Parity.None, 8, StopBits.One);
             serialPort1.OnDataReceivedEvent += SerialPort1_DataReceived;
             serialPort1.Open();
 
@@ -793,7 +793,7 @@ namespace InterfaceRobot
 
         private void button_1_1_Click(object sender, RoutedEventArgs e)
         {
-            PointD pt = new PointD(-1, -1);
+            PointD pt = new PointD(-1, 1);
 
             byte[] PosX_byte = BitConverter.GetBytes((float)pt.X);
             byte[] PosY_byte = BitConverter.GetBytes((float)pt.Y);

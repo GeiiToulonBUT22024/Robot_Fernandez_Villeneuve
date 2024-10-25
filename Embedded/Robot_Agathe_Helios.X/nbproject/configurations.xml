@@ -227,6 +227,9 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
+      <ICD4Tool>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
+      </ICD4Tool>
     </conf>
   </confs>
 </configurationDescriptor>

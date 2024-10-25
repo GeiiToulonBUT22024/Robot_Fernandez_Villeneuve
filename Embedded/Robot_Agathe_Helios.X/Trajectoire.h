@@ -30,6 +30,7 @@ typedef struct {
     float thetaRestant;
     float thetaArret;
     float incrementeAngulaire;
+    float incrementeLineaire;
     float vitesseLineaire;
     float vitesseAngulaire;
     float posX;
@@ -37,9 +38,10 @@ typedef struct {
     float waypoint;
     float waypointX;
     float waypointY;
-    float distanceToTarget;
+    float distanceRestante;
     float target_angle;
     double distance;
+    double distanceArret;
     float last_waypointX;
     float last_waypointY; 
     float erreurAngulaire;
