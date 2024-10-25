@@ -222,22 +222,17 @@ void UpdateTrajectory() {
 
                 if (ghostPosition.thetaRestant > 0) {
                     ghostPosition.vitesseAngulaire = Min(ghostPosition.vitesseAngulaire + accelerationAngulaire / FREQ_T1, VitesseMaxAngulaire);
-                } 
-                else if (ghostPosition.thetaRestant < 0) {
+                } else if (ghostPosition.thetaRestant < 0) {
                     ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, -VitesseMaxAngulaire);
                 }
-            } 
-            else {
+            } else {
                 if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire > 0) {
                     ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, 0);
-                } 
-                else if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire < 0) {
+                } else if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire < 0) {
                     ghostPosition.vitesseAngulaire = Min(ghostPosition.vitesseAngulaire + accelerationAngulaire / FREQ_T1, 0);
-                } 
-                else if (ghostPosition.thetaRestant <= 0 && ghostPosition.vitesseAngulaire > 0) {
+                } else if (ghostPosition.thetaRestant <= 0 && ghostPosition.vitesseAngulaire > 0) {
                     ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, 0);
-                } 
-                else if (ghostPosition.thetaRestant <= 0 && ghostPosition.vitesseAngulaire < 0) {
+                } else if (ghostPosition.thetaRestant <= 0 && ghostPosition.vitesseAngulaire < 0) {
                     ghostPosition.vitesseAngulaire = Min(ghostPosition.vitesseAngulaire + accelerationAngulaire / FREQ_T1, 0);
                 }
 
@@ -256,32 +251,30 @@ void UpdateTrajectory() {
 
         case DEPLACEMENTLINEAIRE:
 
-            if (((ghostPosition.distanceArret >= 0 && ghostPosition.distanceRestante >= 0) || (ghostPosition.distanceArret <= 0 && ghostPosition.distanceRestante <= 0))
-                    && Abs(ghostPosition.distanceRestante) >= Abs(ghostPosition.distanceArret)) {
+            if ((ghostPosition.distanceRestante != 0) && (Modulo2PIAngleRadian(ghostPosition.thetaRestant) < 0.01)) {
+                if (((ghostPosition.distanceArret >= 0 && ghostPosition.distanceRestante >= 0) || (ghostPosition.distanceArret <= 0 && ghostPosition.distanceRestante <= 0))
+                        && Abs(ghostPosition.distanceRestante) >= Abs(ghostPosition.distanceArret)) {
 
-                if (ghostPosition.distanceRestante > 0) {
-                    ghostPosition.vitesseLineaire = Min(ghostPosition.vitesseLineaire + accelerationLineaire / FREQ_T1, VitesseMaxLineaire);
-                } 
-                else if (ghostPosition.distanceRestante < 0) {
-                    ghostPosition.vitesseLineaire = Max(ghostPosition.vitesseLineaire - accelerationLineaire / FREQ_T1, -VitesseMaxLineaire);
-                }
-            } 
-            else {
-                if (ghostPosition.distanceRestante >= 0 && ghostPosition.vitesseLineaire > 0) {
-                    ghostPosition.vitesseLineaire = Max(ghostPosition.vitesseLineaire - accelerationLineaire / FREQ_T1, 0);
-                } 
-                else if (ghostPosition.distanceRestante >= 0 && ghostPosition.vitesseLineaire < 0) {
-                    ghostPosition.vitesseLineaire = Min(ghostPosition.vitesseLineaire + accelerationLineaire / FREQ_T1, 0);
-                } 
-                else if (ghostPosition.distanceRestante <= 0 && ghostPosition.vitesseLineaire > 0) {
-                    ghostPosition.vitesseLineaire = Max(ghostPosition.vitesseLineaire - accelerationLineaire / FREQ_T1, 0);
-                } 
-                else if (ghostPosition.distanceRestante <= 0 && ghostPosition.vitesseLineaire < 0) {
-                    ghostPosition.vitesseLineaire = Min(ghostPosition.vitesseLineaire + accelerationLineaire / FREQ_T1, 0);
-                }
+                    if (ghostPosition.distanceRestante > 0) {
+                        ghostPosition.vitesseLineaire = Min(ghostPosition.vitesseLineaire + accelerationLineaire / FREQ_T1, VitesseMaxLineaire);
+                    } else if (ghostPosition.distanceRestante < 0) {
+                        ghostPosition.vitesseLineaire = Max(ghostPosition.vitesseLineaire - accelerationLineaire / FREQ_T1, -VitesseMaxLineaire);
+                    }
+                } else {
+                    if (ghostPosition.distanceRestante >= 0 && ghostPosition.vitesseLineaire > 0) {
+                        ghostPosition.vitesseLineaire = Max(ghostPosition.vitesseLineaire - accelerationLineaire / FREQ_T1, 0);
+                    } else if (ghostPosition.distanceRestante >= 0 && ghostPosition.vitesseLineaire < 0) {
+                        ghostPosition.vitesseLineaire = Min(ghostPosition.vitesseLineaire + accelerationLineaire / FREQ_T1, 0);
+                    } else if (ghostPosition.distanceRestante <= 0 && ghostPosition.vitesseLineaire > 0) {
+                        ghostPosition.vitesseLineaire = Max(ghostPosition.vitesseLineaire - accelerationLineaire / FREQ_T1, 0);
+                    } else if (ghostPosition.distanceRestante <= 0 && ghostPosition.vitesseLineaire < 0) {
+                        ghostPosition.vitesseLineaire = Min(ghostPosition.vitesseLineaire + accelerationLineaire / FREQ_T1, 0);
+                    }
 
-                if (Abs(ghostPosition.distanceRestante) < Abs(ghostPosition.incrementeLineaire)) {
-                    ghostPosition.incrementeLineaire = ghostPosition.distanceRestante;
+                    if (Abs(ghostPosition.distanceRestante) < Abs(ghostPosition.incrementeLineaire)) {
+                        ghostPosition.incrementeLineaire = ghostPosition.distanceRestante;
+
+                    }
                 }
 
                 if (ghostPosition.vitesseLineaire == 0 && (Abs(ghostPosition.distanceRestante) < 0.01)) {
@@ -289,6 +282,10 @@ void UpdateTrajectory() {
                     ghostPosition.posY = ghostPosition.waypointY;
                     ghostPosition.state = IDLE;
                 }
+
+                ghostPosition.posX += ghostPosition.incrementeLineaire * cos(ghostPosition.thetaGhost);
+                ghostPosition.posY += ghostPosition.incrementeLineaire * sin(ghostPosition.thetaGhost);
+                robotState.vitesseConsigneLineaire = ghostPosition.vitesseLineaire;
             }
     }
 }

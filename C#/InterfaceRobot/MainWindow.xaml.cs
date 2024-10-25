@@ -51,13 +51,21 @@ namespace InterfaceRobot
             oscilloSpeed.ChangeLineColor(0, Colors.LawnGreen);
             oscilloSpeed.isDisplayActivated = true;
 
-            oscilloGhostPos.AddOrUpdateLine(0, 200, "Angle Ghost");
-            oscilloGhostPos.ChangeLineColor(0, Colors.DeepSkyBlue);
-            oscilloGhostPos.isDisplayActivated = true;
+            oscilloGhostPosAng.AddOrUpdateLine(0, 200, "Angle Ghost");
+            oscilloGhostPosAng.ChangeLineColor(0, Colors.DeepSkyBlue);
+            oscilloGhostPosAng.isDisplayActivated = true;
 
-            oscilloGhostVitesse.AddOrUpdateLine(0, 200, "Vitesse Angulaire Ghost");
-            oscilloGhostVitesse.ChangeLineColor(0, Colors.Yellow);
-            oscilloGhostVitesse.isDisplayActivated = true;
+            oscilloGhostVitesseAng.AddOrUpdateLine(0, 200, "Vitesse Angulaire Ghost");
+            oscilloGhostVitesseAng.ChangeLineColor(0, Colors.Yellow);
+            oscilloGhostVitesseAng.isDisplayActivated = true;
+
+            oscilloGhostPosLin.AddOrUpdateLine(0, 200, "Angle Ghost");
+            oscilloGhostPosLin.ChangeLineColor(0, Colors.LightPink);
+            oscilloGhostPosLin.isDisplayActivated = true;
+
+            oscilloGhostVitesseLin.AddOrUpdateLine(0, 200, "Vitesse Angulaire Ghost");
+            oscilloGhostVitesseLin.ChangeLineColor(0, Colors.MediumPurple);
+            oscilloGhostVitesseLin.isDisplayActivated = true;
         }
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
@@ -406,8 +414,10 @@ namespace InterfaceRobot
                     textBoxReception.Text += "Ghost thetaRobot: " + ghost.thetaRobot.ToString() + "\n";
                 }));
 
-                oscilloGhostPos.AddPointToLine(0, ghost.timestamp, ghost.thetaRobot);
-                oscilloGhostVitesse.AddPointToLine(0, ghost.timestamp, ghost.vitA);
+                oscilloGhostPosAng.AddPointToLine(0, ghost.timestamp, ghost.thetaRobot);
+                oscilloGhostVitesseAng.AddPointToLine(0, ghost.timestamp, ghost.vitA);
+                oscilloGhostVitesseLin.AddPointToLine(0, ghost.timestamp, ghost.vitL);
+                oscilloGhostPosLin.AddPointToLine(0, ghost.posX, ghost.posY);
 
             }
 

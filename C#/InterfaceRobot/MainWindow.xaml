@@ -176,6 +176,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -187,13 +188,19 @@
                 <GroupBox x:Name="Speed" Grid.Row="0" Grid.Column="1" Header="OscilloSpeed "  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
                     <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" />
                 </GroupBox>
-                <GroupBox x:Name="GhostPos" Grid.Row="1" Grid.Column="0" Header="OscilloGhostPosition "  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
-                    <oscillo:WpfOscilloscope x:Name="oscilloGhostPos" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" />
+                <GroupBox x:Name="GhostPosAngulaire" Grid.Row="1" Grid.Column="0" Header="OscilloGhostPositionAngulaire "  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
+                    <oscillo:WpfOscilloscope x:Name="oscilloGhostPosAng" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" />
                 </GroupBox>
-                <GroupBox x:Name="GhostVitesse" Grid.Row="1" Grid.Column="1" Header="OscilloGhostVitesse "  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
-                    <oscillo:WpfOscilloscope x:Name="oscilloGhostVitesse" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" />
+                <GroupBox x:Name="GhostVitesseAngulaire" Grid.Row="1" Grid.Column="1" Header="OscilloGhostVitesseAngulaire"  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
+                    <oscillo:WpfOscilloscope x:Name="oscilloGhostVitesseAng" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" />
                 </GroupBox>
-                
+                <GroupBox x:Name="Lineaire" Grid.Row="2" Grid.Column="0" Header="OscilloGhostPositionLineaire"  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
+                    <oscillo:WpfOscilloscope x:Name="oscilloGhostPosLin" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" />
+                </GroupBox>
+                <GroupBox x:Name="GhostVitesseLineaire" Grid.Row="2" Grid.Column="1" Header="OscilloGhostVitesseLineaire"  FontSize ="18" Background="#FCE1B8" BorderBrush ="#FCBB77" BorderThickness ="3" Margin="5">
+                    <oscillo:WpfOscilloscope x:Name="oscilloGhostVitesseLin" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" />
+                </GroupBox>
+
             </Grid>
         </Grid>
 
