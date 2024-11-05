@@ -144,20 +144,22 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             break;
 
         case 0x50:
-            if(payloadLength == 8)
-            {
+            if (payloadLength == 8) {
                 ghostPosition.waypointX = getFloat(payload, 0);
+                ghostPosition.waypointX = ghostPosition.waypointX / 10;
                 ghostPosition.waypointY = getFloat(payload, 4);
-            }            
+                ghostPosition.waypointY = ghostPosition.waypointY / 10;
+
+            }
             break;
 
-//        case 0x51:
-//            ghostPosition.waypointX = getFloat(payload, 0);
-//            break;
-//
-//        case 0x52:
-//            ghostPosition.waypointY = getFloat(payload, 0);
-//            break;
+            //        case 0x51:
+            //            ghostPosition.waypointX = getFloat(payload, 0);
+            //            break;
+            //
+            //        case 0x52:
+            //            ghostPosition.waypointY = getFloat(payload, 0);
+            //            break;
 
         case 0x70:
             KpX = getFloat(payload, 0);

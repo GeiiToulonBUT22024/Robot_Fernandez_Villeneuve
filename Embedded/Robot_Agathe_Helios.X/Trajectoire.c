@@ -6,6 +6,7 @@
 #include "UART_Protocol.h"
 #include "timer.h"
 #include "ChipConfig.h"
+#include "QEI.h"
 
 
 volatile GhostPosition ghostPosition;
@@ -192,7 +193,6 @@ void UpdateTrajectory() {
     //        }
 
     //if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) { //Rotation
-
     ghostPosition.thetaWaypoint = atan2((ghostPosition.waypointY - ghostPosition.posY), (ghostPosition.waypointX - ghostPosition.posX));
     ghostPosition.thetaRestant = ModuloByAngle(ghostPosition.thetaGhost, ghostPosition.thetaWaypoint) - ghostPosition.thetaGhost;
     ghostPosition.thetaArret = ghostPosition.vitesseAngulaire * ghostPosition.vitesseAngulaire / (2 * accelerationAngulaire);
@@ -225,7 +225,8 @@ void UpdateTrajectory() {
                 } else if (ghostPosition.thetaRestant < 0) {
                     ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, -VitesseMaxAngulaire);
                 }
-            } else {
+            }
+            else {
                 if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire > 0) {
                     ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, 0);
                 } else if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire < 0) {
@@ -248,13 +249,13 @@ void UpdateTrajectory() {
                 ghostPosition.thetaGhost = ghostPosition.thetaWaypoint;
                 ghostPosition.state = DEPLACEMENTLINEAIRE;
             }
+            break;
 
         case DEPLACEMENTLINEAIRE:
 
             if ((ghostPosition.distanceRestante != 0) && (Modulo2PIAngleRadian(ghostPosition.thetaRestant) < 0.01)) {
                 if (((ghostPosition.distanceArret >= 0 && ghostPosition.distanceRestante >= 0) || (ghostPosition.distanceArret <= 0 && ghostPosition.distanceRestante <= 0))
                         && Abs(ghostPosition.distanceRestante) >= Abs(ghostPosition.distanceArret)) {
-
                     if (ghostPosition.distanceRestante > 0) {
                         ghostPosition.vitesseLineaire = Min(ghostPosition.vitesseLineaire + accelerationLineaire / FREQ_T1, VitesseMaxLineaire);
                     } else if (ghostPosition.distanceRestante < 0) {
@@ -276,8 +277,9 @@ void UpdateTrajectory() {
 
                     }
                 }
-
-                if (ghostPosition.vitesseLineaire == 0 && (Abs(ghostPosition.distanceRestante) < 0.01)) {
+            }
+            if ((Abs(ghostPosition.distanceRestante) < 0.01)) {
+                    ghostPosition.vitesseLineaire = 0;
                     ghostPosition.posX = ghostPosition.waypointX;
                     ghostPosition.posY = ghostPosition.waypointY;
                     ghostPosition.state = IDLE;
@@ -286,14 +288,13 @@ void UpdateTrajectory() {
                 ghostPosition.posX += ghostPosition.incrementeLineaire * cos(ghostPosition.thetaGhost);
                 ghostPosition.posY += ghostPosition.incrementeLineaire * sin(ghostPosition.thetaGhost);
                 robotState.vitesseConsigneLineaire = ghostPosition.vitesseLineaire;
-            }
+            break;
     }
 }
 
-void PIDPosition() {
-    ghostPosition.erreurAngulaire = ghostPosition.thetaGhost - robotState.angleRadianFromOdometry;
-
-}
+//void PIDPosition() {
+//    ghostPosition.erreurAngulaire = ghostPosition.thetaGhost - robotState.angleRadianFromOdometry;
+//}
 
 void SendGhostInfo() {
 
