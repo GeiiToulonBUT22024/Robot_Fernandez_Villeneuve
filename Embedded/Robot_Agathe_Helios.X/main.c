@@ -59,8 +59,8 @@ int main(void) {
 
     SetupPidAsservissement(&robotState.PidX, 2.5f, 30.0f, 0.0f, 100.0f, 100.0f, 100.0f);
     SetupPidAsservissement(&robotState.PidTheta, 1.5f, 20.0f, 0.0f, 100.0f, 100.0f, 100.0f);
-    SetupPidAsservissement(&robotState.PdX, 0.0f, 0.0f, 0.0f, 100.0f, 100.0f, 100.0f);
-    SetupPidAsservissement(&robotState.PdTheta, 0.0f, 0.0f, 0.0f, 100.0f, 100.0f, 100.0f);
+    SetupPidAsservissement(&robotState.PdX, 0.0f, 0.0f, 0.5f, 100.0f, 100.0f, 100.0f);
+    SetupPidAsservissement(&robotState.PdTheta, 0.6f, 0.0f, 0.5f, 100.0f, 100.0f, 100.0f);
 
 
     //        PWMSetSpeed(50,MOTEUR_GAUCHE);

@@ -156,9 +156,6 @@ void UpdateTrajectory() {
     }
 }
 
-//void PDPosition() {
-//    ghostPosition.erreurAngulaire = ghostPosition.thetaGhost - robotState.angleRadianFromOdometry;
-//}
 
 void SendGhostInfo() {
 

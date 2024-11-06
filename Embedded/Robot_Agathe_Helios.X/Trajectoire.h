@@ -12,9 +12,9 @@
 #define VitesseMaxAngulaire 3
 #define ToleranceAngulaire 0.005
 #define accelerationAngulaire 5
-#define VitesseMaxLineaire 2 // 1m.s-1
+#define VitesseMaxLineaire 1 // 1m.s-1
 #define Tolerancedistance 0.1 // 10 cm
-#define accelerationLineaire 2
+#define accelerationLineaire 1
 
 
 typedef enum {
@@ -46,6 +46,7 @@ typedef struct {
     float last_waypointY; 
     float erreurAngulaire;
     float erreurLineaire;
+    double position;
 
     EtatTraj state;
 

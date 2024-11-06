@@ -4,6 +4,9 @@
 #include "UART_Protocol.h"
 #include "QEI.h"
 #include "PWM.h"
+#include "Trajectoire.h"
+#include "math.h"
+
 
 void SetupPidAsservissement(volatile PidCorrector* PidCorr, float Kp, float Ki, float Kd, float proportionelleMax, float integralMax, float deriveeMax) {
     PidCorr->Kp = Kp;
@@ -45,8 +48,19 @@ float Correcteur(volatile PidCorrector* PidCorr, float erreur) {
 void UpdateAsservissement() {
     robotState.PidX.erreur = robotState.vitesseConsigneLineaire - robotState.vitesseLineaireFromOdometry;
     robotState.PidTheta.erreur = robotState.vitesseConsigneAngulaire - robotState.vitesseAngulaireFromOdometry;
+    
+    ghostPosition.position =  sqrt(ghostPosition.posX * ghostPosition.posX + ghostPosition.posY * ghostPosition.posY);
+    double PositionFromOdometry = sqrt(robotState.xPosFromOdometry * robotState.xPosFromOdometry + robotState.yPosFromOdometry * robotState.yPosFromOdometry);
+            
+//    robotState.PdX.erreur =  ghostPosition.position - PositionFromOdometry;
+    //robotState.xCorrectionVitesse = Correcteur(&robotState.PdX, robotState.PdX.erreur);
+
+//    robotState.PdTheta.erreur = ghostPosition.thetaGhost - robotState.angleRadianFromOdometry;
+    //robotState.thetaCorrectionVitesse = Correcteur(&robotState.PdTheta, robotState.PdTheta.erreur);
+
     robotState.xCorrectionVitesse = Correcteur(&robotState.PidX, robotState.PidX.erreur);
     robotState.thetaCorrectionVitesse = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
+    
     PWMSetSpeedConsignePolaire(robotState.xCorrectionVitesse, robotState.thetaCorrectionVitesse);
 }
 
