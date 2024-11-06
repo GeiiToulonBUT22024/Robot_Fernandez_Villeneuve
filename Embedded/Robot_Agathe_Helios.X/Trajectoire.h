@@ -9,12 +9,12 @@
 #define	TRAJECTOIRE_H
 
 
-#define VitesseMaxAngulaire 0.2
+#define VitesseMaxAngulaire 3
 #define ToleranceAngulaire 0.005
-#define accelerationAngulaire 0.2
-#define VitesseMaxLineaire 0.5 // 1m.s-1
+#define accelerationAngulaire 5
+#define VitesseMaxLineaire 2 // 1m.s-1
 #define Tolerancedistance 0.1 // 10 cm
-#define accelerationLineaire 0.1
+#define accelerationLineaire 2
 
 
 typedef enum {

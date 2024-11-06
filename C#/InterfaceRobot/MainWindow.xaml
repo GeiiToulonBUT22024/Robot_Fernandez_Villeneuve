@@ -89,7 +89,7 @@
                 <Button x:Name="buttonEnvoyer" Content="Envoyer" HorizontalAlignment="Center" Grid.Column="0"  Grid.Row="1" FontSize ="18" Background="#95B5DE"  Click="buttonEnvoyer_Click" Width="100" Margin="5"/>
                 <Button x:Name="buttonClear" HorizontalAlignment="Center" Content="Clear" Grid.Column="1" Grid.Row="1" FontSize ="18"  Background="#95B5DE" Click="buttonClear_Click" Width="100" Margin="5" />
                 <Button x:Name="buttonPID" Content="Config PID" HorizontalAlignment="Center" Grid.Column="2"  FontSize ="18" Background="#95B5DE" Click="buttonPID_Click" Width="100" Margin="5"/>
-                <Button x:Name="buttonMode" HorizontalAlignment="Center" Content="Mode : Auto" Grid.Column="3" FontSize ="18" Background="LightSkyBlue" Click="buttonMode_Click" Width="105" Margin="5" />
+                <Button x:Name="buttonMode" HorizontalAlignment="Center" Content="Mode : Asser" Grid.Column="3" FontSize ="18" Background="LightSkyBlue" Click="buttonMode_Click" Width="105" Margin="5" />
             </Grid>
         </Grid>
 

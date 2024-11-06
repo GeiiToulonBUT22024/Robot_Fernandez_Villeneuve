@@ -45,7 +45,7 @@ int main(void) {
     // Configuration des entr?es sorties
     /****************************************************************************************************/
     InitIO();
-
+    robotState.mode = 1;
     InitTimer23();
     InitTimer1();
     InitTimer4();
@@ -56,7 +56,13 @@ int main(void) {
     InitQEI2();
 
     InitTrajectory();
-    
+
+    SetupPidAsservissement(&robotState.PidX, 2.5f, 30.0f, 0.0f, 100.0f, 100.0f, 100.0f);
+    SetupPidAsservissement(&robotState.PidTheta, 1.5f, 20.0f, 0.0f, 100.0f, 100.0f, 100.0f);
+    SetupPidAsservissement(&robotState.PdX, 0.0f, 0.0f, 0.0f, 100.0f, 100.0f, 100.0f);
+    SetupPidAsservissement(&robotState.PdTheta, 0.0f, 0.0f, 0.0f, 100.0f, 100.0f, 100.0f);
+
+
     //        PWMSetSpeed(50,MOTEUR_GAUCHE);
     //        PWMSetSpeed(50,MOTEUR_DROIT);
     //

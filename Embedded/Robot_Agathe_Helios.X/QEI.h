@@ -8,7 +8,7 @@
 #ifndef QEI_H
 #define	QEI_H
 
-#define DISTROUES 0.2812
+#define DISTROUES 0.216
 #define FREQ_ECH_QEI 250
 
 void InitQEI1();

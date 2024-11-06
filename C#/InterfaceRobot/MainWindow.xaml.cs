@@ -59,13 +59,15 @@ namespace InterfaceRobot
             oscilloGhostVitesseAng.ChangeLineColor(0, Colors.Yellow);
             oscilloGhostVitesseAng.isDisplayActivated = true;
 
-            oscilloGhostPosLin.AddOrUpdateLine(0, 200, "Angle Ghost");
+            oscilloGhostPosLin.AddOrUpdateLine(0, 200, "Lin Ghost");
             oscilloGhostPosLin.ChangeLineColor(0, Colors.LightPink);
             oscilloGhostPosLin.isDisplayActivated = true;
 
-            oscilloGhostVitesseLin.AddOrUpdateLine(0, 200, "Vitesse Angulaire Ghost");
+            oscilloGhostVitesseLin.AddOrUpdateLine(0, 200, "Vitesse Linaire Ghost");
             oscilloGhostVitesseLin.ChangeLineColor(0, Colors.MediumPurple);
             oscilloGhostVitesseLin.isDisplayActivated = true;
+
+
         }
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
@@ -599,7 +601,7 @@ namespace InterfaceRobot
             UartEncodeAndSendMessage(0x0071, parametrePIDT.Length, parametrePIDT);
 
         }
-        byte mode = 0;
+        byte mode = 1;
         private void buttonMode_Click(object sender, RoutedEventArgs e)
         {
 

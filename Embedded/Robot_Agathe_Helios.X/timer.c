@@ -72,11 +72,11 @@ void __attribute__((interrupt, no_auto_psv)) _T3Interrupt(void) {
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
     ADC1StartConversionSequence();
-    OperatingSystemLoop();
     QEIUpdateData();
     PWMUpdateSpeed();
 
     if (robotState.mode == 0) {
+        OperatingSystemLoop();
         LED_ORANGE_2 = 1;
     } 
     else if (robotState.mode == 1) {

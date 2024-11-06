@@ -11,12 +11,28 @@
 
 volatile GhostPosition ghostPosition;
 static unsigned long lastUpdateTime = 0;
+int i = 0;
+
+struct Square {
+    double x;
+    double y;
+};
+typedef struct Square square;
+
+square point_carree[7] = {
+    {0, 0},
+    {0, 0.5},
+    {-1, 0.5},
+    {-1, -0.5},
+    {0, -0.5},
+    {0, 0},
+    {1.3, 0}
+};
 
 void InitTrajectory(void) {
-    ghostPosition.posX = 0.0;
+    ghostPosition.posX = 1.33;
     ghostPosition.posY = 0.0;
-    ghostPosition.thetaRobot = 0.0;
-    ghostPosition.thetaGhost = 0.0;
+    ghostPosition.thetaGhost = -PI;
     ghostPosition.vitesseLineaire = 0.0;
     ghostPosition.vitesseAngulaire = 0.0;
     ghostPosition.waypointX = 0.0;
@@ -30,169 +46,7 @@ void InitTrajectory(void) {
 }
 
 void UpdateTrajectory() {
-    ////    switch (ghostPosition.state) {
-    ////        case IDLE:
-    ////            ghostPosition.vitesseLineaire = 0;
-    ////            ghostPosition.vitesseAngulaire = 0;
-    ////            if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) {
-    ////                ghostPosition.state = ROTATION;
-    ////            }
-    ////            break;
-    ////
-    ////        case ROTATION:
-    ////            ghostPosition.target_angle = atan2((ghostPosition.waypointY - ghostPosition.posY), (ghostPosition.waypointX - ghostPosition.posX));
-    ////            ghostPosition.thetaRestant = ghostPosition.thetaWaypoint - ModuloByAngle(ghostPosition.target_angle, ghostPosition.thetaRobot);
-    ////            ghostPosition.thetaArret = pow(ghostPosition.vitesseAngulaire, 2) / (2 * accelerationAngulaire);
-    ////
-    ////            if (ghostPosition.thetaRestant > 0) {
-    ////                if (ghostPosition.vitesseAngulaire < 0) {
-    ////                    ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    ////                } else {
-    ////                    if (ghostPosition.thetaRestant > ghostPosition.thetaArret) {
-    ////                        if (ghostPosition.vitesseAngulaire < VitesseMaxAngulaire) {
-    ////                            ghostPosition.vitesseAngulaire += accelerationAngulaire;
-    ////                        } else {
-    ////                            ghostPosition.vitesseAngulaire = VitesseMaxAngulaire;
-    ////                        }
-    ////                    } else {
-    ////                        ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    ////                    }
-    ////                }
-    ////            } else {
-    ////                if (ghostPosition.vitesseAngulaire > 0) {
-    ////                    ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    ////                } else {
-    ////                    if (Abs(ghostPosition.thetaRestant) > ghostPosition.thetaArret) {
-    ////                        if (ghostPosition.vitesseAngulaire>-VitesseMaxAngulaire) {
-    ////                            ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    ////                        } else {
-    ////                            ghostPosition.vitesseAngulaire = VitesseMaxAngulaire;
-    ////                        }
-    ////                    } else {
-    ////                        ghostPosition.vitesseAngulaire += accelerationAngulaire;
-    ////                    }
-    ////                }
-    ////            }
-    ////            if (Abs(ghostPosition.thetaRestant) < ToleranceAngulaire) {
-    ////                ghostPosition.vitesseAngulaire = 0;
-    ////                ghostPosition.thetaRobot = ghostPosition.thetaWaypoint;
-    ////                ghostPosition.state = DEPLACEMENTLINEAIRE;
-    ////            }
-    ////            break;
-    ////        case DEPLACEMENTLINEAIRE:
-    ////            ghostPosition.distance = sqrt(pow((ghostPosition.waypointY - ghostPosition.posY), 2) + pow((ghostPosition.waypointX - ghostPosition.posX), 2));
-
-    ////
-    ////            if (ghostPosition.distance < Tolerancedistance) {
-    ////                ghostPosition.state = IDLE;
-    ////                ghostPosition.vitesseLineaire = 0.0;
-    ////                ghostPosition.waypointX = ghostPosition.posX;
-    ////                ghostPosition.waypointY = ghostPosition.posY;
-    ////                return;
-    ////            }
-    ////            ghostPosition.distanceToTarget = ghostPosition.distance;
-    ////
-    ////            double distanceDecel = pow(ghostPosition.vitesseLineaire, 2) / (2 * accelerationLineaire);
-    ////            double distanceAccel = (pow(VitesseMaxLineaire, 2) - pow(ghostPosition.vitesseLineaire, 2)) / (2 * accelerationLineaire);
-    ////            double deltaTime = timestamp - lastUpdateTime;
-    ////
-    ////            if (ghostPosition.distance <= (distanceDecel + Tolerancedistance)) {
-    ////                ghostPosition.vitesseLineaire -= accelerationLineaire * deltaTime;
-    ////                ghostPosition.vitesseLineaire = fmax(ghostPosition.vitesseLineaire, 0);
-    ////            } else if (ghostPosition.distance > distanceDecel + distanceAccel) {
-    ////                ghostPosition.vitesseLineaire += accelerationLineaire * deltaTime;
-    ////                ghostPosition.vitesseLineaire = fmin(ghostPosition.vitesseLineaire, VitesseMaxLineaire);
-    ////            } else {
-    ////                double vMedian = sqrt(VitesseMaxLineaire * ghostPosition.distance + ghostPosition.vitesseLineaire / 2);
-    ////                ghostPosition.vitesseLineaire += accelerationLineaire * deltaTime;
-    ////                ghostPosition.vitesseLineaire = fmin(ghostPosition.vitesseLineaire, vMedian);
-    ////            }
-    ////            ghostPosition.posX += ghostPosition.vitesseLineaire * cos(ghostPosition.thetaRobot) * deltaTime;
-    ////            ghostPosition.posY += ghostPosition.vitesseLineaire * sin(ghostPosition.thetaRobot) * deltaTime;
-    ////            break;
-    ////
-    ////            lastUpdateTime = timestamp;
-    ////    }
-    //
-    //        if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) {
-    //    
-    //            ghostPosition.last_waypointX = ghostPosition.waypointX;
-    //            ghostPosition.last_waypointY = ghostPosition.waypointY;
-    //    
-    //            ghostPosition.target_angle = atan2((ghostPosition.waypointY - ghostPosition.posY), (ghostPosition.waypointX - ghostPosition.posX));
-    //            ghostPosition.thetaRestant = ghostPosition.thetaWaypoint - ModuloByAngle(ghostPosition.target_angle, ghostPosition.thetaRobot);
-    //            ghostPosition.thetaArret = pow(ghostPosition.vitesseAngulaire, 2) / (2 * accelerationAngulaire);
-    //    
-    //            ghostPosition.distance = sqrt(pow((ghostPosition.waypointY - ghostPosition.posY), 2) + pow((ghostPosition.waypointX - ghostPosition.posX), 2));
-    //    
-    //            double distanceDecel = pow(ghostPosition.vitesseLineaire, 2) / (2 * accelerationLineaire);
-    //            double distanceAccel = (pow(VitesseMaxLineaire, 2) - pow(ghostPosition.vitesseLineaire, 2)) / (2 * accelerationLineaire);
-    //            double deltaTime = timestamp - lastUpdateTime;
-    //    
-    //            if (ghostPosition.thetaRestant > 0) {
-    //                if (ghostPosition.vitesseAngulaire < 0) {
-    //                    ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    //                } else {
-    //                    if (ghostPosition.thetaRestant > ghostPosition.thetaArret) {
-    //                        if (ghostPosition.vitesseAngulaire < VitesseMaxAngulaire) {
-    //                            ghostPosition.vitesseAngulaire += accelerationAngulaire;
-    //                        } else {
-    //                            ghostPosition.vitesseAngulaire = VitesseMaxAngulaire;
-    //                        }
-    //                    } else {
-    //                        ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    //                    }
-    //                }
-    //            } else {
-    //                if (ghostPosition.vitesseAngulaire > 0) {
-    //                    ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    //                } else {
-    //                    if (Abs(ghostPosition.thetaRestant) > ghostPosition.thetaArret) {
-    //                        if (ghostPosition.vitesseAngulaire>-VitesseMaxAngulaire) {
-    //                            ghostPosition.vitesseAngulaire -= accelerationAngulaire;
-    //                        } else {
-    //                            ghostPosition.vitesseAngulaire = VitesseMaxAngulaire;
-    //                        }
-    //                    } else {
-    //                        ghostPosition.vitesseAngulaire += accelerationAngulaire;
-    //                    }
-    //                }
-    //            }
-    //            if (Abs(ghostPosition.thetaRestant) < ToleranceAngulaire) {
-    //                ghostPosition.vitesseAngulaire = 0;
-    //                ghostPosition.thetaRobot = ghostPosition.thetaWaypoint;
-    //            }
-    //    
-    //            if (ghostPosition.distance < Tolerancedistance) {
-    //                ghostPosition.vitesseLineaire = 0.0;
-    //                ghostPosition.waypointX = ghostPosition.posX;
-    //                ghostPosition.waypointY = ghostPosition.posY;
-    //            }
-    //    
-    //            if (ghostPosition.distance <= (distanceDecel + Tolerancedistance)) {
-    //               ghostPosition.vitesseLineaire -= accelerationLineaire * deltaTime;
-    //                ghostPosition.vitesseLineaire = fmax(ghostPosition.vitesseLineaire, 0);
-    //            } else if (ghostPosition.distance > distanceDecel + distanceAccel) {
-    //                ghostPosition.vitesseLineaire += accelerationLineaire * deltaTime;
-    //                ghostPosition.vitesseLineaire = fmin(ghostPosition.vitesseLineaire, VitesseMaxLineaire);
-    //            } else {
-    //                double vMedian = sqrt(VitesseMaxLineaire * ghostPosition.distance + ghostPosition.vitesseLineaire / 2);
-    //                ghostPosition.vitesseLineaire += accelerationLineaire * deltaTime;
-    //                ghostPosition.vitesseLineaire = fmin(ghostPosition.vitesseLineaire, vMedian);
-    //            }
-    //            ghostPosition.posX += ghostPosition.vitesseLineaire * cos(ghostPosition.thetaRobot) * deltaTime;
-    //            ghostPosition.posY += ghostPosition.vitesseLineaire * sin(ghostPosition.thetaRobot) * deltaTime;
-    //            
-    //    
-    //            lastUpdateTime = timestamp;
-    //    
-    //        }
-    //        else {
-    //            ghostPosition.vitesseLineaire = 0;
-    //            ghostPosition.vitesseAngulaire = 0;
-    //        }
-
-    //if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) { //Rotation
+   
     ghostPosition.thetaWaypoint = atan2((ghostPosition.waypointY - ghostPosition.posY), (ghostPosition.waypointX - ghostPosition.posX));
     ghostPosition.thetaRestant = ModuloByAngle(ghostPosition.thetaGhost, ghostPosition.thetaWaypoint) - ghostPosition.thetaGhost;
     ghostPosition.thetaArret = ghostPosition.vitesseAngulaire * ghostPosition.vitesseAngulaire / (2 * accelerationAngulaire);
@@ -206,7 +60,13 @@ void UpdateTrajectory() {
         case IDLE:
             ghostPosition.vitesseLineaire = 0;
             ghostPosition.vitesseAngulaire = 0;
-            if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) {
+            //            if (ghostPosition.last_waypointX != ghostPosition.waypointX || ghostPosition.last_waypointY != ghostPosition.waypointY) {
+            //                ghostPosition.state = ROTATION;
+            //            }
+            if (i < 7) {
+                square next_point = point_carree[i++];
+                ghostPosition.waypointX = next_point.x;
+                ghostPosition.waypointY = next_point.y;
                 ghostPosition.state = ROTATION;
             }
             break;
@@ -225,8 +85,7 @@ void UpdateTrajectory() {
                 } else if (ghostPosition.thetaRestant < 0) {
                     ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, -VitesseMaxAngulaire);
                 }
-            }
-            else {
+            } else {
                 if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire > 0) {
                     ghostPosition.vitesseAngulaire = Max(ghostPosition.vitesseAngulaire - accelerationAngulaire / FREQ_T1, 0);
                 } else if (ghostPosition.thetaRestant >= 0 && ghostPosition.vitesseAngulaire < 0) {
@@ -247,7 +106,11 @@ void UpdateTrajectory() {
 
             if (ghostPosition.vitesseAngulaire == 0 && (Abs(ghostPosition.thetaRestant) < 0.01)) {
                 ghostPosition.thetaGhost = ghostPosition.thetaWaypoint;
-                ghostPosition.state = DEPLACEMENTLINEAIRE;
+                if (i == 7) {
+                    ghostPosition.state = IDLE;
+                } else {
+                    ghostPosition.state = DEPLACEMENTLINEAIRE;
+                }
             }
             break;
 
@@ -279,20 +142,21 @@ void UpdateTrajectory() {
                 }
             }
             if ((Abs(ghostPosition.distanceRestante) < 0.01)) {
-                    ghostPosition.vitesseLineaire = 0;
-                    ghostPosition.posX = ghostPosition.waypointX;
-                    ghostPosition.posY = ghostPosition.waypointY;
-                    ghostPosition.state = IDLE;
-                }
+                ghostPosition.vitesseLineaire = 0;
+                ghostPosition.posX = ghostPosition.waypointX;
+                ghostPosition.posY = ghostPosition.waypointY;
+                ghostPosition.state = IDLE;
+            }
 
-                ghostPosition.posX += ghostPosition.incrementeLineaire * cos(ghostPosition.thetaGhost);
-                ghostPosition.posY += ghostPosition.incrementeLineaire * sin(ghostPosition.thetaGhost);
-                robotState.vitesseConsigneLineaire = ghostPosition.vitesseLineaire;
+            ghostPosition.posX += ghostPosition.incrementeLineaire * cos(ghostPosition.thetaGhost);
+            ghostPosition.posY += ghostPosition.incrementeLineaire * sin(ghostPosition.thetaGhost);
+            robotState.vitesseConsigneLineaire = ghostPosition.vitesseLineaire;
+
             break;
     }
 }
 
-//void PIDPosition() {
+//void PDPosition() {
 //    ghostPosition.erreurAngulaire = ghostPosition.thetaGhost - robotState.angleRadianFromOdometry;
 //}
 
