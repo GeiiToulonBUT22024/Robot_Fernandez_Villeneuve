@@ -12,7 +12,7 @@
 #define VitesseMaxAngulaire 3
 #define ToleranceAngulaire 0.005
 #define accelerationAngulaire 5
-#define VitesseMaxLineaire 1 // 1m.s-1
+#define VitesseMaxLineaire 0.5 // 1m.s-1
 #define Tolerancedistance 0.1 // 10 cm
 #define accelerationLineaire 1
 

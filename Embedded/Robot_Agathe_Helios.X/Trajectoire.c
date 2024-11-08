@@ -25,12 +25,12 @@ square point_carree[7] = {
     {-1, 0.5},
     {-1, -0.5},
     {0, -0.5},
-    {0, 0},
-    {1.3, 0}
+    {0, -0.06},
+    {1.35, -0.06}
 };
 
 void InitTrajectory(void) {
-    ghostPosition.posX = 1.33;
+    ghostPosition.posX = 1.35;
     ghostPosition.posY = 0.0;
     ghostPosition.thetaGhost = -PI;
     ghostPosition.vitesseLineaire = 0.0;
