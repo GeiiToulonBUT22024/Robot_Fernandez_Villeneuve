@@ -115,7 +115,8 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
     //int tabPos[payloadLength];
     float KpX, KiX, KdX, LimPX, LimIX, LimDX;
     float KpT, KiT, KdT, LimPT, LimIT, LimDT;
-
+    float coord_x,coord_y;
+    
     switch (function) {
         case 0x20:
 
@@ -191,6 +192,10 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
         case 0x91:
             robotState.vitesseConsigneAngulaire = getFloat(payload, 0);
+            break;
+        case 0x10:
+            coord_x = getFloat(payload, 0);
+            coord_y = getFloat(payload, 4);
             break;
     }
 }
