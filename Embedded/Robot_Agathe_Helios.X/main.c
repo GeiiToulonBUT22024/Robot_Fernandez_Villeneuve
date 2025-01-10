@@ -18,6 +18,7 @@
 #include "UART.h"
 #include "CB_TX1.h"
 #include "CB_RX1.h"
+#include "CB_RX2.h"
 #include "UART_Protocol.h"
 #include "ADC.h"
 #include "QEI.h"
@@ -143,6 +144,11 @@ int main(void) {
         for (i = 0; i < CB_RX1_GetDataSize(); i++) {
             unsigned char c = CB_RX1_Get();
             UartDecodeMessage(c);
+        }    
+        int j;
+        for (j = 0; j < CB_RX2_GetDataSize(); j++) {
+            unsigned char cam = CB_RX2_Get();
+            UartDecodeMessage(cam);
             //                    SendMessage(&c, 1);
         }
         __delay32(10000);

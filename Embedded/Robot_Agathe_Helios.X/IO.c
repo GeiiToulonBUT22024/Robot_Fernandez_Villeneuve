@@ -48,6 +48,9 @@ void InitIO() {
 
     _U1RXR = 78; //Remappe la RPI78 sur l?éentre Rx1
     _RP79R = 0b00001; //Remappe la sortie Tx1 vers RP79
+    
+    _U2RXR = 98; //Remappe la RP98 sur l?éentre Rx1
+
 
     // Configuration des pins remappables  
     //******************** QEI *****************
